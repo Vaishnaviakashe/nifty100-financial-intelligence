@@ -1,0 +1,320 @@
+company_id,field,issue,severity,rule_id,year
+JIOFIN,year,Less than 5 years of data in profitandloss,WARNING,DQ-16,
+ADANIENSOL,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2024-03
+AXISBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2013-03
+AXISBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2014-03
+AXISBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2015-03
+AXISBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2016-03
+AXISBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2017-03
+AXISBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2018-03
+AXISBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2019-03
+AXISBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2020-03
+AXISBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2021-03
+AXISBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2022-03
+AXISBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2023-03
+AXISBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2024-03
+BAJFINANCE,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2015-03
+BAJFINANCE,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2016-03
+BAJFINANCE,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2017-03
+BAJFINANCE,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2018-03
+BAJFINANCE,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2019-03
+BAJFINANCE,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2020-03
+BAJFINANCE,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2021-03
+BAJFINANCE,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2022-03
+BAJFINANCE,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2023-03
+BAJFINANCE,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2024-03
+BANKBARODA,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2013-03
+BANKBARODA,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2014-03
+BANKBARODA,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2015-03
+BANKBARODA,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2016-03
+BANKBARODA,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2017-03
+BANKBARODA,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2018-03
+BANKBARODA,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2019-03
+BANKBARODA,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2020-03
+BANKBARODA,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2021-03
+BANKBARODA,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2022-03
+BANKBARODA,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2023-03
+BANKBARODA,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2024-03
+CANBK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2013-03
+CANBK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2014-03
+CANBK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2015-03
+CANBK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2016-03
+CANBK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2017-03
+CANBK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2018-03
+CANBK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2019-03
+CANBK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2020-03
+CANBK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2021-03
+CANBK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2022-03
+CANBK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2023-03
+CANBK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2024-03
+CHOLAFIN,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2013-03
+CHOLAFIN,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2014-03
+CHOLAFIN,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2015-03
+CHOLAFIN,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2016-03
+CHOLAFIN,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2017-03
+CHOLAFIN,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2018-03
+CHOLAFIN,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2019-03
+CHOLAFIN,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2020-03
+CHOLAFIN,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2021-03
+CHOLAFIN,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2022-03
+CHOLAFIN,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2023-03
+CHOLAFIN,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2024-03
+CIPLA,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2013-03
+CIPLA,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2014-03
+CIPLA,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2015-03
+CIPLA,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2016-03
+CIPLA,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2017-03
+CIPLA,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2018-03
+CIPLA,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2019-03
+CIPLA,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2020-03
+CIPLA,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2021-03
+CIPLA,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2022-03
+CIPLA,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2023-03
+CIPLA,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2024-03
+COALINDIA,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2013-03
+COALINDIA,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2014-03
+COALINDIA,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2015-03
+COALINDIA,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2016-03
+COALINDIA,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2017-03
+COALINDIA,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2018-03
+COALINDIA,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2019-03
+COALINDIA,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2020-03
+COALINDIA,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2021-03
+COALINDIA,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2022-03
+COALINDIA,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2023-03
+COALINDIA,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2024-03
+HDFCBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2013-03
+HDFCBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2014-03
+HDFCBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2015-03
+HDFCBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2016-03
+HDFCBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2017-03
+HDFCBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2018-03
+HDFCBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2019-03
+HDFCBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2020-03
+HDFCBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2021-03
+HDFCBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2022-03
+HDFCBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2023-03
+HDFCBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2024-03
+HDFCLIFE,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2013-03
+HDFCLIFE,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2014-03
+HDFCLIFE,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2015-03
+HDFCLIFE,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2016-03
+HDFCLIFE,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2017-03
+HDFCLIFE,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2018-03
+HDFCLIFE,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2019-03
+HDFCLIFE,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2020-03
+HDFCLIFE,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2021-03
+HDFCLIFE,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2022-03
+HDFCLIFE,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2023-03
+HDFCLIFE,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2024-03
+HEROMOTOCO,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2014-03
+HEROMOTOCO,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2015-03
+HEROMOTOCO,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2016-03
+HEROMOTOCO,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2017-03
+HEROMOTOCO,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2018-03
+HEROMOTOCO,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2019-03
+HEROMOTOCO,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2020-03
+HEROMOTOCO,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2021-03
+HEROMOTOCO,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2022-03
+HEROMOTOCO,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2023-03
+HEROMOTOCO,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2024-03
+HINDALCO,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2013-03
+HINDALCO,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2014-03
+HINDALCO,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2015-03
+HINDALCO,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2016-03
+HINDALCO,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2017-03
+HINDALCO,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2018-03
+HINDALCO,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2019-03
+HINDALCO,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2020-03
+HINDALCO,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2021-03
+HINDALCO,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2022-03
+HINDALCO,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2023-03
+HINDALCO,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2024-03
+HINDUNILVR,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2013-03
+HINDUNILVR,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2014-03
+HINDUNILVR,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2015-03
+HINDUNILVR,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2016-03
+HINDUNILVR,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2017-03
+HINDUNILVR,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2018-03
+HINDUNILVR,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2019-03
+HINDUNILVR,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2020-03
+HINDUNILVR,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2021-03
+HINDUNILVR,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2022-03
+HINDUNILVR,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2023-03
+HINDUNILVR,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2024-03
+ICICIBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2013-03
+ICICIBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2014-03
+ICICIBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2015-03
+ICICIBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2016-03
+ICICIBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2017-03
+ICICIBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2018-03
+ICICIBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2019-03
+ICICIBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2020-03
+ICICIBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2021-03
+ICICIBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2022-03
+ICICIBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2023-03
+ICICIBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2024-03
+ICICIGI,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2013-03
+ICICIGI,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2014-03
+ICICIGI,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2015-03
+ICICIGI,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2016-03
+ICICIGI,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2017-03
+ICICIGI,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2018-03
+ICICIGI,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2019-03
+ICICIGI,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2020-03
+ICICIGI,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2021-03
+ICICIGI,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2022-03
+ICICIGI,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2023-03
+ICICIGI,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2024-03
+ICICIPRULI,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2013-03
+ICICIPRULI,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2014-03
+ICICIPRULI,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2015-03
+ICICIPRULI,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2016-03
+ICICIPRULI,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2017-03
+ICICIPRULI,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2018-03
+ICICIPRULI,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2019-03
+ICICIPRULI,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2020-03
+ICICIPRULI,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2021-03
+ICICIPRULI,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2022-03
+ICICIPRULI,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2023-03
+ICICIPRULI,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2024-03
+INDUSINDBK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2013-03
+INDUSINDBK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2014-03
+INDUSINDBK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2015-03
+INDUSINDBK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2016-03
+INDUSINDBK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2017-03
+INDUSINDBK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2018-03
+INDUSINDBK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2019-03
+INDUSINDBK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2020-03
+INDUSINDBK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2021-03
+INDUSINDBK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2022-03
+INDUSINDBK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2023-03
+INDUSINDBK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2024-03
+JIOFIN,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2023-03
+KOTAKBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2013-03
+KOTAKBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2014-03
+KOTAKBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2015-03
+KOTAKBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2016-03
+KOTAKBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2017-03
+KOTAKBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2018-03
+KOTAKBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2019-03
+KOTAKBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2020-03
+KOTAKBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2021-03
+KOTAKBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2022-03
+KOTAKBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2023-03
+KOTAKBANK,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2024-03
+SUNPHARMA,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2024-03
+INDIGO,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2013-03
+INDIGO,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2014-03
+INDIGO,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2015-03
+INDIGO,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2016-03
+INDIGO,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2017-03
+INDIGO,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2018-03
+INDIGO,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2019-03
+INDIGO,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2020-03
+INDIGO,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2021-03
+INDIGO,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2022-03
+INDIGO,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2023-03
+INDIGO,opm_percentage,Reported OPM differs from calculated OPM by 1 percentage point or more,WARNING,DQ-05,2024-03
+ADANIENSOL,sales,Sales are zero or negative,WARNING,DQ-06,2014-03
+ADANIENT,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2014-03
+ADANIGREEN,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2017-03
+ADANIGREEN,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2018-03
+ADANIGREEN,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2019-03
+ADANIPOWER,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2014-03
+ADANIPOWER,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2016-03
+ADANIPOWER,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2017-03
+ADANIPOWER,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2023-03
+AMBUJACEM,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2018-12
+APOLLOHOSP,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2018-03
+AXISBANK,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2018-03
+AXISBANK,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2020-03
+BANKBARODA,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2016-03
+BANKBARODA,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2018-03
+BANKBARODA,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2020-03
+BANKBARODA,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2021-03
+BHARTIARTL,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2014-03
+BHARTIARTL,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2019-03
+BHARTIARTL,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2020-03
+BHARTIARTL,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2021-03
+BHEL,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2016-03
+BHEL,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2018-03
+BHEL,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2020-03
+BHEL,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2021-03
+BHEL,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2024-03
+CANBK,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2016-03
+CANBK,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2018-03
+CANBK,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2019-03
+DLF,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2014-03
+DLF,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2020-03
+DRREDDY,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2020-03
+GODREJCP,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2019-03
+GODREJCP,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2024-03
+GRASIM,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2020-03
+HDFCLIFE,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2024-03
+HINDALCO,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2015-03
+HINDALCO,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2016-03
+IOC,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2020-03
+IRFC,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2013-03
+JINDALSTEL,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2015-03
+JINDALSTEL,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2016-03
+JINDALSTEL,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2017-03
+JINDALSTEL,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2018-03
+JINDALSTEL,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2019-03
+JSWENERGY,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2018-03
+JSWSTEEL,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2014-03
+JSWSTEEL,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2016-03
+JSWSTEEL,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2020-03
+LICI,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2019-03
+LICI,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2020-03
+LICI,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2021-03
+LICI,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2022-03
+LODHA,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2021-03
+LODHA,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2023-03
+M&M,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2020-03
+MOTHERSON,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2020-03
+NAUKRI,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2015-03
+NAUKRI,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2017-03
+NAUKRI,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2020-03
+NAUKRI,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2023-03
+NHPC,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2020-03
+NHPC,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2022-03
+NTPC,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2016-03
+NTPC,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2019-03
+PNB,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2016-03
+PNB,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2018-03
+PNB,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2019-03
+POWERGRID,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2019-03
+SBIN,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2017-03
+SBIN,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2018-03
+SHREECEM,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2015-06
+TATACONSUM,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2016-03
+TATAMOTORS,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2019-03
+TATAMOTORS,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2024-03
+TATAPOWER,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2013-03
+TATAPOWER,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2014-03
+TATAPOWER,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2015-03
+TATASTEEL,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2013-03
+TATASTEEL,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2015-03
+TATASTEEL,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2016-03
+TATASTEEL,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2017-03
+TATASTEEL,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2020-03
+TATASTEEL,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2024-03
+TRENT,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2013-03
+TRENT,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2014-03
+TRENT,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2021-03
+TRENT,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2022-03
+INDIGO,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2019-03
+INDIGO,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2020-03
+INDIGO,tax_percentage,Tax percentage outside 0-60 range,WARNING,DQ-11,2024-03
+BHARTIARTL,dividend_payout,Dividend payout exceeds 200 percent,WARNING,DQ-12,2019-03
+BRITANNIA,dividend_payout,Dividend payout exceeds 200 percent,WARNING,DQ-12,2021-03
+M&M,dividend_payout,Dividend payout exceeds 200 percent,WARNING,DQ-12,2020-03
+SBIN,dividend_payout,Dividend payout exceeds 200 percent,WARNING,DQ-12,2017-03
+TATAPOWER,dividend_payout,Dividend payout exceeds 200 percent,WARNING,DQ-12,2015-03
+JSWENERGY,eps,EPS is non-positive while net profit is positive,WARNING,DQ-14,2018-03
+TATAPOWER,eps,EPS is non-positive while net profit is positive,WARNING,DQ-14,2013-03
+TATAPOWER,eps,EPS is non-positive while net profit is positive,WARNING,DQ-14,2014-03
+JIOFIN,year,Less than 5 years of data in balancesheet,WARNING,DQ-16,
+JIOFIN,year,Less than 5 years of data in cashflow,WARNING,DQ-16,
+TVSMOTOR,net_cash_flow,Net cash flow differs from activity total by more than 10 Cr,WARNING,DQ-09,2022-03
