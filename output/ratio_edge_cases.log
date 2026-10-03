@@ -1,0 +1,36 @@
+SPRINT 2 — RATIO ENGINE EDGE CASE LOG
+======================================
+
+D08 — PROFITABILITY
+- Sales = 0: NPM and OPM return None.
+- Equity + reserves <= 0: ROE returns None.
+- Capital employed = 0: ROCE returns None.
+- OPM source values may differ because source percentages are rounded.
+
+D09 — LEVERAGE & EFFICIENCY
+- Debt-to-equity returns None when equity + reserves <= 0.
+- Debt-free companies return 0 for debt-to-equity.
+- Interest = 0 returns 999 for interest coverage, representing debt-free handling.
+- Total assets = 0 returns None for asset turnover.
+
+D10 — CAGR
+- CAGR requires a positive starting and ending value.
+- Non-positive values return None.
+- Turnaround is flagged when the starting value is negative and ending value is positive.
+
+D11 — CASH FLOW
+- FCF is calculated as CFO + CFI and may be negative.
+- CapEx intensity returns None when sales = 0.
+- FCF conversion returns None when net profit = 0.
+- CFO quality score returns None when net profit = 0.
+- Capital allocation classification is based on CFO, CFI and CFF signs.
+
+D12 — DATABASE
+- 1,073 financial ratio rows were populated from the available source company-year records.
+- 92 companies are represented.
+- Source data contains 41 distinct year values.
+
+D13 — BANKS/NBFCs
+- Calculated year-level ROCE differs from the company-level source ROCE.
+- Differences are documented in output/sector_roce_notes.csv.
+- Differences are treated as methodology/data-basis differences rather than automatically classified as calculation errors.

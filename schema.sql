@@ -146,20 +146,29 @@ CREATE TABLE IF NOT EXISTS financial_ratios (
     id INTEGER PRIMARY KEY,
     company_id TEXT NOT NULL,
     year TEXT NOT NULL,
+
     net_profit_margin_pct NUMERIC,
     operating_profit_margin_pct NUMERIC,
     return_on_equity_pct NUMERIC,
+    return_on_capital_employed_pct NUMERIC,
+
     debt_to_equity NUMERIC,
     interest_coverage NUMERIC,
     asset_turnover NUMERIC,
+
     free_cash_flow_cr NUMERIC,
     capex_cr NUMERIC,
+    cfo_quality_score NUMERIC,
+    fcf_conversion_pct NUMERIC,
+
     earnings_per_share NUMERIC,
     book_value_per_share NUMERIC,
     dividend_payout_ratio_pct NUMERIC,
     total_debt_cr NUMERIC,
     cash_from_operations_cr NUMERIC,
-    FOREIGN KEY (company_id) REFERENCES companies(id)
+
+    FOREIGN KEY (company_id) REFERENCES companies(id),
+    UNIQUE(company_id, year)
 );
 
 CREATE TABLE IF NOT EXISTS peer_groups (
