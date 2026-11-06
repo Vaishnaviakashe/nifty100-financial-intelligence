@@ -1,0 +1,17 @@
+company_id,company_name,broad_sector,latest_year,latest_cfo_cr,latest_cff_cr,latest_net_profit_cr
+AXISBANK,Axis Bank Ltd,Financials,2024-03-01,-5555.0,22341.0,24861
+BAJAJFINSV,Bajaj Finserv Ltd,Financials,2024-03-01,-68674.0,82709.0,15595
+BAJFINANCE,Bajaj Finance Ltd,Financials,2024-03-01,-72760.0,82415.0,14451
+BANKBARODA,Bank of Baroda,Financials,2024-03-01,-6274.0,5476.0,18869
+BHEL,"Bharat Heavy Electricals Limited
+",Industrials,2024-03-01,-3713.0,2656.0,282
+CHOLAFIN,Cholamandalam Investment & Finance Company Ltd,Financials,2024-03-01,-35683.0,38471.0,3420
+GRASIM,Grasim Industries Ltd,Industrials,2024-03-01,-10719.0,33908.0,9926
+M&M,"Mahindra & Mahindra Ltd
+",Consumer Discretionary,2024-03-01,-5630.0,12281.0,12270
+PFC,Power Finance Corporation Ltd,Financials,2024-03-01,-97820.0,101261.0,26461
+PNB,Punjab National Bank,Financials,2024-03-01,-27939.0,3518.0,9157
+RECLTD,REC Ltd,Financials,2024-03-01,-57723.0,59588.0,14145
+SHRIRAMFIN,"Shriram Finance Ltd
+",Financials,2024-03-01,-31101.0,27609.0,7399
+TVSMOTOR,TVS Motor Company Ltd,Consumer Discretionary,2024-03-01,-1253.0,2759.0,1779

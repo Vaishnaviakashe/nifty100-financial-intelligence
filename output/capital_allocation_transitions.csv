@@ -1,0 +1,1152 @@
+company_id,company_name,broad_sector,previous_year,year,previous_pattern,pattern_label,transition
+ABB,Abbott India Ltd,Industrials,2012-12,2014-03,Reinvest,Neutral,Reinvest -> Neutral
+ABB,Abbott India Ltd,Industrials,2014-03,2015-03,Neutral,Distress,Neutral -> Distress
+ABB,Abbott India Ltd,Industrials,2015-03,2016-03,Distress,Reinvest,Distress -> Reinvest
+ABB,Abbott India Ltd,Industrials,2016-03,2017-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ABB,Abbott India Ltd,Industrials,2017-03,2018-03,Reinvest,Expansion,Reinvest -> Expansion
+ABB,Abbott India Ltd,Industrials,2018-03,2019-03,Expansion,Expansion,Expansion -> Expansion
+ABB,Abbott India Ltd,Industrials,2019-03,2020-03,Expansion,Expansion,Expansion -> Expansion
+ABB,Abbott India Ltd,Industrials,2020-03,2021-03,Expansion,Reinvest,Expansion -> Reinvest
+ABB,Abbott India Ltd,Industrials,2021-03,2022-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ABB,Abbott India Ltd,Industrials,2022-03,2023-03,Reinvest,Expansion,Reinvest -> Expansion
+ABB,Abbott India Ltd,Industrials,2023-03,2024-03,Expansion,Reinvest,Expansion -> Reinvest
+ADANIENSOL,Adani Energy Solutions Ltd,Energy,2014-03,2015-03,Neutral,Distress,Neutral -> Distress
+ADANIENSOL,Adani Energy Solutions Ltd,Energy,2015-03,2016-03,Distress,Reinvest,Distress -> Reinvest
+ADANIENSOL,Adani Energy Solutions Ltd,Energy,2016-03,2017-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ADANIENSOL,Adani Energy Solutions Ltd,Energy,2017-03,2018-03,Reinvest,Expansion,Reinvest -> Expansion
+ADANIENSOL,Adani Energy Solutions Ltd,Energy,2018-03,2019-03,Expansion,Expansion,Expansion -> Expansion
+ADANIENSOL,Adani Energy Solutions Ltd,Energy,2019-03,2020-03,Expansion,Expansion,Expansion -> Expansion
+ADANIENSOL,Adani Energy Solutions Ltd,Energy,2020-03,2021-03,Expansion,Reinvest,Expansion -> Reinvest
+ADANIENSOL,Adani Energy Solutions Ltd,Energy,2021-03,2022-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ADANIENSOL,Adani Energy Solutions Ltd,Energy,2022-03,2023-03,Reinvest,Expansion,Reinvest -> Expansion
+ADANIENSOL,Adani Energy Solutions Ltd,Energy,2023-03,2024-03,Expansion,Reinvest,Expansion -> Reinvest
+ADANIENT,Adani Enterprises Ltd,Industrials,2013-03,2014-03,Expansion,Reinvest,Expansion -> Reinvest
+ADANIENT,Adani Enterprises Ltd,Industrials,2014-03,2015-03,Reinvest,Expansion,Reinvest -> Expansion
+ADANIENT,Adani Enterprises Ltd,Industrials,2015-03,2016-03,Expansion,Reinvest,Expansion -> Reinvest
+ADANIENT,Adani Enterprises Ltd,Industrials,2016-03,2017-03,Reinvest,Expansion,Reinvest -> Expansion
+ADANIENT,Adani Enterprises Ltd,Industrials,2017-03,2018-03,Expansion,Expansion,Expansion -> Expansion
+ADANIENT,Adani Enterprises Ltd,Industrials,2018-03,2019-03,Expansion,Return,Expansion -> Return
+ADANIENT,Adani Enterprises Ltd,Industrials,2019-03,2020-03,Return,Reinvest,Return -> Reinvest
+ADANIENT,Adani Enterprises Ltd,Industrials,2020-03,2021-03,Reinvest,Expansion,Reinvest -> Expansion
+ADANIENT,Adani Enterprises Ltd,Industrials,2021-03,2022-03,Expansion,Expansion,Expansion -> Expansion
+ADANIENT,Adani Enterprises Ltd,Industrials,2022-03,2023-03,Expansion,Reinvest,Expansion -> Reinvest
+ADANIENT,Adani Enterprises Ltd,Industrials,2023-03,2024-03,Reinvest,Expansion,Reinvest -> Expansion
+ADANIGREEN,Adani Green Energy Ltd,Energy,2017-03,2018-03,Expansion,Expansion,Expansion -> Expansion
+ADANIGREEN,Adani Green Energy Ltd,Energy,2018-03,2019-03,Expansion,Expansion,Expansion -> Expansion
+ADANIGREEN,Adani Green Energy Ltd,Energy,2019-03,2020-03,Expansion,Expansion,Expansion -> Expansion
+ADANIGREEN,Adani Green Energy Ltd,Energy,2020-03,2021-03,Expansion,Expansion,Expansion -> Expansion
+ADANIGREEN,Adani Green Energy Ltd,Energy,2021-03,2022-03,Expansion,Expansion,Expansion -> Expansion
+ADANIGREEN,Adani Green Energy Ltd,Energy,2022-03,2023-03,Expansion,Reinvest,Expansion -> Reinvest
+ADANIGREEN,Adani Green Energy Ltd,Energy,2023-03,2024-03,Reinvest,Expansion,Reinvest -> Expansion
+ADANIPORTS,"Adani Ports & Special Economic Zone Ltd
+",Industrials,2013-03,2014-03,Expansion,Expansion,Expansion -> Expansion
+ADANIPORTS,"Adani Ports & Special Economic Zone Ltd
+",Industrials,2014-03,2015-03,Expansion,Reinvest,Expansion -> Reinvest
+ADANIPORTS,"Adani Ports & Special Economic Zone Ltd
+",Industrials,2015-03,2016-03,Reinvest,Expansion,Reinvest -> Expansion
+ADANIPORTS,"Adani Ports & Special Economic Zone Ltd
+",Industrials,2016-03,2017-03,Expansion,Reinvest,Expansion -> Reinvest
+ADANIPORTS,"Adani Ports & Special Economic Zone Ltd
+",Industrials,2017-03,2018-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ADANIPORTS,"Adani Ports & Special Economic Zone Ltd
+",Industrials,2018-03,2019-03,Reinvest,Expansion,Reinvest -> Expansion
+ADANIPORTS,"Adani Ports & Special Economic Zone Ltd
+",Industrials,2019-03,2020-03,Expansion,Reinvest,Expansion -> Reinvest
+ADANIPORTS,"Adani Ports & Special Economic Zone Ltd
+",Industrials,2020-03,2021-03,Reinvest,Expansion,Reinvest -> Expansion
+ADANIPORTS,"Adani Ports & Special Economic Zone Ltd
+",Industrials,2021-03,2022-03,Expansion,Reinvest,Expansion -> Reinvest
+ADANIPORTS,"Adani Ports & Special Economic Zone Ltd
+",Industrials,2022-03,2023-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ADANIPORTS,"Adani Ports & Special Economic Zone Ltd
+",Industrials,2023-03,2024-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ADANIPOWER,Adani Power Ltd,Energy,2013-03,2014-03,Expansion,Expansion,Expansion -> Expansion
+ADANIPOWER,Adani Power Ltd,Energy,2014-03,2015-03,Expansion,Reinvest,Expansion -> Reinvest
+ADANIPOWER,Adani Power Ltd,Energy,2015-03,2016-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ADANIPOWER,Adani Power Ltd,Energy,2016-03,2017-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ADANIPOWER,Adani Power Ltd,Energy,2017-03,2018-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ADANIPOWER,Adani Power Ltd,Energy,2018-03,2019-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ADANIPOWER,Adani Power Ltd,Energy,2019-03,2020-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ADANIPOWER,Adani Power Ltd,Energy,2020-03,2021-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ADANIPOWER,Adani Power Ltd,Energy,2021-03,2022-03,Reinvest,Return,Reinvest -> Return
+ADANIPOWER,Adani Power Ltd,Energy,2022-03,2023-03,Return,Return,Return -> Return
+ADANIPOWER,Adani Power Ltd,Energy,2023-03,2024-03,Return,Return,Return -> Return
+AMBUJACEM,Ambuja Cements Ltd,Materials,2012-12,2013-12,Reinvest,Reinvest,Reinvest -> Reinvest
+AMBUJACEM,Ambuja Cements Ltd,Materials,2013-12,2014-12,Reinvest,Reinvest,Reinvest -> Reinvest
+AMBUJACEM,Ambuja Cements Ltd,Materials,2014-12,2015-12,Reinvest,Reinvest,Reinvest -> Reinvest
+AMBUJACEM,Ambuja Cements Ltd,Materials,2015-12,2016-12,Reinvest,Reinvest,Reinvest -> Reinvest
+AMBUJACEM,Ambuja Cements Ltd,Materials,2016-12,2017-12,Reinvest,Reinvest,Reinvest -> Reinvest
+AMBUJACEM,Ambuja Cements Ltd,Materials,2017-12,2018-12,Reinvest,Reinvest,Reinvest -> Reinvest
+AMBUJACEM,Ambuja Cements Ltd,Materials,2018-12,2019-12,Reinvest,Reinvest,Reinvest -> Reinvest
+AMBUJACEM,Ambuja Cements Ltd,Materials,2019-12,2020-12,Reinvest,Reinvest,Reinvest -> Reinvest
+AMBUJACEM,Ambuja Cements Ltd,Materials,2020-12,2021-12,Reinvest,Reinvest,Reinvest -> Reinvest
+AMBUJACEM,Ambuja Cements Ltd,Materials,2021-12,2023-03,Reinvest,Expansion,Reinvest -> Expansion
+AMBUJACEM,Ambuja Cements Ltd,Materials,2023-03,2024-03,Expansion,Expansion,Expansion -> Expansion
+APOLLOHOSP,"Apollo Hospitals
+Chain of Indian private hospitals",Healthcare,2013-03,2014-03,Expansion,Reinvest,Expansion -> Reinvest
+APOLLOHOSP,"Apollo Hospitals
+Chain of Indian private hospitals",Healthcare,2014-03,2015-03,Reinvest,Expansion,Reinvest -> Expansion
+APOLLOHOSP,"Apollo Hospitals
+Chain of Indian private hospitals",Healthcare,2015-03,2016-03,Expansion,Expansion,Expansion -> Expansion
+APOLLOHOSP,"Apollo Hospitals
+Chain of Indian private hospitals",Healthcare,2016-03,2017-03,Expansion,Expansion,Expansion -> Expansion
+APOLLOHOSP,"Apollo Hospitals
+Chain of Indian private hospitals",Healthcare,2017-03,2018-03,Expansion,Reinvest,Expansion -> Reinvest
+APOLLOHOSP,"Apollo Hospitals
+Chain of Indian private hospitals",Healthcare,2018-03,2019-03,Reinvest,Reinvest,Reinvest -> Reinvest
+APOLLOHOSP,"Apollo Hospitals
+Chain of Indian private hospitals",Healthcare,2019-03,2020-03,Reinvest,Reinvest,Reinvest -> Reinvest
+APOLLOHOSP,"Apollo Hospitals
+Chain of Indian private hospitals",Healthcare,2020-03,2021-03,Reinvest,Reinvest,Reinvest -> Reinvest
+APOLLOHOSP,"Apollo Hospitals
+Chain of Indian private hospitals",Healthcare,2021-03,2022-03,Reinvest,Reinvest,Reinvest -> Reinvest
+APOLLOHOSP,"Apollo Hospitals
+Chain of Indian private hospitals",Healthcare,2022-03,2023-03,Reinvest,Reinvest,Reinvest -> Reinvest
+APOLLOHOSP,"Apollo Hospitals
+Chain of Indian private hospitals",Healthcare,2023-03,2024-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ASIANPAINT,"Asian Paints
+Indian Multi-National Paint and Coating Manufacturing Company",Materials,2013-03,2014-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ASIANPAINT,"Asian Paints
+Indian Multi-National Paint and Coating Manufacturing Company",Materials,2014-03,2015-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ASIANPAINT,"Asian Paints
+Indian Multi-National Paint and Coating Manufacturing Company",Materials,2015-03,2016-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ASIANPAINT,"Asian Paints
+Indian Multi-National Paint and Coating Manufacturing Company",Materials,2016-03,2017-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ASIANPAINT,"Asian Paints
+Indian Multi-National Paint and Coating Manufacturing Company",Materials,2017-03,2018-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ASIANPAINT,"Asian Paints
+Indian Multi-National Paint and Coating Manufacturing Company",Materials,2018-03,2019-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ASIANPAINT,"Asian Paints
+Indian Multi-National Paint and Coating Manufacturing Company",Materials,2019-03,2020-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ASIANPAINT,"Asian Paints
+Indian Multi-National Paint and Coating Manufacturing Company",Materials,2020-03,2021-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ASIANPAINT,"Asian Paints
+Indian Multi-National Paint and Coating Manufacturing Company",Materials,2021-03,2022-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ASIANPAINT,"Asian Paints
+Indian Multi-National Paint and Coating Manufacturing Company",Materials,2022-03,2023-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ASIANPAINT,"Asian Paints
+Indian Multi-National Paint and Coating Manufacturing Company",Materials,2023-03,2024-03,Reinvest,Reinvest,Reinvest -> Reinvest
+AXISBANK,Axis Bank Ltd,Financials,2013-03,2014-03,Expansion,Expansion,Expansion -> Expansion
+AXISBANK,Axis Bank Ltd,Financials,2014-03,2015-03,Expansion,Distress,Expansion -> Distress
+AXISBANK,Axis Bank Ltd,Financials,2015-03,2016-03,Distress,Distress,Distress -> Distress
+AXISBANK,Axis Bank Ltd,Financials,2016-03,2017-03,Distress,Reinvest,Distress -> Reinvest
+AXISBANK,Axis Bank Ltd,Financials,2017-03,2018-03,Reinvest,Distress,Reinvest -> Distress
+AXISBANK,Axis Bank Ltd,Financials,2018-03,2019-03,Distress,Expansion,Distress -> Expansion
+AXISBANK,Axis Bank Ltd,Financials,2019-03,2020-03,Expansion,Expansion,Expansion -> Expansion
+AXISBANK,Axis Bank Ltd,Financials,2020-03,2021-03,Expansion,Expansion,Expansion -> Expansion
+AXISBANK,Axis Bank Ltd,Financials,2021-03,2022-03,Expansion,Expansion,Expansion -> Expansion
+AXISBANK,Axis Bank Ltd,Financials,2022-03,2023-03,Expansion,Expansion,Expansion -> Expansion
+AXISBANK,Axis Bank Ltd,Financials,2023-03,2024-03,Expansion,Distress,Expansion -> Distress
+BAJAJ-AUTO,Bajaj Auto Ltd,Consumer Discretionary,2013-03,2014-03,Reinvest,Reinvest,Reinvest -> Reinvest
+BAJAJ-AUTO,Bajaj Auto Ltd,Consumer Discretionary,2014-03,2015-03,Reinvest,Reinvest,Reinvest -> Reinvest
+BAJAJ-AUTO,Bajaj Auto Ltd,Consumer Discretionary,2015-03,2016-03,Reinvest,Reinvest,Reinvest -> Reinvest
+BAJAJ-AUTO,Bajaj Auto Ltd,Consumer Discretionary,2016-03,2017-03,Reinvest,Reinvest,Reinvest -> Reinvest
+BAJAJ-AUTO,Bajaj Auto Ltd,Consumer Discretionary,2017-03,2018-03,Reinvest,Reinvest,Reinvest -> Reinvest
+BAJAJ-AUTO,Bajaj Auto Ltd,Consumer Discretionary,2018-03,2019-03,Reinvest,Reinvest,Reinvest -> Reinvest
+BAJAJ-AUTO,Bajaj Auto Ltd,Consumer Discretionary,2019-03,2020-03,Reinvest,Return,Reinvest -> Return
+BAJAJ-AUTO,Bajaj Auto Ltd,Consumer Discretionary,2020-03,2021-03,Return,Reinvest,Return -> Reinvest
+BAJAJ-AUTO,Bajaj Auto Ltd,Consumer Discretionary,2021-03,2022-03,Reinvest,Return,Reinvest -> Return
+BAJAJ-AUTO,Bajaj Auto Ltd,Consumer Discretionary,2022-03,2023-03,Return,Return,Return -> Return
+BAJAJ-AUTO,Bajaj Auto Ltd,Consumer Discretionary,2023-03,2024-03,Return,Reinvest,Return -> Reinvest
+BAJAJFINSV,Bajaj Finserv Ltd,Financials,2013-03,2014-03,Distress,Distress,Distress -> Distress
+BAJAJFINSV,Bajaj Finserv Ltd,Financials,2014-03,2015-03,Distress,Distress,Distress -> Distress
+BAJAJFINSV,Bajaj Finserv Ltd,Financials,2015-03,2016-03,Distress,Distress,Distress -> Distress
+BAJAJFINSV,Bajaj Finserv Ltd,Financials,2016-03,2017-03,Distress,Distress,Distress -> Distress
+BAJAJFINSV,Bajaj Finserv Ltd,Financials,2017-03,2018-03,Distress,Distress,Distress -> Distress
+BAJAJFINSV,Bajaj Finserv Ltd,Financials,2018-03,2019-03,Distress,Distress,Distress -> Distress
+BAJAJFINSV,Bajaj Finserv Ltd,Financials,2019-03,2020-03,Distress,Distress,Distress -> Distress
+BAJAJFINSV,Bajaj Finserv Ltd,Financials,2020-03,2021-03,Distress,Expansion,Distress -> Expansion
+BAJAJFINSV,Bajaj Finserv Ltd,Financials,2021-03,2022-03,Expansion,Distress,Expansion -> Distress
+BAJAJFINSV,Bajaj Finserv Ltd,Financials,2022-03,2023-03,Distress,Distress,Distress -> Distress
+BAJAJFINSV,Bajaj Finserv Ltd,Financials,2023-03,2024-03,Distress,Distress,Distress -> Distress
+BAJAJHLDNG,Bajaj Holdings & Investment Ltd,Financials,2013-03,2014-03,Reinvest,Reinvest,Reinvest -> Reinvest
+BAJAJHLDNG,Bajaj Holdings & Investment Ltd,Financials,2014-03,2015-03,Reinvest,Reinvest,Reinvest -> Reinvest
+BAJAJHLDNG,Bajaj Holdings & Investment Ltd,Financials,2015-03,2016-03,Reinvest,Return,Reinvest -> Return
+BAJAJHLDNG,Bajaj Holdings & Investment Ltd,Financials,2016-03,2017-03,Return,Distress,Return -> Distress
+BAJAJHLDNG,Bajaj Holdings & Investment Ltd,Financials,2017-03,2018-03,Distress,Reinvest,Distress -> Reinvest
+BAJAJHLDNG,Bajaj Holdings & Investment Ltd,Financials,2018-03,2019-03,Reinvest,Reinvest,Reinvest -> Reinvest
+BAJAJHLDNG,Bajaj Holdings & Investment Ltd,Financials,2019-03,2020-03,Reinvest,Reinvest,Reinvest -> Reinvest
+BAJAJHLDNG,Bajaj Holdings & Investment Ltd,Financials,2020-03,2021-03,Reinvest,Reinvest,Reinvest -> Reinvest
+BAJAJHLDNG,Bajaj Holdings & Investment Ltd,Financials,2021-03,2022-03,Reinvest,Reinvest,Reinvest -> Reinvest
+BAJAJHLDNG,Bajaj Holdings & Investment Ltd,Financials,2022-03,2023-03,Reinvest,Reinvest,Reinvest -> Reinvest
+BAJAJHLDNG,Bajaj Holdings & Investment Ltd,Financials,2023-03,2024-03,Reinvest,Reinvest,Reinvest -> Reinvest
+BAJFINANCE,Bajaj Finance Ltd,Financials,2015-03,2016-03,Distress,Distress,Distress -> Distress
+BAJFINANCE,Bajaj Finance Ltd,Financials,2016-03,2017-03,Distress,Distress,Distress -> Distress
+BAJFINANCE,Bajaj Finance Ltd,Financials,2017-03,2018-03,Distress,Distress,Distress -> Distress
+BAJFINANCE,Bajaj Finance Ltd,Financials,2018-03,2019-03,Distress,Distress,Distress -> Distress
+BAJFINANCE,Bajaj Finance Ltd,Financials,2019-03,2020-03,Distress,Distress,Distress -> Distress
+BAJFINANCE,Bajaj Finance Ltd,Financials,2020-03,2021-03,Distress,Distress,Distress -> Distress
+BAJFINANCE,Bajaj Finance Ltd,Financials,2021-03,2022-03,Distress,Distress,Distress -> Distress
+BAJFINANCE,Bajaj Finance Ltd,Financials,2022-03,2023-03,Distress,Distress,Distress -> Distress
+BAJFINANCE,Bajaj Finance Ltd,Financials,2023-03,2024-03,Distress,Distress,Distress -> Distress
+BANKBARODA,Bank of Baroda,Financials,2013-03,2014-03,Reinvest,Expansion,Reinvest -> Expansion
+BANKBARODA,Bank of Baroda,Financials,2014-03,2015-03,Expansion,Reinvest,Expansion -> Reinvest
+BANKBARODA,Bank of Baroda,Financials,2015-03,2016-03,Reinvest,Distress,Reinvest -> Distress
+BANKBARODA,Bank of Baroda,Financials,2016-03,2017-03,Distress,Reinvest,Distress -> Reinvest
+BANKBARODA,Bank of Baroda,Financials,2017-03,2018-03,Reinvest,Distress,Reinvest -> Distress
+BANKBARODA,Bank of Baroda,Financials,2018-03,2019-03,Distress,Distress,Distress -> Distress
+BANKBARODA,Bank of Baroda,Financials,2019-03,2020-03,Distress,Expansion,Distress -> Expansion
+BANKBARODA,Bank of Baroda,Financials,2020-03,2021-03,Expansion,Distress,Expansion -> Distress
+BANKBARODA,Bank of Baroda,Financials,2021-03,2022-03,Distress,Reinvest,Distress -> Reinvest
+BANKBARODA,Bank of Baroda,Financials,2022-03,2023-03,Reinvest,Distress,Reinvest -> Distress
+BANKBARODA,Bank of Baroda,Financials,2023-03,2024-03,Distress,Distress,Distress -> Distress
+BEL,Bharat Electronics Ltd,Industrials,2013-03,2014-03,Distress,Distress,Distress -> Distress
+BEL,Bharat Electronics Ltd,Industrials,2014-03,2015-03,Distress,Reinvest,Distress -> Reinvest
+BEL,Bharat Electronics Ltd,Industrials,2015-03,2016-03,Reinvest,Reinvest,Reinvest -> Reinvest
+BEL,Bharat Electronics Ltd,Industrials,2016-03,2017-03,Reinvest,Distress,Reinvest -> Distress
+BEL,Bharat Electronics Ltd,Industrials,2017-03,2018-03,Distress,Distress,Distress -> Distress
+BEL,Bharat Electronics Ltd,Industrials,2018-03,2019-03,Distress,Reinvest,Distress -> Reinvest
+BEL,Bharat Electronics Ltd,Industrials,2019-03,2020-03,Reinvest,Reinvest,Reinvest -> Reinvest
+BEL,Bharat Electronics Ltd,Industrials,2020-03,2021-03,Reinvest,Reinvest,Reinvest -> Reinvest
+BEL,Bharat Electronics Ltd,Industrials,2021-03,2022-03,Reinvest,Reinvest,Reinvest -> Reinvest
+BEL,Bharat Electronics Ltd,Industrials,2022-03,2023-03,Reinvest,Return,Reinvest -> Return
+BEL,Bharat Electronics Ltd,Industrials,2023-03,2024-03,Return,Reinvest,Return -> Reinvest
+BHARTIARTL,Bharti Airtel Ltd,Communication Services,2013-03,2014-03,Reinvest,Expansion,Reinvest -> Expansion
+BHARTIARTL,Bharti Airtel Ltd,Communication Services,2014-03,2015-03,Expansion,Reinvest,Expansion -> Reinvest
+BHARTIARTL,Bharti Airtel Ltd,Communication Services,2015-03,2016-03,Reinvest,Reinvest,Reinvest -> Reinvest
+BHARTIARTL,Bharti Airtel Ltd,Communication Services,2016-03,2017-03,Reinvest,Reinvest,Reinvest -> Reinvest
+BHARTIARTL,Bharti Airtel Ltd,Communication Services,2017-03,2018-03,Reinvest,Expansion,Reinvest -> Expansion
+BHARTIARTL,Bharti Airtel Ltd,Communication Services,2018-03,2019-03,Expansion,Expansion,Expansion -> Expansion
+BHARTIARTL,Bharti Airtel Ltd,Communication Services,2019-03,2020-03,Expansion,Expansion,Expansion -> Expansion
+BHARTIARTL,Bharti Airtel Ltd,Communication Services,2020-03,2021-03,Expansion,Reinvest,Expansion -> Reinvest
+BHARTIARTL,Bharti Airtel Ltd,Communication Services,2021-03,2022-03,Reinvest,Reinvest,Reinvest -> Reinvest
+BHARTIARTL,Bharti Airtel Ltd,Communication Services,2022-03,2023-03,Reinvest,Reinvest,Reinvest -> Reinvest
+BHARTIARTL,Bharti Airtel Ltd,Communication Services,2023-03,2024-03,Reinvest,Reinvest,Reinvest -> Reinvest
+BHEL,"Bharat Heavy Electricals Limited
+",Industrials,2013-03,2014-03,Expansion,Expansion,Expansion -> Expansion
+BHEL,"Bharat Heavy Electricals Limited
+",Industrials,2014-03,2015-03,Expansion,Return,Expansion -> Return
+BHEL,"Bharat Heavy Electricals Limited
+",Industrials,2015-03,2016-03,Return,Return,Return -> Return
+BHEL,"Bharat Heavy Electricals Limited
+",Industrials,2016-03,2017-03,Return,Reinvest,Return -> Reinvest
+BHEL,"Bharat Heavy Electricals Limited
+",Industrials,2017-03,2018-03,Reinvest,Return,Reinvest -> Return
+BHEL,"Bharat Heavy Electricals Limited
+",Industrials,2018-03,2019-03,Return,Distress,Return -> Distress
+BHEL,"Bharat Heavy Electricals Limited
+",Industrials,2019-03,2020-03,Distress,Distress,Distress -> Distress
+BHEL,"Bharat Heavy Electricals Limited
+",Industrials,2020-03,2021-03,Distress,Reinvest,Distress -> Reinvest
+BHEL,"Bharat Heavy Electricals Limited
+",Industrials,2021-03,2022-03,Reinvest,Reinvest,Reinvest -> Reinvest
+BHEL,"Bharat Heavy Electricals Limited
+",Industrials,2022-03,2023-03,Reinvest,Distress,Reinvest -> Distress
+BHEL,"Bharat Heavy Electricals Limited
+",Industrials,2023-03,2024-03,Distress,Distress,Distress -> Distress
+BOSCHLTD,Bosch Ltd,Consumer Discretionary,2012-12,2013-12,Reinvest,Reinvest,Reinvest -> Reinvest
+BOSCHLTD,Bosch Ltd,Consumer Discretionary,2013-12,2015-03,Reinvest,Reinvest,Reinvest -> Reinvest
+BOSCHLTD,Bosch Ltd,Consumer Discretionary,2015-03,2016-03,Reinvest,Reinvest,Reinvest -> Reinvest
+BOSCHLTD,Bosch Ltd,Consumer Discretionary,2016-03,2017-03,Reinvest,Return,Reinvest -> Return
+BOSCHLTD,Bosch Ltd,Consumer Discretionary,2017-03,2018-03,Return,Reinvest,Return -> Reinvest
+BOSCHLTD,Bosch Ltd,Consumer Discretionary,2018-03,2019-03,Reinvest,Return,Reinvest -> Return
+BOSCHLTD,Bosch Ltd,Consumer Discretionary,2019-03,2020-03,Return,Reinvest,Return -> Reinvest
+BOSCHLTD,Bosch Ltd,Consumer Discretionary,2020-03,2021-03,Reinvest,Reinvest,Reinvest -> Reinvest
+BOSCHLTD,Bosch Ltd,Consumer Discretionary,2021-03,2022-03,Reinvest,Reinvest,Reinvest -> Reinvest
+BOSCHLTD,Bosch Ltd,Consumer Discretionary,2022-03,2023-03,Reinvest,Return,Reinvest -> Return
+BOSCHLTD,Bosch Ltd,Consumer Discretionary,2023-03,2024-03,Return,Return,Return -> Return
+BPCL,Bharat Petroleum Corporation Ltd,Energy,2013-03,2014-03,Reinvest,Reinvest,Reinvest -> Reinvest
+BPCL,Bharat Petroleum Corporation Ltd,Energy,2014-03,2015-03,Reinvest,Reinvest,Reinvest -> Reinvest
+BPCL,Bharat Petroleum Corporation Ltd,Energy,2015-03,2016-03,Reinvest,Reinvest,Reinvest -> Reinvest
+BPCL,Bharat Petroleum Corporation Ltd,Energy,2016-03,2017-03,Reinvest,Expansion,Reinvest -> Expansion
+BPCL,Bharat Petroleum Corporation Ltd,Energy,2017-03,2018-03,Expansion,Reinvest,Expansion -> Reinvest
+BPCL,Bharat Petroleum Corporation Ltd,Energy,2018-03,2019-03,Reinvest,Expansion,Reinvest -> Expansion
+BPCL,Bharat Petroleum Corporation Ltd,Energy,2019-03,2020-03,Expansion,Expansion,Expansion -> Expansion
+BPCL,Bharat Petroleum Corporation Ltd,Energy,2020-03,2021-03,Expansion,Reinvest,Expansion -> Reinvest
+BPCL,Bharat Petroleum Corporation Ltd,Energy,2021-03,2022-03,Reinvest,Reinvest,Reinvest -> Reinvest
+BPCL,Bharat Petroleum Corporation Ltd,Energy,2022-03,2023-03,Reinvest,Reinvest,Reinvest -> Reinvest
+BPCL,Bharat Petroleum Corporation Ltd,Energy,2023-03,2024-03,Reinvest,Reinvest,Reinvest -> Reinvest
+BRITANNIA,Britannia Industries Ltd,Consumer Staples,2013-03,2014-03,Return,Reinvest,Return -> Reinvest
+BRITANNIA,Britannia Industries Ltd,Consumer Staples,2014-03,2015-03,Reinvest,Reinvest,Reinvest -> Reinvest
+BRITANNIA,Britannia Industries Ltd,Consumer Staples,2015-03,2016-03,Reinvest,Reinvest,Reinvest -> Reinvest
+BRITANNIA,Britannia Industries Ltd,Consumer Staples,2016-03,2017-03,Reinvest,Reinvest,Reinvest -> Reinvest
+BRITANNIA,Britannia Industries Ltd,Consumer Staples,2017-03,2018-03,Reinvest,Reinvest,Reinvest -> Reinvest
+BRITANNIA,Britannia Industries Ltd,Consumer Staples,2018-03,2019-03,Reinvest,Reinvest,Reinvest -> Reinvest
+BRITANNIA,Britannia Industries Ltd,Consumer Staples,2019-03,2020-03,Reinvest,Expansion,Reinvest -> Expansion
+BRITANNIA,Britannia Industries Ltd,Consumer Staples,2020-03,2021-03,Expansion,Return,Expansion -> Return
+BRITANNIA,Britannia Industries Ltd,Consumer Staples,2021-03,2022-03,Return,Return,Return -> Return
+BRITANNIA,Britannia Industries Ltd,Consumer Staples,2022-03,2023-03,Return,Reinvest,Return -> Reinvest
+BRITANNIA,Britannia Industries Ltd,Consumer Staples,2023-03,2024-03,Reinvest,Return,Reinvest -> Return
+CANBK,Canara Bank,Financials,2013-03,2014-03,Reinvest,Reinvest,Reinvest -> Reinvest
+CANBK,Canara Bank,Financials,2014-03,2015-03,Reinvest,Reinvest,Reinvest -> Reinvest
+CANBK,Canara Bank,Financials,2015-03,2016-03,Reinvest,Reinvest,Reinvest -> Reinvest
+CANBK,Canara Bank,Financials,2016-03,2017-03,Reinvest,Expansion,Reinvest -> Expansion
+CANBK,Canara Bank,Financials,2017-03,2018-03,Expansion,Distress,Expansion -> Distress
+CANBK,Canara Bank,Financials,2018-03,2019-03,Distress,Reinvest,Distress -> Reinvest
+CANBK,Canara Bank,Financials,2019-03,2020-03,Reinvest,Distress,Reinvest -> Distress
+CANBK,Canara Bank,Financials,2020-03,2021-03,Distress,Expansion,Distress -> Expansion
+CANBK,Canara Bank,Financials,2021-03,2022-03,Expansion,Expansion,Expansion -> Expansion
+CANBK,Canara Bank,Financials,2022-03,2023-03,Expansion,Distress,Expansion -> Distress
+CANBK,Canara Bank,Financials,2023-03,2024-03,Distress,Reinvest,Distress -> Reinvest
+CHOLAFIN,Cholamandalam Investment & Finance Company Ltd,Financials,2013-03,2014-03,Distress,Distress,Distress -> Distress
+CHOLAFIN,Cholamandalam Investment & Finance Company Ltd,Financials,2014-03,2015-03,Distress,Distress,Distress -> Distress
+CHOLAFIN,Cholamandalam Investment & Finance Company Ltd,Financials,2015-03,2016-03,Distress,Distress,Distress -> Distress
+CHOLAFIN,Cholamandalam Investment & Finance Company Ltd,Financials,2016-03,2017-03,Distress,Distress,Distress -> Distress
+CHOLAFIN,Cholamandalam Investment & Finance Company Ltd,Financials,2017-03,2018-03,Distress,Distress,Distress -> Distress
+CHOLAFIN,Cholamandalam Investment & Finance Company Ltd,Financials,2018-03,2019-03,Distress,Distress,Distress -> Distress
+CHOLAFIN,Cholamandalam Investment & Finance Company Ltd,Financials,2019-03,2020-03,Distress,Distress,Distress -> Distress
+CHOLAFIN,Cholamandalam Investment & Finance Company Ltd,Financials,2020-03,2021-03,Distress,Distress,Distress -> Distress
+CHOLAFIN,Cholamandalam Investment & Finance Company Ltd,Financials,2021-03,2022-03,Distress,Distress,Distress -> Distress
+CHOLAFIN,Cholamandalam Investment & Finance Company Ltd,Financials,2022-03,2023-03,Distress,Distress,Distress -> Distress
+CHOLAFIN,Cholamandalam Investment & Finance Company Ltd,Financials,2023-03,2024-03,Distress,Distress,Distress -> Distress
+CIPLA,"Cipla Ltd
+",Healthcare,2013-03,2014-03,Expansion,Reinvest,Expansion -> Reinvest
+CIPLA,"Cipla Ltd
+",Healthcare,2014-03,2015-03,Reinvest,Expansion,Reinvest -> Expansion
+CIPLA,"Cipla Ltd
+",Healthcare,2015-03,2016-03,Expansion,Expansion,Expansion -> Expansion
+CIPLA,"Cipla Ltd
+",Healthcare,2016-03,2017-03,Expansion,Reinvest,Expansion -> Reinvest
+CIPLA,"Cipla Ltd
+",Healthcare,2017-03,2018-03,Reinvest,Reinvest,Reinvest -> Reinvest
+CIPLA,"Cipla Ltd
+",Healthcare,2018-03,2019-03,Reinvest,Reinvest,Reinvest -> Reinvest
+CIPLA,"Cipla Ltd
+",Healthcare,2019-03,2020-03,Reinvest,Return,Reinvest -> Return
+CIPLA,"Cipla Ltd
+",Healthcare,2020-03,2021-03,Return,Reinvest,Return -> Reinvest
+CIPLA,"Cipla Ltd
+",Healthcare,2021-03,2022-03,Reinvest,Reinvest,Reinvest -> Reinvest
+CIPLA,"Cipla Ltd
+",Healthcare,2022-03,2023-03,Reinvest,Reinvest,Reinvest -> Reinvest
+CIPLA,"Cipla Ltd
+",Healthcare,2023-03,2024-03,Reinvest,Reinvest,Reinvest -> Reinvest
+COALINDIA,Coal India Ltd,Materials,2013-03,2014-03,Reinvest,Return,Reinvest -> Return
+COALINDIA,Coal India Ltd,Materials,2014-03,2015-03,Return,Return,Return -> Return
+COALINDIA,Coal India Ltd,Materials,2015-03,2016-03,Return,Return,Return -> Return
+COALINDIA,Coal India Ltd,Materials,2016-03,2017-03,Return,Return,Return -> Return
+COALINDIA,Coal India Ltd,Materials,2017-03,2018-03,Return,Reinvest,Return -> Reinvest
+COALINDIA,Coal India Ltd,Materials,2018-03,2019-03,Reinvest,Reinvest,Reinvest -> Reinvest
+COALINDIA,Coal India Ltd,Materials,2019-03,2020-03,Reinvest,Return,Reinvest -> Return
+COALINDIA,Coal India Ltd,Materials,2020-03,2021-03,Return,Return,Return -> Return
+COALINDIA,Coal India Ltd,Materials,2021-03,2022-03,Return,Reinvest,Return -> Reinvest
+COALINDIA,Coal India Ltd,Materials,2022-03,2023-03,Reinvest,Reinvest,Reinvest -> Reinvest
+COALINDIA,Coal India Ltd,Materials,2023-03,2024-03,Reinvest,Reinvest,Reinvest -> Reinvest
+DABUR,Dabur India Ltd,Consumer Staples,2013-03,2014-03,Reinvest,Reinvest,Reinvest -> Reinvest
+DABUR,Dabur India Ltd,Consumer Staples,2014-03,2015-03,Reinvest,Reinvest,Reinvest -> Reinvest
+DABUR,Dabur India Ltd,Consumer Staples,2015-03,2016-03,Reinvest,Reinvest,Reinvest -> Reinvest
+DABUR,Dabur India Ltd,Consumer Staples,2016-03,2017-03,Reinvest,Reinvest,Reinvest -> Reinvest
+DABUR,Dabur India Ltd,Consumer Staples,2017-03,2018-03,Reinvest,Reinvest,Reinvest -> Reinvest
+DABUR,Dabur India Ltd,Consumer Staples,2018-03,2019-03,Reinvest,Return,Reinvest -> Return
+DABUR,Dabur India Ltd,Consumer Staples,2019-03,2020-03,Return,Reinvest,Return -> Reinvest
+DABUR,Dabur India Ltd,Consumer Staples,2020-03,2021-03,Reinvest,Reinvest,Reinvest -> Reinvest
+DABUR,Dabur India Ltd,Consumer Staples,2021-03,2022-03,Reinvest,Reinvest,Reinvest -> Reinvest
+DABUR,Dabur India Ltd,Consumer Staples,2022-03,2023-03,Reinvest,Reinvest,Reinvest -> Reinvest
+DABUR,Dabur India Ltd,Consumer Staples,2023-03,2024-03,Reinvest,Reinvest,Reinvest -> Reinvest
+DIVISLAB,Divis Laboratories Ltd,Healthcare,2013-03,2014-03,Reinvest,Reinvest,Reinvest -> Reinvest
+DIVISLAB,Divis Laboratories Ltd,Healthcare,2014-03,2015-03,Reinvest,Reinvest,Reinvest -> Reinvest
+DIVISLAB,Divis Laboratories Ltd,Healthcare,2015-03,2016-03,Reinvest,Reinvest,Reinvest -> Reinvest
+DIVISLAB,Divis Laboratories Ltd,Healthcare,2016-03,2017-03,Reinvest,Expansion,Reinvest -> Expansion
+DIVISLAB,Divis Laboratories Ltd,Healthcare,2017-03,2018-03,Expansion,Reinvest,Expansion -> Reinvest
+DIVISLAB,Divis Laboratories Ltd,Healthcare,2018-03,2019-03,Reinvest,Reinvest,Reinvest -> Reinvest
+DIVISLAB,Divis Laboratories Ltd,Healthcare,2019-03,2020-03,Reinvest,Reinvest,Reinvest -> Reinvest
+DIVISLAB,Divis Laboratories Ltd,Healthcare,2020-03,2021-03,Reinvest,Return,Reinvest -> Return
+DIVISLAB,Divis Laboratories Ltd,Healthcare,2021-03,2022-03,Return,Reinvest,Return -> Reinvest
+DIVISLAB,Divis Laboratories Ltd,Healthcare,2022-03,2023-03,Reinvest,Reinvest,Reinvest -> Reinvest
+DIVISLAB,Divis Laboratories Ltd,Healthcare,2023-03,2024-03,Reinvest,Reinvest,Reinvest -> Reinvest
+DLF,DLF Ltd,Real Estate,2013-03,2014-03,Return,Return,Return -> Return
+DLF,DLF Ltd,Real Estate,2014-03,2015-03,Return,Return,Return -> Return
+DLF,DLF Ltd,Real Estate,2015-03,2016-03,Return,Reinvest,Return -> Reinvest
+DLF,DLF Ltd,Real Estate,2016-03,2017-03,Reinvest,Distress,Reinvest -> Distress
+DLF,DLF Ltd,Real Estate,2017-03,2018-03,Distress,Reinvest,Distress -> Reinvest
+DLF,DLF Ltd,Real Estate,2018-03,2019-03,Reinvest,Cash Accumulation,Reinvest -> Cash Accumulation
+DLF,DLF Ltd,Real Estate,2019-03,2020-03,Cash Accumulation,Return,Cash Accumulation -> Return
+DLF,DLF Ltd,Real Estate,2020-03,2021-03,Return,Return,Return -> Return
+DLF,DLF Ltd,Real Estate,2021-03,2022-03,Return,Return,Return -> Return
+DLF,DLF Ltd,Real Estate,2022-03,2023-03,Return,Reinvest,Return -> Reinvest
+DLF,DLF Ltd,Real Estate,2023-03,2024-03,Reinvest,Expansion,Reinvest -> Expansion
+DMART,Avenue Supermarts Ltd,Consumer Discretionary,2013-03,2014-03,Expansion,Expansion,Expansion -> Expansion
+DMART,Avenue Supermarts Ltd,Consumer Discretionary,2014-03,2015-03,Expansion,Expansion,Expansion -> Expansion
+DMART,Avenue Supermarts Ltd,Consumer Discretionary,2015-03,2016-03,Expansion,Expansion,Expansion -> Expansion
+DMART,Avenue Supermarts Ltd,Consumer Discretionary,2016-03,2017-03,Expansion,Expansion,Expansion -> Expansion
+DMART,Avenue Supermarts Ltd,Consumer Discretionary,2017-03,2018-03,Expansion,Return,Expansion -> Return
+DMART,Avenue Supermarts Ltd,Consumer Discretionary,2018-03,2019-03,Return,Expansion,Return -> Expansion
+DMART,Avenue Supermarts Ltd,Consumer Discretionary,2019-03,2020-03,Expansion,Expansion,Expansion -> Expansion
+DMART,Avenue Supermarts Ltd,Consumer Discretionary,2020-03,2021-03,Expansion,Reinvest,Expansion -> Reinvest
+DMART,Avenue Supermarts Ltd,Consumer Discretionary,2021-03,2022-03,Reinvest,Reinvest,Reinvest -> Reinvest
+DMART,Avenue Supermarts Ltd,Consumer Discretionary,2022-03,2023-03,Reinvest,Reinvest,Reinvest -> Reinvest
+DMART,Avenue Supermarts Ltd,Consumer Discretionary,2023-03,2024-03,Reinvest,Reinvest,Reinvest -> Reinvest
+DRREDDY,Dr Reddys Laboratories Ltd,Healthcare,2013-03,2014-03,Reinvest,Reinvest,Reinvest -> Reinvest
+DRREDDY,Dr Reddys Laboratories Ltd,Healthcare,2014-03,2015-03,Reinvest,Reinvest,Reinvest -> Reinvest
+DRREDDY,Dr Reddys Laboratories Ltd,Healthcare,2015-03,2016-03,Reinvest,Reinvest,Reinvest -> Reinvest
+DRREDDY,Dr Reddys Laboratories Ltd,Healthcare,2016-03,2017-03,Reinvest,Reinvest,Reinvest -> Reinvest
+DRREDDY,Dr Reddys Laboratories Ltd,Healthcare,2017-03,2018-03,Reinvest,Reinvest,Reinvest -> Reinvest
+DRREDDY,Dr Reddys Laboratories Ltd,Healthcare,2018-03,2019-03,Reinvest,Reinvest,Reinvest -> Reinvest
+DRREDDY,Dr Reddys Laboratories Ltd,Healthcare,2019-03,2020-03,Reinvest,Reinvest,Reinvest -> Reinvest
+DRREDDY,Dr Reddys Laboratories Ltd,Healthcare,2020-03,2021-03,Reinvest,Reinvest,Reinvest -> Reinvest
+DRREDDY,Dr Reddys Laboratories Ltd,Healthcare,2021-03,2022-03,Reinvest,Reinvest,Reinvest -> Reinvest
+DRREDDY,Dr Reddys Laboratories Ltd,Healthcare,2022-03,2023-03,Reinvest,Reinvest,Reinvest -> Reinvest
+DRREDDY,Dr Reddys Laboratories Ltd,Healthcare,2023-03,2024-03,Reinvest,Reinvest,Reinvest -> Reinvest
+EICHERMOT,Eicher Motors Ltd,Consumer Discretionary,2012-12,2013-12,Reinvest,Reinvest,Reinvest -> Reinvest
+EICHERMOT,Eicher Motors Ltd,Consumer Discretionary,2013-12,2014-12,Reinvest,Reinvest,Reinvest -> Reinvest
+EICHERMOT,Eicher Motors Ltd,Consumer Discretionary,2014-12,2016-03,Reinvest,Reinvest,Reinvest -> Reinvest
+EICHERMOT,Eicher Motors Ltd,Consumer Discretionary,2016-03,2017-03,Reinvest,Expansion,Reinvest -> Expansion
+EICHERMOT,Eicher Motors Ltd,Consumer Discretionary,2017-03,2018-03,Expansion,Reinvest,Expansion -> Reinvest
+EICHERMOT,Eicher Motors Ltd,Consumer Discretionary,2018-03,2019-03,Reinvest,Reinvest,Reinvest -> Reinvest
+EICHERMOT,Eicher Motors Ltd,Consumer Discretionary,2019-03,2020-03,Reinvest,Reinvest,Reinvest -> Reinvest
+EICHERMOT,Eicher Motors Ltd,Consumer Discretionary,2020-03,2021-03,Reinvest,Reinvest,Reinvest -> Reinvest
+EICHERMOT,Eicher Motors Ltd,Consumer Discretionary,2021-03,2022-03,Reinvest,Reinvest,Reinvest -> Reinvest
+EICHERMOT,Eicher Motors Ltd,Consumer Discretionary,2022-03,2023-03,Reinvest,Reinvest,Reinvest -> Reinvest
+EICHERMOT,Eicher Motors Ltd,Consumer Discretionary,2023-03,2024-03,Reinvest,Reinvest,Reinvest -> Reinvest
+GAIL,GAIL (India) Ltd,Energy,2013-03,2014-03,Expansion,Reinvest,Expansion -> Reinvest
+GAIL,GAIL (India) Ltd,Energy,2014-03,2015-03,Reinvest,Reinvest,Reinvest -> Reinvest
+GAIL,GAIL (India) Ltd,Energy,2015-03,2016-03,Reinvest,Reinvest,Reinvest -> Reinvest
+GAIL,GAIL (India) Ltd,Energy,2016-03,2017-03,Reinvest,Reinvest,Reinvest -> Reinvest
+GAIL,GAIL (India) Ltd,Energy,2017-03,2018-03,Reinvest,Reinvest,Reinvest -> Reinvest
+GAIL,GAIL (India) Ltd,Energy,2018-03,2019-03,Reinvest,Reinvest,Reinvest -> Reinvest
+GAIL,GAIL (India) Ltd,Energy,2019-03,2020-03,Reinvest,Expansion,Reinvest -> Expansion
+GAIL,GAIL (India) Ltd,Energy,2020-03,2021-03,Expansion,Reinvest,Expansion -> Reinvest
+GAIL,GAIL (India) Ltd,Energy,2021-03,2022-03,Reinvest,Reinvest,Reinvest -> Reinvest
+GAIL,GAIL (India) Ltd,Energy,2022-03,2023-03,Reinvest,Expansion,Reinvest -> Expansion
+GAIL,GAIL (India) Ltd,Energy,2023-03,2024-03,Expansion,Reinvest,Expansion -> Reinvest
+GODREJCP,Godrej Consumer Products Ltd,Consumer Staples,2013-03,2014-03,Expansion,Reinvest,Expansion -> Reinvest
+GODREJCP,Godrej Consumer Products Ltd,Consumer Staples,2014-03,2015-03,Reinvest,Reinvest,Reinvest -> Reinvest
+GODREJCP,Godrej Consumer Products Ltd,Consumer Staples,2015-03,2016-03,Reinvest,Reinvest,Reinvest -> Reinvest
+GODREJCP,Godrej Consumer Products Ltd,Consumer Staples,2016-03,2017-03,Reinvest,Expansion,Reinvest -> Expansion
+GODREJCP,Godrej Consumer Products Ltd,Consumer Staples,2017-03,2018-03,Expansion,Reinvest,Expansion -> Reinvest
+GODREJCP,Godrej Consumer Products Ltd,Consumer Staples,2018-03,2019-03,Reinvest,Return,Reinvest -> Return
+GODREJCP,Godrej Consumer Products Ltd,Consumer Staples,2019-03,2020-03,Return,Reinvest,Return -> Reinvest
+GODREJCP,Godrej Consumer Products Ltd,Consumer Staples,2020-03,2021-03,Reinvest,Reinvest,Reinvest -> Reinvest
+GODREJCP,Godrej Consumer Products Ltd,Consumer Staples,2021-03,2022-03,Reinvest,Reinvest,Reinvest -> Reinvest
+GODREJCP,Godrej Consumer Products Ltd,Consumer Staples,2022-03,2023-03,Reinvest,Reinvest,Reinvest -> Reinvest
+GODREJCP,Godrej Consumer Products Ltd,Consumer Staples,2023-03,2024-03,Reinvest,Expansion,Reinvest -> Expansion
+GRASIM,Grasim Industries Ltd,Industrials,2013-03,2014-03,Expansion,Reinvest,Expansion -> Reinvest
+GRASIM,Grasim Industries Ltd,Industrials,2014-03,2015-03,Reinvest,Reinvest,Reinvest -> Reinvest
+GRASIM,Grasim Industries Ltd,Industrials,2015-03,2016-03,Reinvest,Reinvest,Reinvest -> Reinvest
+GRASIM,Grasim Industries Ltd,Industrials,2016-03,2017-03,Reinvest,Reinvest,Reinvest -> Reinvest
+GRASIM,Grasim Industries Ltd,Industrials,2017-03,2018-03,Reinvest,Distress,Reinvest -> Distress
+GRASIM,Grasim Industries Ltd,Industrials,2018-03,2019-03,Distress,Distress,Distress -> Distress
+GRASIM,Grasim Industries Ltd,Industrials,2019-03,2020-03,Distress,Reinvest,Distress -> Reinvest
+GRASIM,Grasim Industries Ltd,Industrials,2020-03,2021-03,Reinvest,Reinvest,Reinvest -> Reinvest
+GRASIM,Grasim Industries Ltd,Industrials,2021-03,2022-03,Reinvest,Reinvest,Reinvest -> Reinvest
+GRASIM,Grasim Industries Ltd,Industrials,2022-03,2023-03,Reinvest,Distress,Reinvest -> Distress
+GRASIM,Grasim Industries Ltd,Industrials,2023-03,2024-03,Distress,Distress,Distress -> Distress
+HAL,Hindustan Aeronautics Ltd,Industrials,2017-03,2018-03,Distress,Distress,Distress -> Distress
+HAL,Hindustan Aeronautics Ltd,Industrials,2018-03,2019-03,Distress,Distress,Distress -> Distress
+HAL,Hindustan Aeronautics Ltd,Industrials,2019-03,2020-03,Distress,Expansion,Distress -> Expansion
+HAL,Hindustan Aeronautics Ltd,Industrials,2020-03,2021-03,Expansion,Reinvest,Expansion -> Reinvest
+HAL,Hindustan Aeronautics Ltd,Industrials,2021-03,2022-03,Reinvest,Reinvest,Reinvest -> Reinvest
+HAL,Hindustan Aeronautics Ltd,Industrials,2022-03,2023-03,Reinvest,Reinvest,Reinvest -> Reinvest
+HAL,Hindustan Aeronautics Ltd,Industrials,2023-03,2024-03,Reinvest,Reinvest,Reinvest -> Reinvest
+HAVELLS,Havells India Ltd,Industrials,2013-03,2014-03,Reinvest,Reinvest,Reinvest -> Reinvest
+HAVELLS,Havells India Ltd,Industrials,2014-03,2015-03,Reinvest,Reinvest,Reinvest -> Reinvest
+HAVELLS,Havells India Ltd,Industrials,2015-03,2016-03,Reinvest,Reinvest,Reinvest -> Reinvest
+HAVELLS,Havells India Ltd,Industrials,2016-03,2017-03,Reinvest,Reinvest,Reinvest -> Reinvest
+HAVELLS,Havells India Ltd,Industrials,2017-03,2018-03,Reinvest,Reinvest,Reinvest -> Reinvest
+HAVELLS,Havells India Ltd,Industrials,2018-03,2019-03,Reinvest,Return,Reinvest -> Return
+HAVELLS,Havells India Ltd,Industrials,2019-03,2020-03,Return,Reinvest,Return -> Reinvest
+HAVELLS,Havells India Ltd,Industrials,2020-03,2021-03,Reinvest,Expansion,Reinvest -> Expansion
+HAVELLS,Havells India Ltd,Industrials,2021-03,2022-03,Expansion,Reinvest,Expansion -> Reinvest
+HAVELLS,Havells India Ltd,Industrials,2022-03,2023-03,Reinvest,Return,Reinvest -> Return
+HAVELLS,Havells India Ltd,Industrials,2023-03,2024-03,Return,Reinvest,Return -> Reinvest
+HCLTECH,HCL Technologies Ltd,Information Technology,2013-06,2014-06,Reinvest,Reinvest,Reinvest -> Reinvest
+HCLTECH,HCL Technologies Ltd,Information Technology,2014-06,2015-06,Reinvest,Reinvest,Reinvest -> Reinvest
+HCLTECH,HCL Technologies Ltd,Information Technology,2015-06,2016-03,Reinvest,Reinvest,Reinvest -> Reinvest
+HCLTECH,HCL Technologies Ltd,Information Technology,2016-03,2017-03,Reinvest,Reinvest,Reinvest -> Reinvest
+HCLTECH,HCL Technologies Ltd,Information Technology,2017-03,2018-03,Reinvest,Reinvest,Reinvest -> Reinvest
+HCLTECH,HCL Technologies Ltd,Information Technology,2018-03,2019-03,Reinvest,Reinvest,Reinvest -> Reinvest
+HCLTECH,HCL Technologies Ltd,Information Technology,2019-03,2020-03,Reinvest,Reinvest,Reinvest -> Reinvest
+HCLTECH,HCL Technologies Ltd,Information Technology,2020-03,2021-03,Reinvest,Reinvest,Reinvest -> Reinvest
+HCLTECH,HCL Technologies Ltd,Information Technology,2021-03,2022-03,Reinvest,Return,Reinvest -> Return
+HCLTECH,HCL Technologies Ltd,Information Technology,2022-03,2023-03,Return,Reinvest,Return -> Reinvest
+HCLTECH,HCL Technologies Ltd,Information Technology,2023-03,2024-03,Reinvest,Reinvest,Reinvest -> Reinvest
+HDFCBANK,HDFC Bank Ltd,Financials,2013-03,2014-03,Distress,Expansion,Distress -> Expansion
+HDFCBANK,HDFC Bank Ltd,Financials,2014-03,2015-03,Expansion,Distress,Expansion -> Distress
+HDFCBANK,HDFC Bank Ltd,Financials,2015-03,2016-03,Distress,Distress,Distress -> Distress
+HDFCBANK,HDFC Bank Ltd,Financials,2016-03,2017-03,Distress,Reinvest,Distress -> Reinvest
+HDFCBANK,HDFC Bank Ltd,Financials,2017-03,2018-03,Reinvest,Expansion,Reinvest -> Expansion
+HDFCBANK,HDFC Bank Ltd,Financials,2018-03,2019-03,Expansion,Distress,Expansion -> Distress
+HDFCBANK,HDFC Bank Ltd,Financials,2019-03,2020-03,Distress,Distress,Distress -> Distress
+HDFCBANK,HDFC Bank Ltd,Financials,2020-03,2021-03,Distress,Reinvest,Distress -> Reinvest
+HDFCBANK,HDFC Bank Ltd,Financials,2021-03,2022-03,Reinvest,Distress,Reinvest -> Distress
+HDFCBANK,HDFC Bank Ltd,Financials,2022-03,2023-03,Distress,Expansion,Distress -> Expansion
+HDFCBANK,HDFC Bank Ltd,Financials,2023-03,2024-03,Expansion,Return,Expansion -> Return
+HDFCLIFE,HDFC Life Insurance Company Ltd,Financials,2013-03,2014-03,Neutral,Neutral,Neutral -> Neutral
+HDFCLIFE,HDFC Life Insurance Company Ltd,Financials,2014-03,2015-03,Neutral,Reinvest,Neutral -> Reinvest
+HDFCLIFE,HDFC Life Insurance Company Ltd,Financials,2015-03,2016-03,Reinvest,Reinvest,Reinvest -> Reinvest
+HDFCLIFE,HDFC Life Insurance Company Ltd,Financials,2016-03,2017-03,Reinvest,Reinvest,Reinvest -> Reinvest
+HDFCLIFE,HDFC Life Insurance Company Ltd,Financials,2017-03,2018-03,Reinvest,Reinvest,Reinvest -> Reinvest
+HDFCLIFE,HDFC Life Insurance Company Ltd,Financials,2018-03,2019-03,Reinvest,Reinvest,Reinvest -> Reinvest
+HDFCLIFE,HDFC Life Insurance Company Ltd,Financials,2019-03,2020-03,Reinvest,Expansion,Reinvest -> Expansion
+HDFCLIFE,HDFC Life Insurance Company Ltd,Financials,2020-03,2021-03,Expansion,Expansion,Expansion -> Expansion
+HDFCLIFE,HDFC Life Insurance Company Ltd,Financials,2021-03,2022-03,Expansion,Reinvest,Expansion -> Reinvest
+HDFCLIFE,HDFC Life Insurance Company Ltd,Financials,2022-03,2023-03,Reinvest,Expansion,Reinvest -> Expansion
+HDFCLIFE,HDFC Life Insurance Company Ltd,Financials,2023-03,2024-03,Expansion,Reinvest,Expansion -> Reinvest
+HEROMOTOCO,"Hero MotoCorp Ltd
+",Consumer Discretionary,2014-03,2015-03,Reinvest,Return,Reinvest -> Return
+HEROMOTOCO,"Hero MotoCorp Ltd
+",Consumer Discretionary,2015-03,2016-03,Return,Reinvest,Return -> Reinvest
+HEROMOTOCO,"Hero MotoCorp Ltd
+",Consumer Discretionary,2016-03,2017-03,Reinvest,Reinvest,Reinvest -> Reinvest
+HEROMOTOCO,"Hero MotoCorp Ltd
+",Consumer Discretionary,2017-03,2018-03,Reinvest,Reinvest,Reinvest -> Reinvest
+HEROMOTOCO,"Hero MotoCorp Ltd
+",Consumer Discretionary,2018-03,2019-03,Reinvest,Return,Reinvest -> Return
+HEROMOTOCO,"Hero MotoCorp Ltd
+",Consumer Discretionary,2019-03,2020-03,Return,Reinvest,Return -> Reinvest
+HEROMOTOCO,"Hero MotoCorp Ltd
+",Consumer Discretionary,2020-03,2021-03,Reinvest,Reinvest,Reinvest -> Reinvest
+HEROMOTOCO,"Hero MotoCorp Ltd
+",Consumer Discretionary,2021-03,2022-03,Reinvest,Reinvest,Reinvest -> Reinvest
+HEROMOTOCO,"Hero MotoCorp Ltd
+",Consumer Discretionary,2022-03,2023-03,Reinvest,Reinvest,Reinvest -> Reinvest
+HEROMOTOCO,"Hero MotoCorp Ltd
+",Consumer Discretionary,2023-03,2024-03,Reinvest,Reinvest,Reinvest -> Reinvest
+HINDALCO,Hindalco Industries Ltd,Materials,2013-03,2014-03,Expansion,Expansion,Expansion -> Expansion
+HINDALCO,Hindalco Industries Ltd,Materials,2014-03,2015-03,Expansion,Reinvest,Expansion -> Reinvest
+HINDALCO,Hindalco Industries Ltd,Materials,2015-03,2016-03,Reinvest,Reinvest,Reinvest -> Reinvest
+HINDALCO,Hindalco Industries Ltd,Materials,2016-03,2017-03,Reinvest,Reinvest,Reinvest -> Reinvest
+HINDALCO,Hindalco Industries Ltd,Materials,2017-03,2018-03,Reinvest,Return,Reinvest -> Return
+HINDALCO,Hindalco Industries Ltd,Materials,2018-03,2019-03,Return,Reinvest,Return -> Reinvest
+HINDALCO,Hindalco Industries Ltd,Materials,2019-03,2020-03,Reinvest,Expansion,Reinvest -> Expansion
+HINDALCO,Hindalco Industries Ltd,Materials,2020-03,2021-03,Expansion,Reinvest,Expansion -> Reinvest
+HINDALCO,Hindalco Industries Ltd,Materials,2021-03,2022-03,Reinvest,Reinvest,Reinvest -> Reinvest
+HINDALCO,Hindalco Industries Ltd,Materials,2022-03,2023-03,Reinvest,Reinvest,Reinvest -> Reinvest
+HINDALCO,Hindalco Industries Ltd,Materials,2023-03,2024-03,Reinvest,Reinvest,Reinvest -> Reinvest
+HINDUNILVR,"Hindustan Unilever Ltd
+",Consumer Staples,2013-03,2014-03,Return,Reinvest,Return -> Reinvest
+HINDUNILVR,"Hindustan Unilever Ltd
+",Consumer Staples,2014-03,2015-03,Reinvest,Return,Reinvest -> Return
+HINDUNILVR,"Hindustan Unilever Ltd
+",Consumer Staples,2015-03,2016-03,Return,Reinvest,Return -> Reinvest
+HINDUNILVR,"Hindustan Unilever Ltd
+",Consumer Staples,2016-03,2017-03,Reinvest,Reinvest,Reinvest -> Reinvest
+HINDUNILVR,"Hindustan Unilever Ltd
+",Consumer Staples,2017-03,2018-03,Reinvest,Reinvest,Reinvest -> Reinvest
+HINDUNILVR,"Hindustan Unilever Ltd
+",Consumer Staples,2018-03,2019-03,Reinvest,Reinvest,Reinvest -> Reinvest
+HINDUNILVR,"Hindustan Unilever Ltd
+",Consumer Staples,2019-03,2020-03,Reinvest,Return,Reinvest -> Return
+HINDUNILVR,"Hindustan Unilever Ltd
+",Consumer Staples,2020-03,2021-03,Return,Reinvest,Return -> Reinvest
+HINDUNILVR,"Hindustan Unilever Ltd
+",Consumer Staples,2021-03,2022-03,Reinvest,Reinvest,Reinvest -> Reinvest
+HINDUNILVR,"Hindustan Unilever Ltd
+",Consumer Staples,2022-03,2023-03,Reinvest,Reinvest,Reinvest -> Reinvest
+HINDUNILVR,"Hindustan Unilever Ltd
+",Consumer Staples,2023-03,2024-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ICICIBANK,ICICI Bank Ltd,Financials,2013-03,2014-03,Expansion,Expansion,Expansion -> Expansion
+ICICIBANK,ICICI Bank Ltd,Financials,2014-03,2015-03,Expansion,Distress,Expansion -> Distress
+ICICIBANK,ICICI Bank Ltd,Financials,2015-03,2016-03,Distress,Expansion,Distress -> Expansion
+ICICIBANK,ICICI Bank Ltd,Financials,2016-03,2017-03,Expansion,Reinvest,Expansion -> Reinvest
+ICICIBANK,ICICI Bank Ltd,Financials,2017-03,2018-03,Reinvest,Expansion,Reinvest -> Expansion
+ICICIBANK,ICICI Bank Ltd,Financials,2018-03,2019-03,Expansion,Reinvest,Expansion -> Reinvest
+ICICIBANK,ICICI Bank Ltd,Financials,2019-03,2020-03,Reinvest,Expansion,Reinvest -> Expansion
+ICICIBANK,ICICI Bank Ltd,Financials,2020-03,2021-03,Expansion,Reinvest,Expansion -> Reinvest
+ICICIBANK,ICICI Bank Ltd,Financials,2021-03,2022-03,Reinvest,Expansion,Reinvest -> Expansion
+ICICIBANK,ICICI Bank Ltd,Financials,2022-03,2023-03,Expansion,Distress,Expansion -> Distress
+ICICIBANK,ICICI Bank Ltd,Financials,2023-03,2024-03,Distress,Expansion,Distress -> Expansion
+ICICIGI,ICICI Lombard General Insurance Company Ltd,Financials,2013-03,2014-03,Expansion,Expansion,Expansion -> Expansion
+ICICIGI,ICICI Lombard General Insurance Company Ltd,Financials,2014-03,2015-03,Expansion,Distress,Expansion -> Distress
+ICICIGI,ICICI Lombard General Insurance Company Ltd,Financials,2015-03,2016-03,Distress,Reinvest,Distress -> Reinvest
+ICICIGI,ICICI Lombard General Insurance Company Ltd,Financials,2016-03,2017-03,Reinvest,Expansion,Reinvest -> Expansion
+ICICIGI,ICICI Lombard General Insurance Company Ltd,Financials,2017-03,2018-03,Expansion,Reinvest,Expansion -> Reinvest
+ICICIGI,ICICI Lombard General Insurance Company Ltd,Financials,2018-03,2019-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ICICIGI,ICICI Lombard General Insurance Company Ltd,Financials,2019-03,2020-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ICICIGI,ICICI Lombard General Insurance Company Ltd,Financials,2020-03,2021-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ICICIGI,ICICI Lombard General Insurance Company Ltd,Financials,2021-03,2022-03,Reinvest,Return,Reinvest -> Return
+ICICIGI,ICICI Lombard General Insurance Company Ltd,Financials,2022-03,2023-03,Return,Reinvest,Return -> Reinvest
+ICICIGI,ICICI Lombard General Insurance Company Ltd,Financials,2023-03,2024-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ICICIPRULI,ICICI Prudential Life Insurance Company Ltd,Financials,2013-03,2014-03,Distress,Distress,Distress -> Distress
+ICICIPRULI,ICICI Prudential Life Insurance Company Ltd,Financials,2014-03,2015-03,Distress,Reinvest,Distress -> Reinvest
+ICICIPRULI,ICICI Prudential Life Insurance Company Ltd,Financials,2015-03,2016-03,Reinvest,Return,Reinvest -> Return
+ICICIPRULI,ICICI Prudential Life Insurance Company Ltd,Financials,2016-03,2017-03,Return,Reinvest,Return -> Reinvest
+ICICIPRULI,ICICI Prudential Life Insurance Company Ltd,Financials,2017-03,2018-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ICICIPRULI,ICICI Prudential Life Insurance Company Ltd,Financials,2018-03,2019-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ICICIPRULI,ICICI Prudential Life Insurance Company Ltd,Financials,2019-03,2020-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ICICIPRULI,ICICI Prudential Life Insurance Company Ltd,Financials,2020-03,2021-03,Reinvest,Expansion,Reinvest -> Expansion
+ICICIPRULI,ICICI Prudential Life Insurance Company Ltd,Financials,2021-03,2022-03,Expansion,Reinvest,Expansion -> Reinvest
+ICICIPRULI,ICICI Prudential Life Insurance Company Ltd,Financials,2022-03,2023-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ICICIPRULI,ICICI Prudential Life Insurance Company Ltd,Financials,2023-03,2024-03,Reinvest,Distress,Reinvest -> Distress
+INDIGO,Interglobe Aviation Ltd,Consumer Discretionary,2013-03,2014-03,Expansion,Expansion,Expansion -> Expansion
+INDIGO,Interglobe Aviation Ltd,Consumer Discretionary,2014-03,2015-03,Expansion,Reinvest,Expansion -> Reinvest
+INDIGO,Interglobe Aviation Ltd,Consumer Discretionary,2015-03,2016-03,Reinvest,Reinvest,Reinvest -> Reinvest
+INDIGO,Interglobe Aviation Ltd,Consumer Discretionary,2016-03,2017-03,Reinvest,Reinvest,Reinvest -> Reinvest
+INDIGO,Interglobe Aviation Ltd,Consumer Discretionary,2017-03,2018-03,Reinvest,Expansion,Reinvest -> Expansion
+INDIGO,Interglobe Aviation Ltd,Consumer Discretionary,2018-03,2019-03,Expansion,Reinvest,Expansion -> Reinvest
+INDIGO,Interglobe Aviation Ltd,Consumer Discretionary,2019-03,2020-03,Reinvest,Reinvest,Reinvest -> Reinvest
+INDIGO,Interglobe Aviation Ltd,Consumer Discretionary,2020-03,2021-03,Reinvest,Distress,Reinvest -> Distress
+INDIGO,Interglobe Aviation Ltd,Consumer Discretionary,2021-03,2022-03,Distress,Return,Distress -> Return
+INDIGO,Interglobe Aviation Ltd,Consumer Discretionary,2022-03,2023-03,Return,Reinvest,Return -> Reinvest
+INDIGO,Interglobe Aviation Ltd,Consumer Discretionary,2023-03,2024-03,Reinvest,Reinvest,Reinvest -> Reinvest
+INDUSINDBK,IndusInd Bank Ltd,Financials,2013-03,2014-03,Distress,Distress,Distress -> Distress
+INDUSINDBK,IndusInd Bank Ltd,Financials,2014-03,2015-03,Distress,Distress,Distress -> Distress
+INDUSINDBK,IndusInd Bank Ltd,Financials,2015-03,2016-03,Distress,Distress,Distress -> Distress
+INDUSINDBK,IndusInd Bank Ltd,Financials,2016-03,2017-03,Distress,Reinvest,Distress -> Reinvest
+INDUSINDBK,IndusInd Bank Ltd,Financials,2017-03,2018-03,Reinvest,Distress,Reinvest -> Distress
+INDUSINDBK,IndusInd Bank Ltd,Financials,2018-03,2019-03,Distress,Distress,Distress -> Distress
+INDUSINDBK,IndusInd Bank Ltd,Financials,2019-03,2020-03,Distress,Distress,Distress -> Distress
+INDUSINDBK,IndusInd Bank Ltd,Financials,2020-03,2021-03,Distress,Reinvest,Distress -> Reinvest
+INDUSINDBK,IndusInd Bank Ltd,Financials,2021-03,2022-03,Reinvest,Reinvest,Reinvest -> Reinvest
+INDUSINDBK,IndusInd Bank Ltd,Financials,2022-03,2023-03,Reinvest,Distress,Reinvest -> Distress
+INDUSINDBK,IndusInd Bank Ltd,Financials,2023-03,2024-03,Distress,Distress,Distress -> Distress
+INFY,Infosys Ltd,Information Technology,2013-03,2014-03,Reinvest,Reinvest,Reinvest -> Reinvest
+INFY,Infosys Ltd,Information Technology,2014-03,2015-03,Reinvest,Return,Reinvest -> Return
+INFY,Infosys Ltd,Information Technology,2015-03,2016-03,Return,Reinvest,Return -> Reinvest
+INFY,Infosys Ltd,Information Technology,2016-03,2017-03,Reinvest,Reinvest,Reinvest -> Reinvest
+INFY,Infosys Ltd,Information Technology,2017-03,2018-03,Reinvest,Return,Reinvest -> Return
+INFY,Infosys Ltd,Information Technology,2018-03,2019-03,Return,Reinvest,Return -> Reinvest
+INFY,Infosys Ltd,Information Technology,2019-03,2020-03,Reinvest,Reinvest,Reinvest -> Reinvest
+INFY,Infosys Ltd,Information Technology,2020-03,2021-03,Reinvest,Reinvest,Reinvest -> Reinvest
+INFY,Infosys Ltd,Information Technology,2021-03,2022-03,Reinvest,Reinvest,Reinvest -> Reinvest
+INFY,Infosys Ltd,Information Technology,2022-03,2023-03,Reinvest,Reinvest,Reinvest -> Reinvest
+INFY,Infosys Ltd,Information Technology,2023-03,2024-03,Reinvest,Reinvest,Reinvest -> Reinvest
+IOC,"Indian Oil Corporation
+",Energy,2013-03,2014-03,Expansion,Reinvest,Expansion -> Reinvest
+IOC,"Indian Oil Corporation
+",Energy,2014-03,2015-03,Reinvest,Reinvest,Reinvest -> Reinvest
+IOC,"Indian Oil Corporation
+",Energy,2015-03,2016-03,Reinvest,Reinvest,Reinvest -> Reinvest
+IOC,"Indian Oil Corporation
+",Energy,2016-03,2017-03,Reinvest,Reinvest,Reinvest -> Reinvest
+IOC,"Indian Oil Corporation
+",Energy,2017-03,2018-03,Reinvest,Reinvest,Reinvest -> Reinvest
+IOC,"Indian Oil Corporation
+",Energy,2018-03,2019-03,Reinvest,Expansion,Reinvest -> Expansion
+IOC,"Indian Oil Corporation
+",Energy,2019-03,2020-03,Expansion,Expansion,Expansion -> Expansion
+IOC,"Indian Oil Corporation
+",Energy,2020-03,2021-03,Expansion,Reinvest,Expansion -> Reinvest
+IOC,"Indian Oil Corporation
+",Energy,2021-03,2022-03,Reinvest,Reinvest,Reinvest -> Reinvest
+IOC,"Indian Oil Corporation
+",Energy,2022-03,2023-03,Reinvest,Reinvest,Reinvest -> Reinvest
+IOC,"Indian Oil Corporation
+",Energy,2023-03,2024-03,Reinvest,Reinvest,Reinvest -> Reinvest
+IRCTC,Indian Railway Catering & Tourism Corporation Ltd,Consumer Discretionary,2015-03,2016-03,Reinvest,Return,Reinvest -> Return
+IRCTC,Indian Railway Catering & Tourism Corporation Ltd,Consumer Discretionary,2016-03,2017-03,Return,Return,Return -> Return
+IRCTC,Indian Railway Catering & Tourism Corporation Ltd,Consumer Discretionary,2017-03,2018-03,Return,Return,Return -> Return
+IRCTC,Indian Railway Catering & Tourism Corporation Ltd,Consumer Discretionary,2018-03,2019-03,Return,Reinvest,Return -> Reinvest
+IRCTC,Indian Railway Catering & Tourism Corporation Ltd,Consumer Discretionary,2019-03,2020-03,Reinvest,Return,Reinvest -> Return
+IRCTC,Indian Railway Catering & Tourism Corporation Ltd,Consumer Discretionary,2020-03,2021-03,Return,Reinvest,Return -> Reinvest
+IRCTC,Indian Railway Catering & Tourism Corporation Ltd,Consumer Discretionary,2021-03,2022-03,Reinvest,Reinvest,Reinvest -> Reinvest
+IRCTC,Indian Railway Catering & Tourism Corporation Ltd,Consumer Discretionary,2022-03,2023-03,Reinvest,Reinvest,Reinvest -> Reinvest
+IRCTC,Indian Railway Catering & Tourism Corporation Ltd,Consumer Discretionary,2023-03,2024-03,Reinvest,Reinvest,Reinvest -> Reinvest
+IRFC,Indian Railway Finance Corporation Ltd,Financials,2016-03,2017-03,Distress,Distress,Distress -> Distress
+IRFC,Indian Railway Finance Corporation Ltd,Financials,2017-03,2018-03,Distress,Distress,Distress -> Distress
+IRFC,Indian Railway Finance Corporation Ltd,Financials,2018-03,2019-03,Distress,Distress,Distress -> Distress
+IRFC,Indian Railway Finance Corporation Ltd,Financials,2019-03,2020-03,Distress,Distress,Distress -> Distress
+IRFC,Indian Railway Finance Corporation Ltd,Financials,2020-03,2021-03,Distress,Neutral,Distress -> Neutral
+IRFC,Indian Railway Finance Corporation Ltd,Financials,2021-03,2022-03,Neutral,Distress,Neutral -> Distress
+IRFC,Indian Railway Finance Corporation Ltd,Financials,2022-03,2023-03,Distress,Neutral,Distress -> Neutral
+IRFC,Indian Railway Finance Corporation Ltd,Financials,2023-03,2024-03,Neutral,Reinvest,Neutral -> Reinvest
+ITC,"ITC Ltd
+",Consumer Staples,2013-03,2014-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ITC,"ITC Ltd
+",Consumer Staples,2014-03,2015-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ITC,"ITC Ltd
+",Consumer Staples,2015-03,2016-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ITC,"ITC Ltd
+",Consumer Staples,2016-03,2017-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ITC,"ITC Ltd
+",Consumer Staples,2017-03,2018-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ITC,"ITC Ltd
+",Consumer Staples,2018-03,2019-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ITC,"ITC Ltd
+",Consumer Staples,2019-03,2020-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ITC,"ITC Ltd
+",Consumer Staples,2020-03,2021-03,Reinvest,Return,Reinvest -> Return
+ITC,"ITC Ltd
+",Consumer Staples,2021-03,2022-03,Return,Reinvest,Return -> Reinvest
+ITC,"ITC Ltd
+",Consumer Staples,2022-03,2023-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ITC,"ITC Ltd
+",Consumer Staples,2023-03,2024-03,Reinvest,Return,Reinvest -> Return
+JINDALSTEL,Jindal Steel & Power Ltd,Materials,2013-03,2014-03,Expansion,Expansion,Expansion -> Expansion
+JINDALSTEL,Jindal Steel & Power Ltd,Materials,2014-03,2015-03,Expansion,Expansion,Expansion -> Expansion
+JINDALSTEL,Jindal Steel & Power Ltd,Materials,2015-03,2016-03,Expansion,Reinvest,Expansion -> Reinvest
+JINDALSTEL,Jindal Steel & Power Ltd,Materials,2016-03,2017-03,Reinvest,Reinvest,Reinvest -> Reinvest
+JINDALSTEL,Jindal Steel & Power Ltd,Materials,2017-03,2018-03,Reinvest,Reinvest,Reinvest -> Reinvest
+JINDALSTEL,Jindal Steel & Power Ltd,Materials,2018-03,2019-03,Reinvest,Reinvest,Reinvest -> Reinvest
+JINDALSTEL,Jindal Steel & Power Ltd,Materials,2019-03,2020-03,Reinvest,Reinvest,Reinvest -> Reinvest
+JINDALSTEL,Jindal Steel & Power Ltd,Materials,2020-03,2021-03,Reinvest,Reinvest,Reinvest -> Reinvest
+JINDALSTEL,Jindal Steel & Power Ltd,Materials,2021-03,2022-03,Reinvest,Reinvest,Reinvest -> Reinvest
+JINDALSTEL,Jindal Steel & Power Ltd,Materials,2022-03,2023-03,Reinvest,Reinvest,Reinvest -> Reinvest
+JINDALSTEL,Jindal Steel & Power Ltd,Materials,2023-03,2024-03,Reinvest,Expansion,Reinvest -> Expansion
+JIOFIN,Jio Financial Services Ltd,Financials,2023-03,2024-03,Reinvest,Distress,Reinvest -> Distress
+JSWENERGY,JSW Energy Ltd,Energy,2013-03,2014-03,Reinvest,Reinvest,Reinvest -> Reinvest
+JSWENERGY,JSW Energy Ltd,Energy,2014-03,2015-03,Reinvest,Reinvest,Reinvest -> Reinvest
+JSWENERGY,JSW Energy Ltd,Energy,2015-03,2016-03,Reinvest,Reinvest,Reinvest -> Reinvest
+JSWENERGY,JSW Energy Ltd,Energy,2016-03,2017-03,Reinvest,Reinvest,Reinvest -> Reinvest
+JSWENERGY,JSW Energy Ltd,Energy,2017-03,2018-03,Reinvest,Reinvest,Reinvest -> Reinvest
+JSWENERGY,JSW Energy Ltd,Energy,2018-03,2019-03,Reinvest,Reinvest,Reinvest -> Reinvest
+JSWENERGY,JSW Energy Ltd,Energy,2019-03,2020-03,Reinvest,Return,Reinvest -> Return
+JSWENERGY,JSW Energy Ltd,Energy,2020-03,2021-03,Return,Reinvest,Return -> Reinvest
+JSWENERGY,JSW Energy Ltd,Energy,2021-03,2022-03,Reinvest,Reinvest,Reinvest -> Reinvest
+JSWENERGY,JSW Energy Ltd,Energy,2022-03,2023-03,Reinvest,Expansion,Reinvest -> Expansion
+JSWENERGY,JSW Energy Ltd,Energy,2023-03,2024-03,Expansion,Expansion,Expansion -> Expansion
+JSWSTEEL,JSW Steel Ltd,Materials,2013-03,2014-03,Reinvest,Expansion,Reinvest -> Expansion
+JSWSTEEL,JSW Steel Ltd,Materials,2014-03,2015-03,Expansion,Reinvest,Expansion -> Reinvest
+JSWSTEEL,JSW Steel Ltd,Materials,2015-03,2016-03,Reinvest,Reinvest,Reinvest -> Reinvest
+JSWSTEEL,JSW Steel Ltd,Materials,2016-03,2017-03,Reinvest,Reinvest,Reinvest -> Reinvest
+JSWSTEEL,JSW Steel Ltd,Materials,2017-03,2018-03,Reinvest,Reinvest,Reinvest -> Reinvest
+JSWSTEEL,JSW Steel Ltd,Materials,2018-03,2019-03,Reinvest,Expansion,Reinvest -> Expansion
+JSWSTEEL,JSW Steel Ltd,Materials,2019-03,2020-03,Expansion,Expansion,Expansion -> Expansion
+JSWSTEEL,JSW Steel Ltd,Materials,2020-03,2021-03,Expansion,Reinvest,Expansion -> Reinvest
+JSWSTEEL,JSW Steel Ltd,Materials,2021-03,2022-03,Reinvest,Reinvest,Reinvest -> Reinvest
+JSWSTEEL,JSW Steel Ltd,Materials,2022-03,2023-03,Reinvest,Reinvest,Reinvest -> Reinvest
+JSWSTEEL,JSW Steel Ltd,Materials,2023-03,2024-03,Reinvest,Reinvest,Reinvest -> Reinvest
+KOTAKBANK,"Kotak Mahindra Bank Ltd
+",Financials,2013-03,2014-03,Expansion,Reinvest,Expansion -> Reinvest
+KOTAKBANK,"Kotak Mahindra Bank Ltd
+",Financials,2014-03,2015-03,Reinvest,Expansion,Reinvest -> Expansion
+KOTAKBANK,"Kotak Mahindra Bank Ltd
+",Financials,2015-03,2016-03,Expansion,Expansion,Expansion -> Expansion
+KOTAKBANK,"Kotak Mahindra Bank Ltd
+",Financials,2016-03,2017-03,Expansion,Expansion,Expansion -> Expansion
+KOTAKBANK,"Kotak Mahindra Bank Ltd
+",Financials,2017-03,2018-03,Expansion,Distress,Expansion -> Distress
+KOTAKBANK,"Kotak Mahindra Bank Ltd
+",Financials,2018-03,2019-03,Distress,Expansion,Distress -> Expansion
+KOTAKBANK,"Kotak Mahindra Bank Ltd
+",Financials,2019-03,2020-03,Expansion,Reinvest,Expansion -> Reinvest
+KOTAKBANK,"Kotak Mahindra Bank Ltd
+",Financials,2020-03,2021-03,Reinvest,Reinvest,Reinvest -> Reinvest
+KOTAKBANK,"Kotak Mahindra Bank Ltd
+",Financials,2021-03,2022-03,Reinvest,Expansion,Reinvest -> Expansion
+KOTAKBANK,"Kotak Mahindra Bank Ltd
+",Financials,2022-03,2023-03,Expansion,Distress,Expansion -> Distress
+KOTAKBANK,"Kotak Mahindra Bank Ltd
+",Financials,2023-03,2024-03,Distress,Expansion,Distress -> Expansion
+LICI,Life Insurance Corporation of India,Financials,2019-03,2020-03,Return,Reinvest,Return -> Reinvest
+LICI,Life Insurance Corporation of India,Financials,2020-03,2021-03,Reinvest,Return,Reinvest -> Return
+LICI,Life Insurance Corporation of India,Financials,2021-03,2022-03,Return,Neutral,Return -> Neutral
+LICI,Life Insurance Corporation of India,Financials,2022-03,2023-03,Neutral,Reinvest,Neutral -> Reinvest
+LICI,Life Insurance Corporation of India,Financials,2023-03,2024-03,Reinvest,Reinvest,Reinvest -> Reinvest
+LODHA,Macrotech Developers Ltd,Real Estate,2016-03,2017-03,Expansion,Reinvest,Expansion -> Reinvest
+LODHA,Macrotech Developers Ltd,Real Estate,2017-03,2018-03,Reinvest,Expansion,Reinvest -> Expansion
+LODHA,Macrotech Developers Ltd,Real Estate,2018-03,2019-03,Expansion,Distress,Expansion -> Distress
+LODHA,Macrotech Developers Ltd,Real Estate,2019-03,2020-03,Distress,Return,Distress -> Return
+LODHA,Macrotech Developers Ltd,Real Estate,2020-03,2021-03,Return,Return,Return -> Return
+LODHA,Macrotech Developers Ltd,Real Estate,2021-03,2022-03,Return,Return,Return -> Return
+LODHA,Macrotech Developers Ltd,Real Estate,2022-03,2023-03,Return,Return,Return -> Return
+LODHA,Macrotech Developers Ltd,Real Estate,2023-03,2024-03,Return,Expansion,Return -> Expansion
+LT,Larsen & Toubro Ltd,Industrials,2013-03,2014-03,Distress,Distress,Distress -> Distress
+LT,Larsen & Toubro Ltd,Industrials,2014-03,2015-03,Distress,Distress,Distress -> Distress
+LT,Larsen & Toubro Ltd,Industrials,2015-03,2016-03,Distress,Distress,Distress -> Distress
+LT,Larsen & Toubro Ltd,Industrials,2016-03,2017-03,Distress,Expansion,Distress -> Expansion
+LT,Larsen & Toubro Ltd,Industrials,2017-03,2018-03,Expansion,Distress,Expansion -> Distress
+LT,Larsen & Toubro Ltd,Industrials,2018-03,2019-03,Distress,Distress,Distress -> Distress
+LT,Larsen & Toubro Ltd,Industrials,2019-03,2020-03,Distress,Expansion,Distress -> Expansion
+LT,Larsen & Toubro Ltd,Industrials,2020-03,2021-03,Expansion,Reinvest,Expansion -> Reinvest
+LT,Larsen & Toubro Ltd,Industrials,2021-03,2022-03,Reinvest,Reinvest,Reinvest -> Reinvest
+LT,Larsen & Toubro Ltd,Industrials,2022-03,2023-03,Reinvest,Reinvest,Reinvest -> Reinvest
+LT,Larsen & Toubro Ltd,Industrials,2023-03,2024-03,Reinvest,Return,Reinvest -> Return
+LTIM,LTIMindtree Ltd,Information Technology,2013-03,2014-03,Reinvest,Return,Reinvest -> Return
+LTIM,LTIMindtree Ltd,Information Technology,2014-03,2015-03,Return,Reinvest,Return -> Reinvest
+LTIM,LTIMindtree Ltd,Information Technology,2015-03,2016-03,Reinvest,Reinvest,Reinvest -> Reinvest
+LTIM,LTIMindtree Ltd,Information Technology,2016-03,2017-03,Reinvest,Reinvest,Reinvest -> Reinvest
+LTIM,LTIMindtree Ltd,Information Technology,2017-03,2018-03,Reinvest,Reinvest,Reinvest -> Reinvest
+LTIM,LTIMindtree Ltd,Information Technology,2018-03,2019-03,Reinvest,Reinvest,Reinvest -> Reinvest
+LTIM,LTIMindtree Ltd,Information Technology,2019-03,2020-03,Reinvest,Reinvest,Reinvest -> Reinvest
+LTIM,LTIMindtree Ltd,Information Technology,2020-03,2021-03,Reinvest,Reinvest,Reinvest -> Reinvest
+LTIM,LTIMindtree Ltd,Information Technology,2021-03,2022-03,Reinvest,Reinvest,Reinvest -> Reinvest
+LTIM,LTIMindtree Ltd,Information Technology,2022-03,2023-03,Reinvest,Reinvest,Reinvest -> Reinvest
+LTIM,LTIMindtree Ltd,Information Technology,2023-03,2024-03,Reinvest,Reinvest,Reinvest -> Reinvest
+M&M,"Mahindra & Mahindra Ltd
+",Consumer Discretionary,2013-03,2014-03,Distress,Distress,Distress -> Distress
+M&M,"Mahindra & Mahindra Ltd
+",Consumer Discretionary,2014-03,2015-03,Distress,Expansion,Distress -> Expansion
+M&M,"Mahindra & Mahindra Ltd
+",Consumer Discretionary,2015-03,2016-03,Expansion,Expansion,Expansion -> Expansion
+M&M,"Mahindra & Mahindra Ltd
+",Consumer Discretionary,2016-03,2017-03,Expansion,Expansion,Expansion -> Expansion
+M&M,"Mahindra & Mahindra Ltd
+",Consumer Discretionary,2017-03,2018-03,Expansion,Expansion,Expansion -> Expansion
+M&M,"Mahindra & Mahindra Ltd
+",Consumer Discretionary,2018-03,2019-03,Expansion,Distress,Expansion -> Distress
+M&M,"Mahindra & Mahindra Ltd
+",Consumer Discretionary,2019-03,2020-03,Distress,Distress,Distress -> Distress
+M&M,"Mahindra & Mahindra Ltd
+",Consumer Discretionary,2020-03,2021-03,Distress,Expansion,Distress -> Expansion
+M&M,"Mahindra & Mahindra Ltd
+",Consumer Discretionary,2021-03,2022-03,Expansion,Reinvest,Expansion -> Reinvest
+M&M,"Mahindra & Mahindra Ltd
+",Consumer Discretionary,2022-03,2023-03,Reinvest,Distress,Reinvest -> Distress
+M&M,"Mahindra & Mahindra Ltd
+",Consumer Discretionary,2023-03,2024-03,Distress,Distress,Distress -> Distress
+MARUTI,Maruti Suzuki India Ltd,Consumer Discretionary,2013-03,2014-03,Reinvest,Reinvest,Reinvest -> Reinvest
+MARUTI,Maruti Suzuki India Ltd,Consumer Discretionary,2014-03,2015-03,Reinvest,Reinvest,Reinvest -> Reinvest
+MARUTI,Maruti Suzuki India Ltd,Consumer Discretionary,2015-03,2016-03,Reinvest,Reinvest,Reinvest -> Reinvest
+MARUTI,Maruti Suzuki India Ltd,Consumer Discretionary,2016-03,2017-03,Reinvest,Reinvest,Reinvest -> Reinvest
+MARUTI,Maruti Suzuki India Ltd,Consumer Discretionary,2017-03,2018-03,Reinvest,Reinvest,Reinvest -> Reinvest
+MARUTI,Maruti Suzuki India Ltd,Consumer Discretionary,2018-03,2019-03,Reinvest,Reinvest,Reinvest -> Reinvest
+MARUTI,Maruti Suzuki India Ltd,Consumer Discretionary,2019-03,2020-03,Reinvest,Reinvest,Reinvest -> Reinvest
+MARUTI,Maruti Suzuki India Ltd,Consumer Discretionary,2020-03,2021-03,Reinvest,Reinvest,Reinvest -> Reinvest
+MARUTI,Maruti Suzuki India Ltd,Consumer Discretionary,2021-03,2022-03,Reinvest,Reinvest,Reinvest -> Reinvest
+MARUTI,Maruti Suzuki India Ltd,Consumer Discretionary,2022-03,2023-03,Reinvest,Reinvest,Reinvest -> Reinvest
+MARUTI,Maruti Suzuki India Ltd,Consumer Discretionary,2023-03,2024-03,Reinvest,Reinvest,Reinvest -> Reinvest
+MOTHERSON,Samvardhana Motherson International Ltd,Consumer Discretionary,2013-03,2014-03,Reinvest,Reinvest,Reinvest -> Reinvest
+MOTHERSON,Samvardhana Motherson International Ltd,Consumer Discretionary,2014-03,2015-03,Reinvest,Expansion,Reinvest -> Expansion
+MOTHERSON,Samvardhana Motherson International Ltd,Consumer Discretionary,2015-03,2016-03,Expansion,Reinvest,Expansion -> Reinvest
+MOTHERSON,Samvardhana Motherson International Ltd,Consumer Discretionary,2016-03,2017-03,Reinvest,Expansion,Reinvest -> Expansion
+MOTHERSON,Samvardhana Motherson International Ltd,Consumer Discretionary,2017-03,2018-03,Expansion,Reinvest,Expansion -> Reinvest
+MOTHERSON,Samvardhana Motherson International Ltd,Consumer Discretionary,2018-03,2019-03,Reinvest,Reinvest,Reinvest -> Reinvest
+MOTHERSON,Samvardhana Motherson International Ltd,Consumer Discretionary,2019-03,2020-03,Reinvest,Reinvest,Reinvest -> Reinvest
+MOTHERSON,Samvardhana Motherson International Ltd,Consumer Discretionary,2020-03,2021-03,Reinvest,Reinvest,Reinvest -> Reinvest
+MOTHERSON,Samvardhana Motherson International Ltd,Consumer Discretionary,2021-03,2022-03,Reinvest,Reinvest,Reinvest -> Reinvest
+MOTHERSON,Samvardhana Motherson International Ltd,Consumer Discretionary,2022-03,2023-03,Reinvest,Reinvest,Reinvest -> Reinvest
+MOTHERSON,Samvardhana Motherson International Ltd,Consumer Discretionary,2023-03,2024-03,Reinvest,Expansion,Reinvest -> Expansion
+NAUKRI,Info Edge (India) Ltd,Communication Services,2013-03,2014-03,Reinvest,Expansion,Reinvest -> Expansion
+NAUKRI,Info Edge (India) Ltd,Communication Services,2014-03,2015-03,Expansion,Expansion,Expansion -> Expansion
+NAUKRI,Info Edge (India) Ltd,Communication Services,2015-03,2016-03,Expansion,Reinvest,Expansion -> Reinvest
+NAUKRI,Info Edge (India) Ltd,Communication Services,2016-03,2017-03,Reinvest,Reinvest,Reinvest -> Reinvest
+NAUKRI,Info Edge (India) Ltd,Communication Services,2017-03,2018-03,Reinvest,Reinvest,Reinvest -> Reinvest
+NAUKRI,Info Edge (India) Ltd,Communication Services,2018-03,2019-03,Reinvest,Reinvest,Reinvest -> Reinvest
+NAUKRI,Info Edge (India) Ltd,Communication Services,2019-03,2020-03,Reinvest,Return,Reinvest -> Return
+NAUKRI,Info Edge (India) Ltd,Communication Services,2020-03,2021-03,Return,Expansion,Return -> Expansion
+NAUKRI,Info Edge (India) Ltd,Communication Services,2021-03,2022-03,Expansion,Expansion,Expansion -> Expansion
+NAUKRI,Info Edge (India) Ltd,Communication Services,2022-03,2023-03,Expansion,Expansion,Expansion -> Expansion
+NAUKRI,Info Edge (India) Ltd,Communication Services,2023-03,2024-03,Expansion,Expansion,Expansion -> Expansion
+NESTLEIND,Nestle India Ltd,Consumer Staples,2013-12,2014-12,Reinvest,Reinvest,Reinvest -> Reinvest
+NESTLEIND,Nestle India Ltd,Consumer Staples,2014-12,2015-12,Reinvest,Reinvest,Reinvest -> Reinvest
+NESTLEIND,Nestle India Ltd,Consumer Staples,2015-12,2016-12,Reinvest,Reinvest,Reinvest -> Reinvest
+NESTLEIND,Nestle India Ltd,Consumer Staples,2016-12,2017-12,Reinvest,Reinvest,Reinvest -> Reinvest
+NESTLEIND,Nestle India Ltd,Consumer Staples,2017-12,2018-12,Reinvest,Reinvest,Reinvest -> Reinvest
+NESTLEIND,Nestle India Ltd,Consumer Staples,2018-12,2019-12,Reinvest,Return,Reinvest -> Return
+NESTLEIND,Nestle India Ltd,Consumer Staples,2019-12,2020-12,Return,Reinvest,Return -> Reinvest
+NESTLEIND,Nestle India Ltd,Consumer Staples,2020-12,2021-12,Reinvest,Reinvest,Reinvest -> Reinvest
+NESTLEIND,Nestle India Ltd,Consumer Staples,2021-12,2022-12,Reinvest,Reinvest,Reinvest -> Reinvest
+NESTLEIND,Nestle India Ltd,Consumer Staples,2022-12,2023-12,Reinvest,Reinvest,Reinvest -> Reinvest
+NESTLEIND,Nestle India Ltd,Consumer Staples,2023-12,2024-03,Reinvest,Reinvest,Reinvest -> Reinvest
+NHPC,"NHPC Ltd
+",Energy,2013-03,2014-03,Reinvest,Reinvest,Reinvest -> Reinvest
+NHPC,"NHPC Ltd
+",Energy,2014-03,2015-03,Reinvest,Reinvest,Reinvest -> Reinvest
+NHPC,"NHPC Ltd
+",Energy,2015-03,2016-03,Reinvest,Reinvest,Reinvest -> Reinvest
+NHPC,"NHPC Ltd
+",Energy,2016-03,2017-03,Reinvest,Reinvest,Reinvest -> Reinvest
+NHPC,"NHPC Ltd
+",Energy,2017-03,2018-03,Reinvest,Reinvest,Reinvest -> Reinvest
+NHPC,"NHPC Ltd
+",Energy,2018-03,2019-03,Reinvest,Reinvest,Reinvest -> Reinvest
+NHPC,"NHPC Ltd
+",Energy,2019-03,2020-03,Reinvest,Expansion,Reinvest -> Expansion
+NHPC,"NHPC Ltd
+",Energy,2020-03,2021-03,Expansion,Reinvest,Expansion -> Reinvest
+NHPC,"NHPC Ltd
+",Energy,2021-03,2022-03,Reinvest,Reinvest,Reinvest -> Reinvest
+NHPC,"NHPC Ltd
+",Energy,2022-03,2023-03,Reinvest,Reinvest,Reinvest -> Reinvest
+NHPC,"NHPC Ltd
+",Energy,2023-03,2024-03,Reinvest,Reinvest,Reinvest -> Reinvest
+NTPC,NTPC Ltd,Energy,2013-03,2014-03,Expansion,Reinvest,Expansion -> Reinvest
+NTPC,NTPC Ltd,Energy,2014-03,2015-03,Reinvest,Reinvest,Reinvest -> Reinvest
+NTPC,NTPC Ltd,Energy,2015-03,2016-03,Reinvest,Reinvest,Reinvest -> Reinvest
+NTPC,NTPC Ltd,Energy,2016-03,2017-03,Reinvest,Expansion,Reinvest -> Expansion
+NTPC,NTPC Ltd,Energy,2017-03,2018-03,Expansion,Expansion,Expansion -> Expansion
+NTPC,NTPC Ltd,Energy,2018-03,2019-03,Expansion,Expansion,Expansion -> Expansion
+NTPC,NTPC Ltd,Energy,2019-03,2020-03,Expansion,Expansion,Expansion -> Expansion
+NTPC,NTPC Ltd,Energy,2020-03,2021-03,Expansion,Reinvest,Expansion -> Reinvest
+NTPC,NTPC Ltd,Energy,2021-03,2022-03,Reinvest,Reinvest,Reinvest -> Reinvest
+NTPC,NTPC Ltd,Energy,2022-03,2023-03,Reinvest,Reinvest,Reinvest -> Reinvest
+NTPC,NTPC Ltd,Energy,2023-03,2024-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ONGC,Oil & Natural Gas Corpn Ltd,Energy,2013-03,2014-03,Reinvest,Expansion,Reinvest -> Expansion
+ONGC,Oil & Natural Gas Corpn Ltd,Energy,2014-03,2015-03,Expansion,Reinvest,Expansion -> Reinvest
+ONGC,Oil & Natural Gas Corpn Ltd,Energy,2015-03,2016-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ONGC,Oil & Natural Gas Corpn Ltd,Energy,2016-03,2017-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ONGC,Oil & Natural Gas Corpn Ltd,Energy,2017-03,2018-03,Reinvest,Expansion,Reinvest -> Expansion
+ONGC,Oil & Natural Gas Corpn Ltd,Energy,2018-03,2019-03,Expansion,Reinvest,Expansion -> Reinvest
+ONGC,Oil & Natural Gas Corpn Ltd,Energy,2019-03,2020-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ONGC,Oil & Natural Gas Corpn Ltd,Energy,2020-03,2021-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ONGC,Oil & Natural Gas Corpn Ltd,Energy,2021-03,2022-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ONGC,Oil & Natural Gas Corpn Ltd,Energy,2022-03,2023-03,Reinvest,Reinvest,Reinvest -> Reinvest
+ONGC,Oil & Natural Gas Corpn Ltd,Energy,2023-03,2024-03,Reinvest,Reinvest,Reinvest -> Reinvest
+PFC,Power Finance Corporation Ltd,Financials,2013-03,2014-03,Distress,Distress,Distress -> Distress
+PFC,Power Finance Corporation Ltd,Financials,2014-03,2015-03,Distress,Distress,Distress -> Distress
+PFC,Power Finance Corporation Ltd,Financials,2015-03,2016-03,Distress,Distress,Distress -> Distress
+PFC,Power Finance Corporation Ltd,Financials,2016-03,2017-03,Distress,Expansion,Distress -> Expansion
+PFC,Power Finance Corporation Ltd,Financials,2017-03,2018-03,Expansion,Distress,Expansion -> Distress
+PFC,Power Finance Corporation Ltd,Financials,2018-03,2019-03,Distress,Distress,Distress -> Distress
+PFC,Power Finance Corporation Ltd,Financials,2019-03,2020-03,Distress,Distress,Distress -> Distress
+PFC,Power Finance Corporation Ltd,Financials,2020-03,2021-03,Distress,Distress,Distress -> Distress
+PFC,Power Finance Corporation Ltd,Financials,2021-03,2022-03,Distress,Reinvest,Distress -> Reinvest
+PFC,Power Finance Corporation Ltd,Financials,2022-03,2023-03,Reinvest,Distress,Reinvest -> Distress
+PFC,Power Finance Corporation Ltd,Financials,2023-03,2024-03,Distress,Distress,Distress -> Distress
+PIDILITIND,Pidilite Industries Ltd,Materials,2013-03,2014-03,Reinvest,Reinvest,Reinvest -> Reinvest
+PIDILITIND,Pidilite Industries Ltd,Materials,2014-03,2015-03,Reinvest,Reinvest,Reinvest -> Reinvest
+PIDILITIND,Pidilite Industries Ltd,Materials,2015-03,2016-03,Reinvest,Reinvest,Reinvest -> Reinvest
+PIDILITIND,Pidilite Industries Ltd,Materials,2016-03,2017-03,Reinvest,Expansion,Reinvest -> Expansion
+PIDILITIND,Pidilite Industries Ltd,Materials,2017-03,2018-03,Expansion,Return,Expansion -> Return
+PIDILITIND,Pidilite Industries Ltd,Materials,2018-03,2019-03,Return,Reinvest,Return -> Reinvest
+PIDILITIND,Pidilite Industries Ltd,Materials,2019-03,2020-03,Reinvest,Return,Reinvest -> Return
+PIDILITIND,Pidilite Industries Ltd,Materials,2020-03,2021-03,Return,Reinvest,Return -> Reinvest
+PIDILITIND,Pidilite Industries Ltd,Materials,2021-03,2022-03,Reinvest,Reinvest,Reinvest -> Reinvest
+PIDILITIND,Pidilite Industries Ltd,Materials,2022-03,2023-03,Reinvest,Reinvest,Reinvest -> Reinvest
+PIDILITIND,Pidilite Industries Ltd,Materials,2023-03,2024-03,Reinvest,Reinvest,Reinvest -> Reinvest
+PNB,Punjab National Bank,Financials,2013-03,2014-03,Distress,Expansion,Distress -> Expansion
+PNB,Punjab National Bank,Financials,2014-03,2015-03,Expansion,Expansion,Expansion -> Expansion
+PNB,Punjab National Bank,Financials,2015-03,2016-03,Expansion,Expansion,Expansion -> Expansion
+PNB,Punjab National Bank,Financials,2016-03,2017-03,Expansion,Return,Expansion -> Return
+PNB,Punjab National Bank,Financials,2017-03,2018-03,Return,Distress,Return -> Distress
+PNB,Punjab National Bank,Financials,2018-03,2019-03,Distress,Distress,Distress -> Distress
+PNB,Punjab National Bank,Financials,2019-03,2020-03,Distress,Distress,Distress -> Distress
+PNB,Punjab National Bank,Financials,2020-03,2021-03,Distress,Expansion,Distress -> Expansion
+PNB,Punjab National Bank,Financials,2021-03,2022-03,Expansion,Expansion,Expansion -> Expansion
+PNB,Punjab National Bank,Financials,2022-03,2023-03,Expansion,Expansion,Expansion -> Expansion
+PNB,Punjab National Bank,Financials,2023-03,2024-03,Expansion,Distress,Expansion -> Distress
+POWERGRID,Power Grid Corporation of India Ltd,Energy,2013-03,2014-03,Expansion,Expansion,Expansion -> Expansion
+POWERGRID,Power Grid Corporation of India Ltd,Energy,2014-03,2015-03,Expansion,Expansion,Expansion -> Expansion
+POWERGRID,Power Grid Corporation of India Ltd,Energy,2015-03,2016-03,Expansion,Expansion,Expansion -> Expansion
+POWERGRID,Power Grid Corporation of India Ltd,Energy,2016-03,2017-03,Expansion,Expansion,Expansion -> Expansion
+POWERGRID,Power Grid Corporation of India Ltd,Energy,2017-03,2018-03,Expansion,Expansion,Expansion -> Expansion
+POWERGRID,Power Grid Corporation of India Ltd,Energy,2018-03,2019-03,Expansion,Reinvest,Expansion -> Reinvest
+POWERGRID,Power Grid Corporation of India Ltd,Energy,2019-03,2020-03,Reinvest,Reinvest,Reinvest -> Reinvest
+POWERGRID,Power Grid Corporation of India Ltd,Energy,2020-03,2021-03,Reinvest,Reinvest,Reinvest -> Reinvest
+POWERGRID,Power Grid Corporation of India Ltd,Energy,2021-03,2022-03,Reinvest,Return,Reinvest -> Return
+POWERGRID,Power Grid Corporation of India Ltd,Energy,2022-03,2023-03,Return,Reinvest,Return -> Reinvest
+POWERGRID,Power Grid Corporation of India Ltd,Energy,2023-03,2024-03,Reinvest,Reinvest,Reinvest -> Reinvest
+RECLTD,REC Ltd,Financials,2013-03,2014-03,Distress,Distress,Distress -> Distress
+RECLTD,REC Ltd,Financials,2014-03,2015-03,Distress,Distress,Distress -> Distress
+RECLTD,REC Ltd,Financials,2015-03,2016-03,Distress,Distress,Distress -> Distress
+RECLTD,REC Ltd,Financials,2016-03,2017-03,Distress,Reinvest,Distress -> Reinvest
+RECLTD,REC Ltd,Financials,2017-03,2018-03,Reinvest,Distress,Reinvest -> Distress
+RECLTD,REC Ltd,Financials,2018-03,2019-03,Distress,Distress,Distress -> Distress
+RECLTD,REC Ltd,Financials,2019-03,2020-03,Distress,Distress,Distress -> Distress
+RECLTD,REC Ltd,Financials,2020-03,2021-03,Distress,Distress,Distress -> Distress
+RECLTD,REC Ltd,Financials,2021-03,2022-03,Distress,Distress,Distress -> Distress
+RECLTD,REC Ltd,Financials,2022-03,2023-03,Distress,Distress,Distress -> Distress
+RECLTD,REC Ltd,Financials,2023-03,2024-03,Distress,Distress,Distress -> Distress
+RELIANCE,"Reliance Industries Ltd
+",Energy,2013-03,2014-03,Expansion,Expansion,Expansion -> Expansion
+RELIANCE,"Reliance Industries Ltd
+",Energy,2014-03,2015-03,Expansion,Expansion,Expansion -> Expansion
+RELIANCE,"Reliance Industries Ltd
+",Energy,2015-03,2016-03,Expansion,Reinvest,Expansion -> Reinvest
+RELIANCE,"Reliance Industries Ltd
+",Energy,2016-03,2017-03,Reinvest,Expansion,Reinvest -> Expansion
+RELIANCE,"Reliance Industries Ltd
+",Energy,2017-03,2018-03,Expansion,Reinvest,Expansion -> Reinvest
+RELIANCE,"Reliance Industries Ltd
+",Energy,2018-03,2019-03,Reinvest,Expansion,Reinvest -> Expansion
+RELIANCE,"Reliance Industries Ltd
+",Energy,2019-03,2020-03,Expansion,Reinvest,Expansion -> Reinvest
+RELIANCE,"Reliance Industries Ltd
+",Energy,2020-03,2021-03,Reinvest,Expansion,Reinvest -> Expansion
+RELIANCE,"Reliance Industries Ltd
+",Energy,2021-03,2022-03,Expansion,Expansion,Expansion -> Expansion
+RELIANCE,"Reliance Industries Ltd
+",Energy,2022-03,2023-03,Expansion,Expansion,Expansion -> Expansion
+RELIANCE,"Reliance Industries Ltd
+",Energy,2023-03,2024-03,Expansion,Reinvest,Expansion -> Reinvest
+SBILIFE,SBI Life Insurance Company Ltd,Financials,2013-03,2014-03,Reinvest,Reinvest,Reinvest -> Reinvest
+SBILIFE,SBI Life Insurance Company Ltd,Financials,2014-03,2015-03,Reinvest,Reinvest,Reinvest -> Reinvest
+SBILIFE,SBI Life Insurance Company Ltd,Financials,2015-03,2016-03,Reinvest,Reinvest,Reinvest -> Reinvest
+SBILIFE,SBI Life Insurance Company Ltd,Financials,2016-03,2017-03,Reinvest,Reinvest,Reinvest -> Reinvest
+SBILIFE,SBI Life Insurance Company Ltd,Financials,2017-03,2018-03,Reinvest,Reinvest,Reinvest -> Reinvest
+SBILIFE,SBI Life Insurance Company Ltd,Financials,2018-03,2019-03,Reinvest,Reinvest,Reinvest -> Reinvest
+SBILIFE,SBI Life Insurance Company Ltd,Financials,2019-03,2020-03,Reinvest,Reinvest,Reinvest -> Reinvest
+SBILIFE,SBI Life Insurance Company Ltd,Financials,2020-03,2021-03,Reinvest,Expansion,Reinvest -> Expansion
+SBILIFE,SBI Life Insurance Company Ltd,Financials,2021-03,2022-03,Expansion,Reinvest,Expansion -> Reinvest
+SBILIFE,SBI Life Insurance Company Ltd,Financials,2022-03,2023-03,Reinvest,Reinvest,Reinvest -> Reinvest
+SBILIFE,SBI Life Insurance Company Ltd,Financials,2023-03,2024-03,Reinvest,Reinvest,Reinvest -> Reinvest
+SBIN,State Bank of India,Financials,2013-03,2014-03,Reinvest,Expansion,Reinvest -> Expansion
+SBIN,State Bank of India,Financials,2014-03,2015-03,Expansion,Reinvest,Expansion -> Reinvest
+SBIN,State Bank of India,Financials,2015-03,2016-03,Reinvest,Expansion,Reinvest -> Expansion
+SBIN,State Bank of India,Financials,2016-03,2017-03,Expansion,Reinvest,Expansion -> Reinvest
+SBIN,State Bank of India,Financials,2017-03,2018-03,Reinvest,Distress,Reinvest -> Distress
+SBIN,State Bank of India,Financials,2018-03,2019-03,Distress,Cash Accumulation,Distress -> Cash Accumulation
+SBIN,State Bank of India,Financials,2019-03,2020-03,Cash Accumulation,Expansion,Cash Accumulation -> Expansion
+SBIN,State Bank of India,Financials,2020-03,2021-03,Expansion,Expansion,Expansion -> Expansion
+SBIN,State Bank of India,Financials,2021-03,2022-03,Expansion,Reinvest,Expansion -> Reinvest
+SBIN,State Bank of India,Financials,2022-03,2023-03,Reinvest,Distress,Reinvest -> Distress
+SBIN,State Bank of India,Financials,2023-03,2024-03,Distress,Reinvest,Distress -> Reinvest
+SHREECEM,Shree Cement Ltd,Materials,2013-06,2014-06,Reinvest,Reinvest,Reinvest -> Reinvest
+SHREECEM,Shree Cement Ltd,Materials,2014-06,2015-06,Reinvest,Reinvest,Reinvest -> Reinvest
+SHREECEM,Shree Cement Ltd,Materials,2015-06,2016-03,Reinvest,Reinvest,Reinvest -> Reinvest
+SHREECEM,Shree Cement Ltd,Materials,2016-03,2017-03,Reinvest,Reinvest,Reinvest -> Reinvest
+SHREECEM,Shree Cement Ltd,Materials,2017-03,2018-03,Reinvest,Expansion,Reinvest -> Expansion
+SHREECEM,Shree Cement Ltd,Materials,2018-03,2019-03,Expansion,Reinvest,Expansion -> Reinvest
+SHREECEM,Shree Cement Ltd,Materials,2019-03,2020-03,Reinvest,Expansion,Reinvest -> Expansion
+SHREECEM,Shree Cement Ltd,Materials,2020-03,2021-03,Expansion,Reinvest,Expansion -> Reinvest
+SHREECEM,Shree Cement Ltd,Materials,2021-03,2022-03,Reinvest,Reinvest,Reinvest -> Reinvest
+SHREECEM,Shree Cement Ltd,Materials,2022-03,2023-03,Reinvest,Reinvest,Reinvest -> Reinvest
+SHREECEM,Shree Cement Ltd,Materials,2023-03,2024-03,Reinvest,Reinvest,Reinvest -> Reinvest
+SHRIRAMFIN,"Shriram Finance Ltd
+",Financials,2013-03,2014-03,Distress,Distress,Distress -> Distress
+SHRIRAMFIN,"Shriram Finance Ltd
+",Financials,2014-03,2015-03,Distress,Distress,Distress -> Distress
+SHRIRAMFIN,"Shriram Finance Ltd
+",Financials,2015-03,2016-03,Distress,Distress,Distress -> Distress
+SHRIRAMFIN,"Shriram Finance Ltd
+",Financials,2016-03,2017-03,Distress,Distress,Distress -> Distress
+SHRIRAMFIN,"Shriram Finance Ltd
+",Financials,2017-03,2018-03,Distress,Distress,Distress -> Distress
+SHRIRAMFIN,"Shriram Finance Ltd
+",Financials,2018-03,2019-03,Distress,Distress,Distress -> Distress
+SHRIRAMFIN,"Shriram Finance Ltd
+",Financials,2019-03,2020-03,Distress,Distress,Distress -> Distress
+SHRIRAMFIN,"Shriram Finance Ltd
+",Financials,2020-03,2021-03,Distress,Distress,Distress -> Distress
+SHRIRAMFIN,"Shriram Finance Ltd
+",Financials,2021-03,2022-03,Distress,Distress,Distress -> Distress
+SHRIRAMFIN,"Shriram Finance Ltd
+",Financials,2022-03,2023-03,Distress,Distress,Distress -> Distress
+SHRIRAMFIN,"Shriram Finance Ltd
+",Financials,2023-03,2024-03,Distress,Distress,Distress -> Distress
+SIEMENS,Siemens Ltd,Industrials,2011-09,2014-09,Return,Return,Return -> Return
+SIEMENS,Siemens Ltd,Industrials,2014-09,2015-09,Return,Return,Return -> Return
+SIEMENS,Siemens Ltd,Industrials,2015-09,2016-09,Return,Return,Return -> Return
+SIEMENS,Siemens Ltd,Industrials,2016-09,2017-09,Return,Return,Return -> Return
+SIEMENS,Siemens Ltd,Industrials,2017-09,2018-09,Return,Reinvest,Return -> Reinvest
+SIEMENS,Siemens Ltd,Industrials,2018-09,2019-09,Reinvest,Reinvest,Reinvest -> Reinvest
+SIEMENS,Siemens Ltd,Industrials,2019-09,2020-09,Reinvest,Return,Reinvest -> Return
+SIEMENS,Siemens Ltd,Industrials,2020-09,2021-09,Return,Reinvest,Return -> Reinvest
+SIEMENS,Siemens Ltd,Industrials,2021-09,2022-09,Reinvest,Reinvest,Reinvest -> Reinvest
+SIEMENS,Siemens Ltd,Industrials,2022-09,2023-09,Reinvest,Reinvest,Reinvest -> Reinvest
+SIEMENS,Siemens Ltd,Industrials,2023-09,2024-09,Reinvest,Reinvest,Reinvest -> Reinvest
+SUNPHARMA,Sun Pharmaceuticals Industries Ltd,Healthcare,2013-03,2014-03,Reinvest,Expansion,Reinvest -> Expansion
+SUNPHARMA,Sun Pharmaceuticals Industries Ltd,Healthcare,2014-03,2015-03,Expansion,Reinvest,Expansion -> Reinvest
+SUNPHARMA,Sun Pharmaceuticals Industries Ltd,Healthcare,2015-03,2016-03,Reinvest,Reinvest,Reinvest -> Reinvest
+SUNPHARMA,Sun Pharmaceuticals Industries Ltd,Healthcare,2016-03,2017-03,Reinvest,Reinvest,Reinvest -> Reinvest
+SUNPHARMA,Sun Pharmaceuticals Industries Ltd,Healthcare,2017-03,2018-03,Reinvest,Reinvest,Reinvest -> Reinvest
+SUNPHARMA,Sun Pharmaceuticals Industries Ltd,Healthcare,2018-03,2019-03,Reinvest,Reinvest,Reinvest -> Reinvest
+SUNPHARMA,Sun Pharmaceuticals Industries Ltd,Healthcare,2019-03,2020-03,Reinvest,Reinvest,Reinvest -> Reinvest
+SUNPHARMA,Sun Pharmaceuticals Industries Ltd,Healthcare,2020-03,2021-03,Reinvest,Return,Reinvest -> Return
+SUNPHARMA,Sun Pharmaceuticals Industries Ltd,Healthcare,2021-03,2022-03,Return,Reinvest,Return -> Reinvest
+SUNPHARMA,Sun Pharmaceuticals Industries Ltd,Healthcare,2022-03,2023-03,Reinvest,Expansion,Reinvest -> Expansion
+SUNPHARMA,Sun Pharmaceuticals Industries Ltd,Healthcare,2023-03,2024-03,Expansion,Reinvest,Expansion -> Reinvest
+TATACONSUM,Tata Consumer Products Ltd,Consumer Staples,2013-03,2014-03,Cash Accumulation,Reinvest,Cash Accumulation -> Reinvest
+TATACONSUM,Tata Consumer Products Ltd,Consumer Staples,2014-03,2015-03,Reinvest,Reinvest,Reinvest -> Reinvest
+TATACONSUM,Tata Consumer Products Ltd,Consumer Staples,2015-03,2016-03,Reinvest,Return,Reinvest -> Return
+TATACONSUM,Tata Consumer Products Ltd,Consumer Staples,2016-03,2017-03,Return,Return,Return -> Return
+TATACONSUM,Tata Consumer Products Ltd,Consumer Staples,2017-03,2018-03,Return,Reinvest,Return -> Reinvest
+TATACONSUM,Tata Consumer Products Ltd,Consumer Staples,2018-03,2019-03,Reinvest,Return,Reinvest -> Return
+TATACONSUM,Tata Consumer Products Ltd,Consumer Staples,2019-03,2020-03,Return,Reinvest,Return -> Reinvest
+TATACONSUM,Tata Consumer Products Ltd,Consumer Staples,2020-03,2021-03,Reinvest,Reinvest,Reinvest -> Reinvest
+TATACONSUM,Tata Consumer Products Ltd,Consumer Staples,2021-03,2022-03,Reinvest,Reinvest,Reinvest -> Reinvest
+TATACONSUM,Tata Consumer Products Ltd,Consumer Staples,2022-03,2023-03,Reinvest,Reinvest,Reinvest -> Reinvest
+TATACONSUM,Tata Consumer Products Ltd,Consumer Staples,2023-03,2024-03,Reinvest,Expansion,Reinvest -> Expansion
+TATAMOTORS,Tata Motors Ltd,Consumer Discretionary,2013-03,2014-03,Reinvest,Reinvest,Reinvest -> Reinvest
+TATAMOTORS,Tata Motors Ltd,Consumer Discretionary,2014-03,2015-03,Reinvest,Expansion,Reinvest -> Expansion
+TATAMOTORS,Tata Motors Ltd,Consumer Discretionary,2015-03,2016-03,Expansion,Reinvest,Expansion -> Reinvest
+TATAMOTORS,Tata Motors Ltd,Consumer Discretionary,2016-03,2017-03,Reinvest,Expansion,Reinvest -> Expansion
+TATAMOTORS,Tata Motors Ltd,Consumer Discretionary,2017-03,2018-03,Expansion,Expansion,Expansion -> Expansion
+TATAMOTORS,Tata Motors Ltd,Consumer Discretionary,2018-03,2019-03,Expansion,Expansion,Expansion -> Expansion
+TATAMOTORS,Tata Motors Ltd,Consumer Discretionary,2019-03,2020-03,Expansion,Expansion,Expansion -> Expansion
+TATAMOTORS,Tata Motors Ltd,Consumer Discretionary,2020-03,2021-03,Expansion,Expansion,Expansion -> Expansion
+TATAMOTORS,Tata Motors Ltd,Consumer Discretionary,2021-03,2022-03,Expansion,Reinvest,Expansion -> Reinvest
+TATAMOTORS,Tata Motors Ltd,Consumer Discretionary,2022-03,2023-03,Reinvest,Reinvest,Reinvest -> Reinvest
+TATAMOTORS,Tata Motors Ltd,Consumer Discretionary,2023-03,2024-03,Reinvest,Reinvest,Reinvest -> Reinvest
+TATAPOWER,"Tata Power Company Ltd
+",Energy,2013-03,2014-03,Reinvest,Reinvest,Reinvest -> Reinvest
+TATAPOWER,"Tata Power Company Ltd
+",Energy,2014-03,2015-03,Reinvest,Reinvest,Reinvest -> Reinvest
+TATAPOWER,"Tata Power Company Ltd
+",Energy,2015-03,2016-03,Reinvest,Reinvest,Reinvest -> Reinvest
+TATAPOWER,"Tata Power Company Ltd
+",Energy,2016-03,2017-03,Reinvest,Expansion,Reinvest -> Expansion
+TATAPOWER,"Tata Power Company Ltd
+",Energy,2017-03,2018-03,Expansion,Reinvest,Expansion -> Reinvest
+TATAPOWER,"Tata Power Company Ltd
+",Energy,2018-03,2019-03,Reinvest,Reinvest,Reinvest -> Reinvest
+TATAPOWER,"Tata Power Company Ltd
+",Energy,2019-03,2020-03,Reinvest,Reinvest,Reinvest -> Reinvest
+TATAPOWER,"Tata Power Company Ltd
+",Energy,2020-03,2021-03,Reinvest,Return,Reinvest -> Return
+TATAPOWER,"Tata Power Company Ltd
+",Energy,2021-03,2022-03,Return,Reinvest,Return -> Reinvest
+TATAPOWER,"Tata Power Company Ltd
+",Energy,2022-03,2023-03,Reinvest,Expansion,Reinvest -> Expansion
+TATAPOWER,"Tata Power Company Ltd
+",Energy,2023-03,2024-03,Expansion,Reinvest,Expansion -> Reinvest
+TATASTEEL,"Tata Steel Ltd
+",Materials,2013-03,2014-03,Reinvest,Expansion,Reinvest -> Expansion
+TATASTEEL,"Tata Steel Ltd
+",Materials,2014-03,2015-03,Expansion,Reinvest,Expansion -> Reinvest
+TATASTEEL,"Tata Steel Ltd
+",Materials,2015-03,2016-03,Reinvest,Reinvest,Reinvest -> Reinvest
+TATASTEEL,"Tata Steel Ltd
+",Materials,2016-03,2017-03,Reinvest,Reinvest,Reinvest -> Reinvest
+TATASTEEL,"Tata Steel Ltd
+",Materials,2017-03,2018-03,Reinvest,Expansion,Reinvest -> Expansion
+TATASTEEL,"Tata Steel Ltd
+",Materials,2018-03,2019-03,Expansion,Reinvest,Expansion -> Reinvest
+TATASTEEL,"Tata Steel Ltd
+",Materials,2019-03,2020-03,Reinvest,Reinvest,Reinvest -> Reinvest
+TATASTEEL,"Tata Steel Ltd
+",Materials,2020-03,2021-03,Reinvest,Reinvest,Reinvest -> Reinvest
+TATASTEEL,"Tata Steel Ltd
+",Materials,2021-03,2022-03,Reinvest,Reinvest,Reinvest -> Reinvest
+TATASTEEL,"Tata Steel Ltd
+",Materials,2022-03,2023-03,Reinvest,Reinvest,Reinvest -> Reinvest
+TATASTEEL,"Tata Steel Ltd
+",Materials,2023-03,2024-03,Reinvest,Reinvest,Reinvest -> Reinvest
+TCS,Tata Consultancy Services Ltd,Information Technology,2013-03,2014-03,Reinvest,Reinvest,Reinvest -> Reinvest
+TCS,Tata Consultancy Services Ltd,Information Technology,2014-03,2015-03,Reinvest,Reinvest,Reinvest -> Reinvest
+TCS,Tata Consultancy Services Ltd,Information Technology,2015-03,2016-03,Reinvest,Reinvest,Reinvest -> Reinvest
+TCS,Tata Consultancy Services Ltd,Information Technology,2016-03,2017-03,Reinvest,Reinvest,Reinvest -> Reinvest
+TCS,Tata Consultancy Services Ltd,Information Technology,2017-03,2018-03,Reinvest,Return,Reinvest -> Return
+TCS,Tata Consultancy Services Ltd,Information Technology,2018-03,2019-03,Return,Return,Return -> Return
+TCS,Tata Consultancy Services Ltd,Information Technology,2019-03,2020-03,Return,Return,Return -> Return
+TCS,Tata Consultancy Services Ltd,Information Technology,2020-03,2021-03,Return,Reinvest,Return -> Reinvest
+TCS,Tata Consultancy Services Ltd,Information Technology,2021-03,2022-03,Reinvest,Reinvest,Reinvest -> Reinvest
+TCS,Tata Consultancy Services Ltd,Information Technology,2022-03,2023-03,Reinvest,Return,Reinvest -> Return
+TCS,Tata Consultancy Services Ltd,Information Technology,2023-03,2024-03,Return,Return,Return -> Return
+TECHM,Tech Mahindra Ltd,Information Technology,2013-03,2014-03,Expansion,Return,Expansion -> Return
+TECHM,Tech Mahindra Ltd,Information Technology,2014-03,2015-03,Return,Reinvest,Return -> Reinvest
+TECHM,Tech Mahindra Ltd,Information Technology,2015-03,2016-03,Reinvest,Reinvest,Reinvest -> Reinvest
+TECHM,Tech Mahindra Ltd,Information Technology,2016-03,2017-03,Reinvest,Reinvest,Reinvest -> Reinvest
+TECHM,Tech Mahindra Ltd,Information Technology,2017-03,2018-03,Reinvest,Reinvest,Reinvest -> Reinvest
+TECHM,Tech Mahindra Ltd,Information Technology,2018-03,2019-03,Reinvest,Reinvest,Reinvest -> Reinvest
+TECHM,Tech Mahindra Ltd,Information Technology,2019-03,2020-03,Reinvest,Return,Reinvest -> Return
+TECHM,Tech Mahindra Ltd,Information Technology,2020-03,2021-03,Return,Reinvest,Return -> Reinvest
+TECHM,Tech Mahindra Ltd,Information Technology,2021-03,2022-03,Reinvest,Return,Reinvest -> Return
+TECHM,Tech Mahindra Ltd,Information Technology,2022-03,2023-03,Return,Reinvest,Return -> Reinvest
+TECHM,Tech Mahindra Ltd,Information Technology,2023-03,2024-03,Reinvest,Reinvest,Reinvest -> Reinvest
+TITAN,"Titan Company Ltd
+",Consumer Discretionary,2013-03,2014-03,Reinvest,Distress,Reinvest -> Distress
+TITAN,"Titan Company Ltd
+",Consumer Discretionary,2014-03,2015-03,Distress,Reinvest,Distress -> Reinvest
+TITAN,"Titan Company Ltd
+",Consumer Discretionary,2015-03,2016-03,Reinvest,Reinvest,Reinvest -> Reinvest
+TITAN,"Titan Company Ltd
+",Consumer Discretionary,2016-03,2017-03,Reinvest,Reinvest,Reinvest -> Reinvest
+TITAN,"Titan Company Ltd
+",Consumer Discretionary,2017-03,2018-03,Reinvest,Distress,Reinvest -> Distress
+TITAN,"Titan Company Ltd
+",Consumer Discretionary,2018-03,2019-03,Distress,Reinvest,Distress -> Reinvest
+TITAN,"Titan Company Ltd
+",Consumer Discretionary,2019-03,2020-03,Reinvest,Distress,Reinvest -> Distress
+TITAN,"Titan Company Ltd
+",Consumer Discretionary,2020-03,2021-03,Distress,Reinvest,Distress -> Reinvest
+TITAN,"Titan Company Ltd
+",Consumer Discretionary,2021-03,2022-03,Reinvest,Distress,Reinvest -> Distress
+TITAN,"Titan Company Ltd
+",Consumer Discretionary,2022-03,2023-03,Distress,Expansion,Distress -> Expansion
+TITAN,"Titan Company Ltd
+",Consumer Discretionary,2023-03,2024-03,Expansion,Reinvest,Expansion -> Reinvest
+TORNTPHARM,Torrent Pharmaceuticals Ltd,Healthcare,2013-03,2014-03,Expansion,Expansion,Expansion -> Expansion
+TORNTPHARM,Torrent Pharmaceuticals Ltd,Healthcare,2014-03,2015-03,Expansion,Expansion,Expansion -> Expansion
+TORNTPHARM,Torrent Pharmaceuticals Ltd,Healthcare,2015-03,2016-03,Expansion,Reinvest,Expansion -> Reinvest
+TORNTPHARM,Torrent Pharmaceuticals Ltd,Healthcare,2016-03,2017-03,Reinvest,Reinvest,Reinvest -> Reinvest
+TORNTPHARM,Torrent Pharmaceuticals Ltd,Healthcare,2017-03,2018-03,Reinvest,Expansion,Reinvest -> Expansion
+TORNTPHARM,Torrent Pharmaceuticals Ltd,Healthcare,2018-03,2019-03,Expansion,Reinvest,Expansion -> Reinvest
+TORNTPHARM,Torrent Pharmaceuticals Ltd,Healthcare,2019-03,2020-03,Reinvest,Return,Reinvest -> Return
+TORNTPHARM,Torrent Pharmaceuticals Ltd,Healthcare,2020-03,2021-03,Return,Reinvest,Return -> Reinvest
+TORNTPHARM,Torrent Pharmaceuticals Ltd,Healthcare,2021-03,2022-03,Reinvest,Reinvest,Reinvest -> Reinvest
+TORNTPHARM,Torrent Pharmaceuticals Ltd,Healthcare,2022-03,2023-03,Reinvest,Expansion,Reinvest -> Expansion
+TORNTPHARM,Torrent Pharmaceuticals Ltd,Healthcare,2023-03,2024-03,Expansion,Reinvest,Expansion -> Reinvest
+TRENT,Trent Ltd,Consumer Discretionary,2013-03,2014-03,Expansion,Distress,Expansion -> Distress
+TRENT,Trent Ltd,Consumer Discretionary,2014-03,2015-03,Distress,Distress,Distress -> Distress
+TRENT,Trent Ltd,Consumer Discretionary,2015-03,2016-03,Distress,Reinvest,Distress -> Reinvest
+TRENT,Trent Ltd,Consumer Discretionary,2016-03,2017-03,Reinvest,Reinvest,Reinvest -> Reinvest
+TRENT,Trent Ltd,Consumer Discretionary,2017-03,2018-03,Reinvest,Reinvest,Reinvest -> Reinvest
+TRENT,Trent Ltd,Consumer Discretionary,2018-03,2019-03,Reinvest,Expansion,Reinvest -> Expansion
+TRENT,Trent Ltd,Consumer Discretionary,2019-03,2020-03,Expansion,Expansion,Expansion -> Expansion
+TRENT,Trent Ltd,Consumer Discretionary,2020-03,2021-03,Expansion,Return,Expansion -> Return
+TRENT,Trent Ltd,Consumer Discretionary,2021-03,2022-03,Return,Return,Return -> Return
+TRENT,Trent Ltd,Consumer Discretionary,2022-03,2023-03,Return,Reinvest,Return -> Reinvest
+TRENT,Trent Ltd,Consumer Discretionary,2023-03,2024-03,Reinvest,Reinvest,Reinvest -> Reinvest
+TVSMOTOR,TVS Motor Company Ltd,Consumer Discretionary,2013-03,2014-03,Reinvest,Reinvest,Reinvest -> Reinvest
+TVSMOTOR,TVS Motor Company Ltd,Consumer Discretionary,2014-03,2015-03,Reinvest,Expansion,Reinvest -> Expansion
+TVSMOTOR,TVS Motor Company Ltd,Consumer Discretionary,2015-03,2016-03,Expansion,Reinvest,Expansion -> Reinvest
+TVSMOTOR,TVS Motor Company Ltd,Consumer Discretionary,2016-03,2017-03,Reinvest,Reinvest,Reinvest -> Reinvest
+TVSMOTOR,TVS Motor Company Ltd,Consumer Discretionary,2017-03,2018-03,Reinvest,Expansion,Reinvest -> Expansion
+TVSMOTOR,TVS Motor Company Ltd,Consumer Discretionary,2018-03,2019-03,Expansion,Distress,Expansion -> Distress
+TVSMOTOR,TVS Motor Company Ltd,Consumer Discretionary,2019-03,2020-03,Distress,Expansion,Distress -> Expansion
+TVSMOTOR,TVS Motor Company Ltd,Consumer Discretionary,2020-03,2021-03,Expansion,Expansion,Expansion -> Expansion
+TVSMOTOR,TVS Motor Company Ltd,Consumer Discretionary,2021-03,2022-03,Expansion,Distress,Expansion -> Distress
+TVSMOTOR,TVS Motor Company Ltd,Consumer Discretionary,2022-03,2023-03,Distress,Distress,Distress -> Distress
+TVSMOTOR,TVS Motor Company Ltd,Consumer Discretionary,2023-03,2024-03,Distress,Distress,Distress -> Distress

@@ -1,0 +1,18 @@
+SPRINT 5 DAY 35 - FINAL REPORT VALIDATION
+Companies in master: 92
+Distinct sectors in database: 10
+Sector PDFs generated: 10
+Sector PDF failures: 0
+Portfolio summary generated: YES
+
+SECTOR REPORTS:
+Communication_Services_sector_report.pdf | 29.0 KB
+Consumer_Discretionary_sector_report.pdf | 31.1 KB
+Consumer_Staples_sector_report.pdf | 30.6 KB
+Energy_sector_report.pdf | 25.4 KB
+Financials_sector_report.pdf | 26.7 KB
+Healthcare_sector_report.pdf | 30.7 KB
+Industrials_sector_report.pdf | 27.2 KB
+Information_Technology_sector_report.pdf | 28.1 KB
+Materials_sector_report.pdf | 28.8 KB
+Real_Estate_sector_report.pdf | 26.9 KB
