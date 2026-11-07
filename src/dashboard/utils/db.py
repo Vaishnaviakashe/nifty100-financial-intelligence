@@ -1,4 +1,3 @@
-
 """Shared cached database utilities for the NIFTY 100 dashboard."""
 
 import sqlite3
@@ -6,7 +5,6 @@ from pathlib import Path
 
 import pandas as pd
 import streamlit as st
-
 
 ROOT_DIR = Path(__file__).resolve().parents[3]
 DB_PATH = ROOT_DIR / "data" / "nifty100.db"

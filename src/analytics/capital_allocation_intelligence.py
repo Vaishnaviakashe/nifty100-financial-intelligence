@@ -1,4 +1,3 @@
-
 """Sprint 5 - Day 32: Capital Allocation Intelligence."""
 
 import sqlite3
@@ -20,25 +19,25 @@ def load_data():
     allocation = pd.read_csv(INPUT_PATH)
 
     required = {
-        "company_id", "year", "CFO_sign",
-        "CFI_sign", "CFF_sign", "pattern_label"
+        "company_id",
+        "year",
+        "CFO_sign",
+        "CFI_sign",
+        "CFF_sign",
+        "pattern_label",
     }
 
     missing = required - set(allocation.columns)
     if missing:
         raise ValueError(f"Missing allocation columns: {missing}")
 
-    allocation["year"] = pd.to_datetime(
-        allocation["year"], errors="coerce"
-    )
+    allocation["year"] = pd.to_datetime(allocation["year"], errors="coerce")
 
     allocation = allocation.dropna(subset=["year"])
     allocation = allocation.sort_values(["company_id", "year"])
 
     with sqlite3.connect(DB_PATH) as conn:
-        companies = pd.read_sql_query(
-            "SELECT id, company_name FROM companies", conn
-        )
+        companies = pd.read_sql_query("SELECT id, company_name FROM companies", conn)
         sectors = pd.read_sql_query(
             "SELECT company_id, broad_sector, sub_sector FROM sectors",
             conn,
@@ -86,9 +85,7 @@ def build_company_summary(allocation, master):
         latest = group.iloc[-1]
         previous = group.iloc[-2] if len(group) >= 2 else None
 
-        distress_years = int(
-            (group["pattern_label"] == "Distress").sum()
-        )
+        distress_years = int((group["pattern_label"] == "Distress").sum())
 
         row = {
             "company_id": company_id,
@@ -100,24 +97,17 @@ def build_company_summary(allocation, master):
             "latest_year": latest["year"].strftime("%Y-%m"),
             "latest_pattern": latest["pattern_label"],
             "previous_pattern": (
-                previous["pattern_label"]
-                if previous is not None else None
+                previous["pattern_label"] if previous is not None else None
             ),
             "dominant_pattern": dominant_pattern,
             "dominant_pattern_years": int(dominant_count),
             "pattern_consistency_pct": round(consistency_pct, 2),
             "consistency_label": consistency,
-            "distinct_patterns": int(
-                group["pattern_label"].nunique()
-            ),
+            "distinct_patterns": int(group["pattern_label"].nunique()),
             "distress_years": distress_years,
-            "distress_history_pct": round(
-                distress_years / total_years * 100, 2
-            ),
+            "distress_history_pct": round(distress_years / total_years * 100, 2),
             "pattern_changes": int(
-                group["pattern_label"].ne(
-                    group["pattern_label"].shift()
-                ).sum() - 1
+                group["pattern_label"].ne(group["pattern_label"].shift()).sum() - 1
             ),
         }
 
@@ -133,16 +123,11 @@ def build_company_summary(allocation, master):
     # Preserve all 92 companies, including companies without allocation history.
     summary = master.merge(
         summary,
-        on=[
-            "company_id", "company_name",
-            "broad_sector", "sub_sector"
-        ],
+        on=["company_id", "company_name", "broad_sector", "sub_sector"],
         how="left",
     )
 
-    summary["years_analyzed"] = (
-        summary["years_analyzed"].fillna(0).astype(int)
-    )
+    summary["years_analyzed"] = summary["years_analyzed"].fillna(0).astype(int)
 
     return summary
 
@@ -152,13 +137,9 @@ def build_transitions(allocation):
 
     df = allocation.sort_values(["company_id", "year"]).copy()
 
-    df["previous_pattern"] = (
-        df.groupby("company_id")["pattern_label"].shift(1)
-    )
+    df["previous_pattern"] = df.groupby("company_id")["pattern_label"].shift(1)
 
-    df["previous_year"] = (
-        df.groupby("company_id")["year"].shift(1)
-    )
+    df["previous_year"] = df.groupby("company_id")["year"].shift(1)
 
     transitions = df[df["previous_pattern"].notna()].copy()
 
@@ -169,14 +150,17 @@ def build_transitions(allocation):
     )
 
     transitions["year"] = transitions["year"].dt.strftime("%Y-%m")
-    transitions["previous_year"] = (
-        transitions["previous_year"].dt.strftime("%Y-%m")
-    )
+    transitions["previous_year"] = transitions["previous_year"].dt.strftime("%Y-%m")
 
     columns = [
-        "company_id", "company_name", "broad_sector",
-        "previous_year", "year", "previous_pattern",
-        "pattern_label", "transition",
+        "company_id",
+        "company_name",
+        "broad_sector",
+        "previous_year",
+        "year",
+        "previous_pattern",
+        "pattern_label",
+        "transition",
     ]
 
     return transitions[columns]
@@ -186,8 +170,7 @@ def build_sector_summary(summary):
     """Summarize latest allocation patterns by sector."""
 
     valid = summary[
-        summary["latest_pattern"].notna()
-        & summary["broad_sector"].notna()
+        summary["latest_pattern"].notna() & summary["broad_sector"].notna()
     ].copy()
 
     counts = pd.crosstab(
@@ -195,25 +178,19 @@ def build_sector_summary(summary):
         valid["latest_pattern"],
     )
 
-    percentages = counts.div(
-        counts.sum(axis=1), axis=0
-    ) * 100
+    percentages = counts.div(counts.sum(axis=1), axis=0) * 100
 
     counts.columns = [
-        f"{col.lower().replace(' ', '_')}_companies"
-        for col in counts.columns
+        f"{col.lower().replace(' ', '_')}_companies" for col in counts.columns
     ]
 
     percentages.columns = [
-        f"{col.lower().replace(' ', '_')}_pct"
-        for col in percentages.columns
+        f"{col.lower().replace(' ', '_')}_pct" for col in percentages.columns
     ]
 
     sector_summary = counts.join(percentages).reset_index()
 
-    sector_summary["companies_analyzed"] = (
-        counts.sum(axis=1).values
-    )
+    sector_summary["companies_analyzed"] = counts.sum(axis=1).values
 
     return sector_summary
 
@@ -246,34 +223,26 @@ def main():
 
     # Multi-sheet intelligence workbook.
     annual_history = allocation.copy()
-    annual_history["year"] = (
-        annual_history["year"].dt.strftime("%Y-%m")
-    )
+    annual_history["year"] = annual_history["year"].dt.strftime("%Y-%m")
 
     with pd.ExcelWriter(
         OUTPUT_DIR / "capital_allocation_intelligence.xlsx",
         engine="openpyxl",
     ) as writer:
-        summary.to_excel(
-            writer, sheet_name="Company Intelligence", index=False
-        )
+        summary.to_excel(writer, sheet_name="Company Intelligence", index=False)
 
-        annual_history.to_excel(
-            writer, sheet_name="Annual History", index=False
-        )
+        annual_history.to_excel(writer, sheet_name="Annual History", index=False)
 
-        transitions.to_excel(
-            writer, sheet_name="Pattern Transitions", index=False
-        )
+        transitions.to_excel(writer, sheet_name="Pattern Transitions", index=False)
 
-        sector_summary.to_excel(
-            writer, sheet_name="Sector Summary", index=False
-        )
+        sector_summary.to_excel(writer, sheet_name="Sector Summary", index=False)
 
     print(f"\nMaster companies: {len(master)}")
     print(f"Annual allocation records: {len(allocation)}")
     print(f"Companies in intelligence: {len(summary)}")
-    print(f"Companies with allocation history: {summary['latest_pattern'].notna().sum()}")
+    print(
+        f"Companies with allocation history: {summary['latest_pattern'].notna().sum()}"
+    )
     print(f"Pattern transitions: {len(transitions)}")
 
     print("\nLatest capital allocation patterns:")

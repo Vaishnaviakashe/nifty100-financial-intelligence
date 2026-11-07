@@ -7,7 +7,6 @@ import pandas as pd
 from src.etl.loader import load_excel
 from src.etl.validator import run_all_validations
 
-
 BASE_DIR = Path(__file__).resolve().parent.parent
 RAW_DIR = BASE_DIR / "data" / "raw"
 OUTPUT_DIR = BASE_DIR / "data" / "processed"
@@ -21,6 +20,7 @@ CORE_FILES = {
     "documents": "documents.xlsx",
     "prosandcons": "prosandcons.xlsx",
 }
+
 
 def load_core_datasets() -> dict[str, pd.DataFrame]:
     """Load all seven core Excel datasets."""
@@ -65,10 +65,10 @@ def main() -> None:
         index=False,
     )
 
-    print(f"\nValidation complete.")
+    print("\nValidation complete.")
     print(f"Total failures: {len(failures)}")
     print(f"Saved to: {output_path}")
-    
-    
+
+
 if __name__ == "__main__":
     main()

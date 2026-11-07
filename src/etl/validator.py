@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import pandas as pd
-
 import requests
 
 
@@ -52,9 +51,7 @@ def validate_fk(
 
     valid_ids = set(companies["id"].dropna())
 
-    orphan_rows = dataframe[
-        ~dataframe["company_id"].isin(valid_ids)
-    ].copy()
+    orphan_rows = dataframe[~dataframe["company_id"].isin(valid_ids)].copy()
 
     if orphan_rows.empty:
         return pd.DataFrame()
@@ -64,16 +61,15 @@ def validate_fk(
     orphan_rows["issue"] = "Company ID not found in companies table"
     orphan_rows["severity"] = "CRITICAL"
 
-    return orphan_rows 
+    return orphan_rows
 
 
 def validate_balance_sheet(dataframe: pd.DataFrame) -> pd.DataFrame:
     """Validate that assets and liabilities are within 1%."""
 
     ratio = (
-        (dataframe["total_assets"] - dataframe["total_liabilities"]).abs()
-        / dataframe["total_assets"]
-    )
+        dataframe["total_assets"] - dataframe["total_liabilities"]
+    ).abs() / dataframe["total_assets"]
 
     failures = dataframe[ratio >= 0.01].copy()
 
@@ -91,15 +87,9 @@ def validate_balance_sheet(dataframe: pd.DataFrame) -> pd.DataFrame:
 def validate_opm(dataframe: pd.DataFrame) -> pd.DataFrame:
     """Cross-check source OPM against calculated OPM."""
 
-    calculated_opm = (
-        dataframe["operating_profit"]
-        / dataframe["sales"]
-        * 100
-    )
+    calculated_opm = dataframe["operating_profit"] / dataframe["sales"] * 100
 
-    difference = (
-        dataframe["opm_percentage"] - calculated_opm
-    ).abs()
+    difference = (dataframe["opm_percentage"] - calculated_opm).abs()
 
     failures = dataframe[difference >= 1.0].copy()
 
@@ -155,10 +145,7 @@ def validate_ticker_format(dataframe: pd.DataFrame) -> pd.DataFrame:
 
     ticker = dataframe["company_id"].astype(str)
 
-    valid = (
-        ticker.eq(ticker.str.strip().str.upper())
-        & ticker.str.len().between(2, 12)
-    )
+    valid = ticker.eq(ticker.str.strip().str.upper()) & ticker.str.len().between(2, 12)
 
     failures = dataframe[~valid].copy()
 
@@ -182,9 +169,7 @@ def validate_net_cash(dataframe: pd.DataFrame) -> pd.DataFrame:
         + dataframe["financing_activity"]
     )
 
-    difference = (
-        dataframe["net_cash_flow"] - calculated
-    ).abs()
+    difference = (dataframe["net_cash_flow"] - calculated).abs()
 
     failures = dataframe[difference > 10].copy()
 
@@ -221,8 +206,7 @@ def validate_tax_rate(dataframe: pd.DataFrame) -> pd.DataFrame:
     """Validate tax percentage range."""
 
     failures = dataframe[
-        (dataframe["tax_percentage"] < 0)
-        | (dataframe["tax_percentage"] > 60)
+        (dataframe["tax_percentage"] < 0) | (dataframe["tax_percentage"] > 60)
     ].copy()
 
     if failures.empty:
@@ -239,9 +223,7 @@ def validate_tax_rate(dataframe: pd.DataFrame) -> pd.DataFrame:
 def validate_dividend_payout(dataframe: pd.DataFrame) -> pd.DataFrame:
     """Validate dividend payout percentage cap."""
 
-    failures = dataframe[
-        dataframe["dividend_payout"] > 200
-    ].copy()
+    failures = dataframe[dataframe["dividend_payout"] > 200].copy()
 
     if failures.empty:
         return pd.DataFrame()
@@ -251,7 +233,7 @@ def validate_dividend_payout(dataframe: pd.DataFrame) -> pd.DataFrame:
     failures["issue"] = "Dividend payout exceeds 200%"
     failures["severity"] = "WARNING"
 
-    return failures 
+    return failures
 
 
 def validate_annual_report_url(dataframe: pd.DataFrame) -> pd.DataFrame:
@@ -291,10 +273,7 @@ def validate_annual_report_url(dataframe: pd.DataFrame) -> pd.DataFrame:
 def validate_eps_sign(dataframe: pd.DataFrame) -> pd.DataFrame:
     """Validate EPS sign against positive net profit."""
 
-    failures = dataframe[
-        (dataframe["net_profit"] > 0)
-        & (dataframe["eps"] <= 0)
-    ].copy()
+    failures = dataframe[(dataframe["net_profit"] > 0) & (dataframe["eps"] <= 0)].copy()
 
     if failures.empty:
         return pd.DataFrame()
@@ -341,10 +320,7 @@ def validate_coverage(
     failures = []
 
     for name, dataframe in datasets.items():
-        coverage = (
-            dataframe.groupby("company_id")["year"]
-            .nunique()
-        )
+        coverage = dataframe.groupby("company_id")["year"].nunique()
 
         insufficient = coverage[coverage < 5]
 
@@ -353,10 +329,7 @@ def validate_coverage(
                 {
                     "company_id": company_id,
                     "field": name,
-                    "issue": (
-                        f"Only {year_count} years of records; "
-                        "minimum is 5"
-                    ),
+                    "issue": (f"Only {year_count} years of records; " "minimum is 5"),
                     "severity": "WARNING",
                     "rule_id": "DQ-16",
                 }
@@ -368,11 +341,7 @@ def validate_coverage(
 def collect_failures(*results: pd.DataFrame) -> pd.DataFrame:
     """Combine validation failures into one DataFrame."""
 
-    non_empty = [
-        result
-        for result in results
-        if not result.empty
-    ]
+    non_empty = [result for result in results if not result.empty]
 
     if not non_empty:
         return pd.DataFrame(
@@ -389,8 +358,7 @@ def collect_failures(*results: pd.DataFrame) -> pd.DataFrame:
         non_empty,
         ignore_index=True,
     )
-    
-    
+
 
 def run_all_validations(
     companies: pd.DataFrame,
@@ -404,9 +372,7 @@ def run_all_validations(
     results = []
 
     # DQ-01: Company primary key
-    results.append(
-        validate_company_pk(companies)
-    )
+    results.append(validate_company_pk(companies))
 
     # DQ-02: Annual primary key
     results.extend(
@@ -428,19 +394,13 @@ def run_all_validations(
     )
 
     # DQ-04: Balance sheet balance
-    results.append(
-        validate_balance_sheet(balancesheet)
-    )
+    results.append(validate_balance_sheet(balancesheet))
 
     # DQ-05: OPM cross-check
-    results.append(
-        validate_opm(profitandloss)
-    )
+    results.append(validate_opm(profitandloss))
 
     # DQ-06: Positive sales
-    results.append(
-        validate_positive_sales(profitandloss)
-    )
+    results.append(validate_positive_sales(profitandloss))
 
     # DQ-07: Year format
     results.extend(
@@ -462,39 +422,25 @@ def run_all_validations(
     )
 
     # DQ-09: Net cash flow
-    results.append(
-        validate_net_cash(cashflow)
-    )
+    results.append(validate_net_cash(cashflow))
 
     # DQ-10: Fixed assets
-    results.append(
-        validate_fixed_assets(balancesheet)
-    )
+    results.append(validate_fixed_assets(balancesheet))
 
     # DQ-11: Tax rate
-    results.append(
-        validate_tax_rate(profitandloss)
-    )
+    results.append(validate_tax_rate(profitandloss))
 
     # DQ-12: Dividend payout
-    results.append(
-        validate_dividend_payout(profitandloss)
-    )
+    results.append(validate_dividend_payout(profitandloss))
 
     # DQ-13: Annual report URLs
-    results.append(
-        validate_annual_report_url(documents)
-    )
+    results.append(validate_annual_report_url(documents))
 
     # DQ-14: EPS sign consistency
-    results.append(
-        validate_eps_sign(profitandloss)
-    )
+    results.append(validate_eps_sign(profitandloss))
 
     # DQ-15: Strict balance equality
-    results.append(
-        validate_balance_equality(balancesheet)
-    )
+    results.append(validate_balance_equality(balancesheet))
 
     # DQ-16: Coverage
     results.append(
@@ -524,8 +470,8 @@ def deduplicate_annual_data(dataframe: pd.DataFrame) -> pd.DataFrame:
         [valid_rows, invalid_rows],
         ignore_index=True,
     )
-    
-    
+
+
 def get_duplicate_rows(dataframe: pd.DataFrame) -> pd.DataFrame:
     """Return all rows involved in valid company-year duplicates."""
 
@@ -539,4 +485,4 @@ def get_duplicate_rows(dataframe: pd.DataFrame) -> pd.DataFrame:
         )
     ].copy()
 
-    return duplicates 
+    return duplicates

@@ -1,4 +1,3 @@
-
 from pathlib import Path
 
 import pandas as pd
@@ -18,10 +17,7 @@ def load_peer_rankings():
 
     df = get_peer_rankings(str(DB_PATH))
 
-    return (
-        df.astype(object)
-        .where(pd.notna(df), None)
-    )
+    return df.astype(object).where(pd.notna(df), None)
 
 
 @router.get("/peers/{group_name}")
@@ -30,9 +26,7 @@ def get_peer_group(group_name: str):
 
     df = load_peer_rankings()
 
-    result = df[
-        df["peer_group_name"].str.lower() == group_name.lower()
-    ]
+    result = df[df["peer_group_name"].str.lower() == group_name.lower()]
 
     if result.empty:
         raise HTTPException(

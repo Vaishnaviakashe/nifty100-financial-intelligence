@@ -5,8 +5,8 @@ ROOT_DIR = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT_DIR))
 
 
-import sqlite3
 import csv
+import sqlite3
 
 from src.analytics.cashflow_kpis import capital_allocation_pattern
 
@@ -55,14 +55,16 @@ for company_id, year, cfo, cfi, cff in rows:
 
     pattern = capital_allocation_pattern(cfo, cfi, cff)
 
-    output_rows.append({
-        "company_id": company_id,
-        "year": year,
-        "CFO_sign": cfo_sign,
-        "CFI_sign": cfi_sign,
-        "CFF_sign": cff_sign,
-        "pattern_label": pattern,
-    })
+    output_rows.append(
+        {
+            "company_id": company_id,
+            "year": year,
+            "CFO_sign": cfo_sign,
+            "CFI_sign": cfi_sign,
+            "CFF_sign": cff_sign,
+            "pattern_label": pattern,
+        }
+    )
 
 
 OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)

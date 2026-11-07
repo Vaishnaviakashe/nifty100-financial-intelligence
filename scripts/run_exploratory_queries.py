@@ -1,7 +1,7 @@
 """Run exploratory SQL queries against the Nifty 100 database."""
 
-from pathlib import Path
 import sqlite3
+from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 DB_PATH = BASE_DIR / "data" / "nifty100.db"
@@ -14,11 +14,7 @@ def main() -> None:
     connection = sqlite3.connect(DB_PATH)
     sql = SQL_PATH.read_text(encoding="utf-8")
 
-    queries = [
-        query.strip()
-        for query in sql.split(";")
-        if query.strip()
-    ]
+    queries = [query.strip() for query in sql.split(";") if query.strip()]
 
     for number, query in enumerate(queries, start=1):
         cursor = connection.execute(query)

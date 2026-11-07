@@ -1,4 +1,3 @@
-
 from pathlib import Path
 
 import pandas as pd
@@ -23,19 +22,15 @@ def get_portfolio_statistics():
     try:
         df = pd.read_csv(STATS_FILE)
 
-        records = (
-            df.astype(object)
-            .where(pd.notna(df), None)
-            .to_dict(orient="records")
-        )
+        records = df.astype(object).where(pd.notna(df), None).to_dict(orient="records")
 
         return {
             "metric_count": len(records),
             "statistics": records,
         }
 
-    except Exception as error:
+    except Exception as error:  # noqa: BLE001
         raise HTTPException(
             status_code=500,
-            detail=f"Portfolio statistics failed: {str(error)}",
+            detail=f"Portfolio statistics failed: {error!s}",
         )

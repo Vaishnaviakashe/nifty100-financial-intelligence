@@ -1,8 +1,7 @@
 import sqlite3
-import pandas as pd
 
-from src.analytics.screener import get_screener_results
 from src.analytics.peer_engine import get_peer_rankings
+from src.analytics.screener import get_screener_results
 
 
 def create_test_db(db_path):
@@ -50,13 +49,11 @@ def create_test_db(db_path):
         ("C", "Company C"),
     ]
 
-    conn.executemany(
-        "INSERT INTO companies VALUES (?, ?)", companies
-    )
+    conn.executemany("INSERT INTO companies VALUES (?, ?)", companies)
 
     conn.executemany(
         "INSERT INTO sectors VALUES (?, ?)",
-        [(company_id, "Test Sector") for company_id, _ in companies]
+        [(company_id, "Test Sector") for company_id, _ in companies],
     )
 
     ratios = [
@@ -65,7 +62,8 @@ def create_test_db(db_path):
         ("C", "2024-03", 12, 18, 18, 17, 0.4, 4, 0.8, 50, 1.1, 80),
     ]
 
-    conn.executemany("""
+    conn.executemany(
+        """
         INSERT INTO financial_ratios (
             company_id, year,
             net_profit_margin_pct,
@@ -80,7 +78,9 @@ def create_test_db(db_path):
             fcf_conversion_pct
         )
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-    """, ratios)
+    """,
+        ratios,
+    )
 
     conn.executemany(
         "INSERT INTO peer_groups VALUES (?, ?, ?)",
@@ -88,7 +88,7 @@ def create_test_db(db_path):
             ("Test Group", "A", 1),
             ("Test Group", "B", 0),
             ("Test Group", "C", 0),
-        ]
+        ],
     )
 
     conn.commit()
@@ -136,9 +136,7 @@ def test_peer_rankings(tmp_path):
     assert "overall_percentile" in result.columns
     assert "overall_rank" in result.columns
 
-    top_company = result.loc[
-        result["overall_rank"] == 1, "company_id"
-    ].tolist()
+    top_company = result.loc[result["overall_rank"] == 1, "company_id"].tolist()
 
     assert top_company == ["A"]
 

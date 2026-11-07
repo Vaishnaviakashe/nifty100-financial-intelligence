@@ -1,10 +1,8 @@
-
 """Sprint 3: Financial screener with six preset filters."""
 
-from pathlib import Path
 import sqlite3
-import pandas as pd
 
+import pandas as pd
 
 PRESETS = {
     "quality": {
@@ -41,9 +39,7 @@ def get_screener_results(db_path, preset="quality"):
     """Return companies matching a preset using latest available records."""
 
     if preset not in PRESETS:
-        raise ValueError(
-            f"Unknown preset: {preset}. Choose from {list(PRESETS)}"
-        )
+        raise ValueError(f"Unknown preset: {preset}. Choose from {list(PRESETS)}")
 
     query = """
         WITH latest AS (
@@ -88,6 +84,6 @@ def get_screener_results(db_path, preset="quality"):
         elif operator == "<":
             df = df[df[column] < threshold]
 
-    return df.sort_values(
-        "return_on_equity_pct", ascending=False
-    ).reset_index(drop=True)
+    return df.sort_values("return_on_equity_pct", ascending=False).reset_index(
+        drop=True
+    )

@@ -1,15 +1,28 @@
-import sqlite3
 import csv
+import sqlite3
 from pathlib import Path
 
 DB_PATH = Path("data/nifty100.db")
 OUTPUT_PATH = Path("output/sector_roce_notes.csv")
 
 FINANCIAL_COMPANIES = {
-    "AXISBANK", "BANKBARODA", "CANBK", "HDFCBANK",
-    "ICICIBANK", "INDUSINDBK", "KOTAKBANK", "PNB", "SBIN",
-    "BAJAJFINSV", "BAJFINANCE", "CHOLAFIN", "IRFC",
-    "JIOFIN", "PFC", "RECLTD", "SHRIRAMFIN",
+    "AXISBANK",
+    "BANKBARODA",
+    "CANBK",
+    "HDFCBANK",
+    "ICICIBANK",
+    "INDUSINDBK",
+    "KOTAKBANK",
+    "PNB",
+    "SBIN",
+    "BAJAJFINSV",
+    "BAJFINANCE",
+    "CHOLAFIN",
+    "IRFC",
+    "JIOFIN",
+    "PFC",
+    "RECLTD",
+    "SHRIRAMFIN",
 }
 
 
@@ -57,16 +70,18 @@ def main():
         else:
             status = "Close"
 
-        notes.append({
-            "company_id": company_id,
-            "year": year,
-            "sub_sector": sub_sector,
-            "calculated_roce_pct": round(calculated, 2),
-            "source_roce_pct": round(source, 2),
-            "difference_pct": round(difference, 2),
-            "status": status,
-            "note": "Source ROCE differs from year-level calculation; likely methodology/data-basis difference."
-        })
+        notes.append(
+            {
+                "company_id": company_id,
+                "year": year,
+                "sub_sector": sub_sector,
+                "calculated_roce_pct": round(calculated, 2),
+                "source_roce_pct": round(source, 2),
+                "difference_pct": round(difference, 2),
+                "status": status,
+                "note": "Source ROCE differs from year-level calculation; likely methodology/data-basis difference.",
+            }
+        )
 
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
 

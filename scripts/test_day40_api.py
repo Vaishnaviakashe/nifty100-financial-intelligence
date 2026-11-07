@@ -1,5 +1,5 @@
-
 import sqlite3
+
 import requests
 
 BASE = "http://127.0.0.1:8000/api/v1"
@@ -7,29 +7,23 @@ DB = "data/nifty100.db"
 
 # Get real sector and peer group names from the database.
 with sqlite3.connect(DB) as conn:
-    sector = conn.execute(
-        """
+    sector = conn.execute("""
         SELECT broad_sector
         FROM sectors
         LIMIT 1
-        """
-    ).fetchone()[0]
+        """).fetchone()[0]
 
-    peer = conn.execute(
-        """
+    peer = conn.execute("""
         SELECT peer_group_name
         FROM peer_groups
         LIMIT 1
-        """
-    ).fetchone()[0]
+        """).fetchone()[0]
 
-    peer_company = conn.execute(
-        """
+    peer_company = conn.execute("""
         SELECT company_id
         FROM peer_groups
         LIMIT 1
-        """
-    ).fetchone()[0]
+        """).fetchone()[0]
 
 tests = [
     ("Screener", f"{BASE}/screener?preset=quality"),

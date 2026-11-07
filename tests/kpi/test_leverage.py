@@ -1,7 +1,7 @@
 from src.analytics.ratios import (
+    asset_turnover,
     debt_to_equity,
     interest_coverage,
-    asset_turnover,
 )
 
 

@@ -1,9 +1,9 @@
 ﻿import pytest
 
-
 # ---------------------------------------------------------
 # ROOT AND HEALTH
 # ---------------------------------------------------------
+
 
 def test_root_endpoint(client):
     response = client.get("/")
@@ -33,6 +33,7 @@ def test_health_endpoint(client):
 # COMPANY ENDPOINTS
 # ---------------------------------------------------------
 
+
 def test_list_companies(client):
     response = client.get("/api/v1/companies")
 
@@ -45,20 +46,14 @@ def test_list_companies(client):
 
 
 def test_company_search(client):
-    response = client.get(
-        "/api/v1/companies",
-        params={"search": "TCS"}
-    )
+    response = client.get("/api/v1/companies", params={"search": "TCS"})
 
     assert response.status_code == 200
     assert response.json()["count"] >= 1
 
 
 def test_company_sector_filter(client, sample_sector):
-    response = client.get(
-        "/api/v1/companies",
-        params={"sector": sample_sector}
-    )
+    response = client.get("/api/v1/companies", params={"sector": sample_sector})
 
     assert response.status_code == 200
 
@@ -67,10 +62,7 @@ def test_company_sector_filter(client, sample_sector):
 
 
 def test_company_pagination(client):
-    response = client.get(
-        "/api/v1/companies",
-        params={"limit": 5, "offset": 0}
-    )
+    response = client.get("/api/v1/companies", params={"limit": 5, "offset": 0})
 
     assert response.status_code == 200
     assert response.json()["count"] <= 5
@@ -86,14 +78,9 @@ def test_company_profile(client, sample_ticker):
     assert "sector" in data
 
 
-@pytest.mark.parametrize(
-    "endpoint",
-    ["pl", "bs", "cashflow", "ratios"]
-)
+@pytest.mark.parametrize("endpoint", ["pl", "bs", "cashflow", "ratios"])
 def test_company_financial_endpoints(client, sample_ticker, endpoint):
-    response = client.get(
-        f"/api/v1/companies/{sample_ticker}/{endpoint}"
-    )
+    response = client.get(f"/api/v1/companies/{sample_ticker}/{endpoint}")
 
     assert response.status_code == 200
 
@@ -106,24 +93,18 @@ def test_company_financial_endpoints(client, sample_ticker, endpoint):
 
 def test_company_financial_year_filter(client, sample_ticker):
     response = client.get(
-        f"/api/v1/companies/{sample_ticker}/pl",
-        params={"year": "2024-03"}
+        f"/api/v1/companies/{sample_ticker}/pl", params={"year": "2024-03"}
     )
 
     assert response.status_code == 200
 
     data = response.json()
 
-    assert all(
-        record["year"] == "2024-03"
-        for record in data["records"]
-    )
+    assert all(record["year"] == "2024-03" for record in data["records"])
 
 
 def test_company_tearsheet_download(client, sample_ticker_with_tearsheet):
-    response = client.get(
-        f"/api/v1/companies/{sample_ticker_with_tearsheet}/tearsheet"
-    )
+    response = client.get(f"/api/v1/companies/{sample_ticker_with_tearsheet}/tearsheet")
 
     assert response.status_code == 200
     assert response.headers["content-type"].startswith("application/pdf")
@@ -134,6 +115,7 @@ def test_company_tearsheet_download(client, sample_ticker_with_tearsheet):
 # SCREENER
 # ---------------------------------------------------------
 
+
 @pytest.mark.parametrize(
     "preset",
     [
@@ -143,13 +125,10 @@ def test_company_tearsheet_download(client, sample_ticker_with_tearsheet):
         "high_returns",
         "efficient",
         "balanced",
-    ]
+    ],
 )
 def test_all_screener_presets(client, preset):
-    response = client.get(
-        "/api/v1/screener",
-        params={"preset": preset}
-    )
+    response = client.get("/api/v1/screener", params={"preset": preset})
 
     assert response.status_code == 200
 
@@ -161,19 +140,13 @@ def test_all_screener_presets(client, preset):
 
 
 def test_screener_invalid_preset(client):
-    response = client.get(
-        "/api/v1/screener",
-        params={"preset": "invalid"}
-    )
+    response = client.get("/api/v1/screener", params={"preset": "invalid"})
 
     assert response.status_code == 400
 
 
 def test_screener_limit(client):
-    response = client.get(
-        "/api/v1/screener",
-        params={"preset": "quality", "limit": 5}
-    )
+    response = client.get("/api/v1/screener", params={"preset": "quality", "limit": 5})
 
     assert response.status_code == 200
     assert response.json()["returned"] <= 5
@@ -182,6 +155,7 @@ def test_screener_limit(client):
 # ---------------------------------------------------------
 # SECTORS
 # ---------------------------------------------------------
+
 
 def test_get_sectors(client):
     response = client.get("/api/v1/sectors")
@@ -195,9 +169,7 @@ def test_get_sectors(client):
 
 
 def test_get_sector_companies(client, sample_sector):
-    response = client.get(
-        f"/api/v1/sectors/{sample_sector}/companies"
-    )
+    response = client.get(f"/api/v1/sectors/{sample_sector}/companies")
 
     assert response.status_code == 200
 
@@ -208,9 +180,7 @@ def test_get_sector_companies(client, sample_sector):
 
 
 def test_unknown_sector_returns_404(client):
-    response = client.get(
-        "/api/v1/sectors/UNKNOWN_SECTOR/companies"
-    )
+    response = client.get("/api/v1/sectors/UNKNOWN_SECTOR/companies")
 
     assert response.status_code == 404
 
@@ -219,10 +189,9 @@ def test_unknown_sector_returns_404(client):
 # PEER ENDPOINTS
 # ---------------------------------------------------------
 
+
 def test_get_peer_group(client, sample_peer_group):
-    response = client.get(
-        f"/api/v1/peers/{sample_peer_group}"
-    )
+    response = client.get(f"/api/v1/peers/{sample_peer_group}")
 
     assert response.status_code == 200
 
@@ -239,9 +208,7 @@ def test_unknown_peer_group_returns_404(client):
 
 
 def test_compare_company_peers(client, sample_peer_company):
-    response = client.get(
-        f"/api/v1/companies/{sample_peer_company}/peers/compare"
-    )
+    response = client.get(f"/api/v1/companies/{sample_peer_company}/peers/compare")
 
     assert response.status_code == 200
 
@@ -255,10 +222,9 @@ def test_compare_company_peers(client, sample_peer_company):
 # VALUATION AND MARKET CAP
 # ---------------------------------------------------------
 
+
 def test_market_cap_history(client, sample_ticker):
-    response = client.get(
-        f"/api/v1/market-cap/{sample_ticker}"
-    )
+    response = client.get(f"/api/v1/market-cap/{sample_ticker}")
 
     assert response.status_code == 200
 
@@ -280,10 +246,7 @@ def test_valuation_summary(client):
 
 
 def test_valuation_invalid_year(client):
-    response = client.get(
-        "/api/v1/valuation/summary",
-        params={"year": 2025}
-    )
+    response = client.get("/api/v1/valuation/summary", params={"year": 2025})
 
     assert response.status_code == 422
 
@@ -291,6 +254,7 @@ def test_valuation_invalid_year(client):
 # ---------------------------------------------------------
 # PORTFOLIO
 # ---------------------------------------------------------
+
 
 def test_portfolio_statistics(client):
     response = client.get("/api/v1/portfolio/stats")
@@ -307,10 +271,9 @@ def test_portfolio_statistics(client):
 # DOCUMENTS
 # ---------------------------------------------------------
 
+
 def test_company_documents(client, sample_ticker):
-    response = client.get(
-        f"/api/v1/companies/{sample_ticker}/documents"
-    )
+    response = client.get(f"/api/v1/companies/{sample_ticker}/documents")
 
     assert response.status_code == 200
 
@@ -322,8 +285,7 @@ def test_company_documents(client, sample_ticker):
 
 def test_company_documents_year_filter(client, sample_ticker):
     response = client.get(
-        f"/api/v1/companies/{sample_ticker}/documents",
-        params={"year": 2024}
+        f"/api/v1/companies/{sample_ticker}/documents", params={"year": 2024}
     )
 
     assert response.status_code == 200
@@ -335,6 +297,7 @@ def test_company_documents_year_filter(client, sample_ticker):
 # ---------------------------------------------------------
 # ERROR HANDLING AND INPUT VALIDATION
 # ---------------------------------------------------------
+
 
 def test_unknown_company_returns_404(client):
     response = client.get("/api/v1/companies/UNKNOWN_TICKER")
@@ -355,28 +318,19 @@ def test_unknown_company_market_cap_returns_404(client):
 
 
 def test_invalid_company_limit_returns_422(client):
-    response = client.get(
-        "/api/v1/companies",
-        params={"limit": 0}
-    )
+    response = client.get("/api/v1/companies", params={"limit": 0})
 
     assert response.status_code == 422
 
 
 def test_invalid_company_offset_returns_422(client):
-    response = client.get(
-        "/api/v1/companies",
-        params={"offset": -1}
-    )
+    response = client.get("/api/v1/companies", params={"offset": -1})
 
     assert response.status_code == 422
 
 
 def test_invalid_document_year_returns_422(client):
-    response = client.get(
-        "/api/v1/companies/TCS/documents",
-        params={"year": 1999}
-    )
+    response = client.get("/api/v1/companies/TCS/documents", params={"year": 1999})
 
     assert response.status_code == 422
 
@@ -384,6 +338,7 @@ def test_invalid_document_year_returns_422(client):
 # ---------------------------------------------------------
 # OPENAPI DOCUMENTATION
 # ---------------------------------------------------------
+
 
 def test_openapi_schema_contains_api_paths(client):
     response = client.get("/openapi.json")

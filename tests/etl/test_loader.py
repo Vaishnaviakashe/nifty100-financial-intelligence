@@ -1,4 +1,3 @@
-
 import pandas as pd
 
 from src.etl.loader import load_excel
@@ -49,10 +48,7 @@ def test_load_excel_without_normalizable_columns(monkeypatch, tmp_path):
 
 def test_load_excel_normalizes_invalid_values(monkeypatch, tmp_path):
     def fake_read_excel(path, header):
-        return pd.DataFrame({
-            "company_id": [None],
-            "year": ["invalid"]
-        })
+        return pd.DataFrame({"company_id": [None], "year": ["invalid"]})
 
     monkeypatch.setattr(pd, "read_excel", fake_read_excel)
 

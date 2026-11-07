@@ -9,7 +9,6 @@ import pandas as pd
 
 from src.etl.normaliser import normalize_ticker, normalize_year
 
-
 logger = logging.getLogger(__name__)
 
 
@@ -40,15 +39,9 @@ def load_excel(path: str | Path, core: bool = True) -> pd.DataFrame:
     dataframe = pd.read_excel(file_path, header=header)
 
     if "company_id" in dataframe.columns:
-        dataframe["company_id"] = (
-            dataframe["company_id"]
-            .apply(normalize_ticker)
-        )
+        dataframe["company_id"] = dataframe["company_id"].apply(normalize_ticker)
 
     if "year" in dataframe.columns:
-        dataframe["year"] = (
-            dataframe["year"]
-            .apply(normalize_year)
-        )
+        dataframe["year"] = dataframe["year"].apply(normalize_year)
 
     return dataframe

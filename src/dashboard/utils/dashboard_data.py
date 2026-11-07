@@ -1,7 +1,7 @@
 """Shared database access for the NIFTY 100 dashboard pages."""
 
-from pathlib import Path
 import sqlite3
+from pathlib import Path
 
 import pandas as pd
 import streamlit as st
@@ -143,7 +143,8 @@ def load_company_list():
 
 @st.cache_data(ttl=600)
 def load_company_history(company_id):
-    ratios = query_df("""
+    ratios = query_df(
+        """
         SELECT year, return_on_equity_pct, return_on_capital_employed_pct,
                net_profit_margin_pct, operating_profit_margin_pct,
                debt_to_equity, interest_coverage, free_cash_flow_cr,
@@ -152,20 +153,28 @@ def load_company_history(company_id):
         FROM financial_ratios
         WHERE company_id = ?
         ORDER BY CAST(year AS INTEGER)
-    """, (company_id,))
-    pl = query_df("""
+    """,
+        (company_id,),
+    )
+    pl = query_df(
+        """
         SELECT year, sales, net_profit, operating_profit, expenses
         FROM profitandloss
         WHERE company_id = ?
         ORDER BY CAST(year AS INTEGER)
-    """, (company_id,))
-    market = query_df("""
+    """,
+        (company_id,),
+    )
+    market = query_df(
+        """
         SELECT year, pe_ratio, pb_ratio, ev_ebitda, market_cap_crore,
                dividend_yield_pct
         FROM market_cap
         WHERE company_id = ?
         ORDER BY CAST(year AS INTEGER)
-    """, (company_id,))
+    """,
+        (company_id,),
+    )
     return ratios, pl, market
 
 

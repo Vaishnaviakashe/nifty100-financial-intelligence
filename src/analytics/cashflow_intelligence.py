@@ -1,4 +1,3 @@
-
 """Sprint 5 - Cash Flow Intelligence Engine."""
 
 import sqlite3
@@ -13,7 +12,6 @@ sys.path.insert(0, str(ROOT))
 
 from src.analytics.cashflow_kpis import (
     capex_intensity,
-    cfo_quality_score,
     capital_allocation_pattern,
 )
 
@@ -38,12 +36,8 @@ def prepare_year(df):
 def latest_records(df):
     if df.empty:
         return df
-    return (
-        prepare_year(df)
-        .groupby("company_id", as_index=False)
-        .tail(1)
-        .copy()
-    )
+    return prepare_year(df).groupby("company_id", as_index=False).tail(1).copy()
+
 
 def calculate_fcf_cagr(group):
     group = group.sort_values("year").tail(5)
@@ -56,8 +50,7 @@ def calculate_fcf_cagr(group):
     end = values.iloc[-1]
 
     years = (
-        group.loc[values.index[-1], "year"]
-        - group.loc[values.index[0], "year"]
+        group.loc[values.index[-1], "year"] - group.loc[values.index[0], "year"]
     ).days / 365.25
 
     if start <= 0 or end <= 0 or years <= 0:
@@ -85,7 +78,8 @@ def main():
         master["company_name"] = companies["company_name"]
 
     sector_cols = [
-        col for col in ["company_id", "broad_sector", "sub_sector"]
+        col
+        for col in ["company_id", "broad_sector", "sub_sector"]
         if col in sectors.columns
     ]
     master = master.merge(
@@ -108,16 +102,24 @@ def main():
 
     # Latest-year cash flow and profit data
     result = master.merge(
-        latest_cf[[
-            "company_id", "year", "operating_activity",
-            "investing_activity", "financing_activity"
-        ]].rename(columns={
-            "year": "latest_year",
-            "operating_activity": "latest_cfo_cr",
-            "investing_activity": "latest_cfi_cr",
-            "financing_activity": "latest_cff_cr",
-        }),
-        on="company_id", how="left",
+        latest_cf[
+            [
+                "company_id",
+                "year",
+                "operating_activity",
+                "investing_activity",
+                "financing_activity",
+            ]
+        ].rename(
+            columns={
+                "year": "latest_year",
+                "operating_activity": "latest_cfo_cr",
+                "investing_activity": "latest_cfi_cr",
+                "financing_activity": "latest_cff_cr",
+            }
+        ),
+        on="company_id",
+        how="left",
     )
 
     result = result.merge(
@@ -127,28 +129,33 @@ def main():
                 "sales": "latest_sales_cr",
             }
         ),
-        on="company_id", how="left",
+        on="company_id",
+        how="left",
     )
 
     result = result.merge(
         latest_balance[["company_id", "borrowings"]].rename(
             columns={"borrowings": "latest_borrowings_cr"}
         ),
-        on="company_id", how="left",
+        on="company_id",
+        how="left",
     )
 
     ratio_cols = [
-        col for col in [
-            "company_id", "free_cash_flow_cr", "fcf_conversion_pct"
-        ] if col in latest_ratios.columns
+        col
+        for col in ["company_id", "free_cash_flow_cr", "fcf_conversion_pct"]
+        if col in latest_ratios.columns
     ]
 
     result = result.merge(
-        latest_ratios[ratio_cols].rename(columns={
-            "free_cash_flow_cr": "latest_fcf_cr",
-            "fcf_conversion_pct": "fcf_conversion_pct",
-        }),
-        on="company_id", how="left",
+        latest_ratios[ratio_cols].rename(
+            columns={
+                "free_cash_flow_cr": "latest_fcf_cr",
+                "fcf_conversion_pct": "fcf_conversion_pct",
+            }
+        ),
+        on="company_id",
+        how="left",
     )
 
     # CFO quality: average CFO / PAT over up to five latest years.
@@ -185,18 +192,15 @@ def main():
             return "Moderate Quality"
         return "Accrual Risk"
 
-    result["cfo_quality_label"] = (
-        result["cfo_quality_score"].apply(quality_label)
-    )
+    result["cfo_quality_label"] = result["cfo_quality_score"].apply(quality_label)
 
     # CapEx intensity proxy: absolute net investing cash flow / sales.
     result["capex_intensity_pct"] = result.apply(
-        lambda row: capex_intensity(
-            row["latest_cfi_cr"], row["latest_sales_cr"]
-        )
-        if pd.notna(row["latest_cfi_cr"])
-        and pd.notna(row["latest_sales_cr"])
-        else np.nan,
+        lambda row: (
+            capex_intensity(row["latest_cfi_cr"], row["latest_sales_cr"])
+            if pd.notna(row["latest_cfi_cr"]) and pd.notna(row["latest_sales_cr"])
+            else np.nan
+        ),
         axis=1,
     )
 
@@ -208,14 +212,14 @@ def main():
         ["High Intensity", "Moderate Intensity"],
         default="Low Intensity",
     )
-    result.loc[
-        result["capex_intensity_pct"].isna(), "capex_label"
-    ] = "Insufficient Data"
+    result.loc[result["capex_intensity_pct"].isna(), "capex_label"] = (
+        "Insufficient Data"
+    )
 
     # FCF CAGR using available annual financial-ratio history.
-    fcf_history = ratios[
-        ["company_id", "year", "free_cash_flow_cr"]
-    ].dropna(subset=["free_cash_flow_cr"])
+    fcf_history = ratios[["company_id", "year", "free_cash_flow_cr"]].dropna(
+        subset=["free_cash_flow_cr"]
+    )
 
     fcf_cagr = (
         fcf_history.groupby("company_id")
@@ -227,12 +231,10 @@ def main():
     result = result.merge(fcf_cagr, on="company_id", how="left")
 
     # Distress and deleveraging flags.
-    result["distress_flag"] = (
-        (result["latest_cfo_cr"] < 0)
-        & (result["latest_cff_cr"] > 0)
+    result["distress_flag"] = (result["latest_cfo_cr"] < 0) & (
+        result["latest_cff_cr"] > 0
     )
 
-    
     previous_debt = (
         balance.sort_values("year")
         .groupby("company_id")
@@ -243,38 +245,26 @@ def main():
         .reset_index()
     )
 
-
-    result = result.merge(
-        previous_debt, on="company_id", how="left"
-    )
+    result = result.merge(previous_debt, on="company_id", how="left")
 
     result["deleveraging_flag"] = (
         (result["latest_cff_cr"] < 0)
-        & (
-            result["latest_borrowings_cr"]
-            < result["previous_borrowings_cr"]
-        )
+        & (result["latest_borrowings_cr"] < result["previous_borrowings_cr"])
     ).fillna(False)
 
     # Use the existing Sprint 2 annual capital allocation classifications.
     allocation = pd.read_csv(ALLOCATION_PATH)
-    allocation["year"] = pd.to_datetime(
-        allocation["year"], errors="coerce"
-    )
+    allocation["year"] = pd.to_datetime(allocation["year"], errors="coerce")
     allocation = allocation.dropna(subset=["year"])
 
     latest_allocation = (
         allocation.sort_values("year")
         .groupby("company_id", as_index=False)
         .tail(1)[["company_id", "pattern_label"]]
-        .rename(columns={
-            "pattern_label": "capital_allocation_label"
-        })
+        .rename(columns={"pattern_label": "capital_allocation_label"})
     )
 
-    result = result.merge(
-        latest_allocation, on="company_id", how="left"
-    )
+    result = result.merge(latest_allocation, on="company_id", how="left")
 
     # Fallback only where no historical allocation pattern exists.
     missing_pattern = result["capital_allocation_label"].isna()
@@ -294,18 +284,20 @@ def main():
     alerts = result.loc[
         result["distress_flag"],
         [
-            "company_id", "company_name", "broad_sector",
-            "latest_year", "latest_cfo_cr", "latest_cff_cr",
+            "company_id",
+            "company_name",
+            "broad_sector",
+            "latest_year",
+            "latest_cfo_cr",
+            "latest_cff_cr",
             "latest_net_profit_cr",
         ],
     ].copy()
 
-    alerts.to_csv(
-        OUTPUT_DIR / "distress_alerts.csv", index=False
-    )
+    alerts.to_csv(OUTPUT_DIR / "distress_alerts.csv", index=False)
 
     # Final intelligence output
-    
+
     final_columns = [
         "company_id",
         "company_name",
@@ -329,10 +321,7 @@ def main():
         "capital_allocation_label",
     ]
 
-
-    final = result[
-        [col for col in final_columns if col in result.columns]
-    ].copy()
+    final = result[[col for col in final_columns if col in result.columns]].copy()
 
     final.to_excel(
         OUTPUT_DIR / "cashflow_intelligence.xlsx",

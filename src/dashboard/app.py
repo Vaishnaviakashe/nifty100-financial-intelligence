@@ -1,11 +1,9 @@
-
 """Main entry point for the NIFTY 100 Financial Intelligence Dashboard."""
 
 import sys
 from pathlib import Path
 
 import streamlit as st
-
 
 # --------------------------------------------------
 # PROJECT CONFIGURATION
@@ -47,7 +45,8 @@ MUTED = "#718096"
 # GLOBAL CSS
 # --------------------------------------------------
 
-st.markdown("""
+st.markdown(
+    """
 <style>
 
 /* Typography */
@@ -174,7 +173,9 @@ hr {
 }
 
 </style>
-""", unsafe_allow_html=True)
+""",
+    unsafe_allow_html=True,
+)
 
 
 # --------------------------------------------------

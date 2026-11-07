@@ -16,11 +16,7 @@ DB_PATH = ROOT / "data" / "nifty100.db"
 def get_cached_valuation_summary(year: int):
     df = build_valuation_summary(year=year, db_path=DB_PATH)
 
-    records = (
-        df.astype(object)
-        .where(pd.notna(df), None)
-        .to_dict(orient="records")
-    )
+    records = df.astype(object).where(pd.notna(df), None).to_dict(orient="records")
 
     return tuple(records)
 
@@ -79,10 +75,7 @@ def get_valuation_summary(
     """Return cached valuation summary for a selected year."""
 
     try:
-        records = [
-            dict(record)
-            for record in get_cached_valuation_summary(year)
-        ]
+        records = [dict(record) for record in get_cached_valuation_summary(year)]
 
         return {
             "year": year,
@@ -90,8 +83,8 @@ def get_valuation_summary(
             "valuation_summary": records,
         }
 
-    except Exception as error:
+    except Exception as error:  # noqa: BLE001
         raise HTTPException(
             status_code=500,
-            detail=f"Valuation summary failed: {str(error)}",
+            detail=f"Valuation summary failed: {error!s}",
         )

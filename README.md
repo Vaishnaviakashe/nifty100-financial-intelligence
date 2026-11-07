@@ -1,128 +1,278 @@
 # NIFTY 100 Financial Intelligence Platform
 
-A Python-based financial analytics platform covering 92 NIFTY 100 company records. It combines a SQLite database, financial analytics, screening, peer analysis, valuation indicators and an interactive Streamlit dashboard.
+A financial research and analytics platform covering 92 NIFTY 100
+companies. It combines financial data processing, KPI calculations,
+screening, peer analysis, clustering, valuation intelligence, an
+interactive dashboard and REST APIs.
 
-## Features
+## 1. Key Features
 
-- Financial data foundation and SQLite storage.
-- Financial ratio and company-level analytics.
-- Fundamental screener with presets, filters and CSV export.
-- Peer-group comparison and percentile analysis.
-- Historical trend and sector analysis.
-- Rule-based capital-allocation pattern classification.
-- Annual-report records and available external links.
-- Relative valuation using P/E, P/B, EV/EBITDA and FCF yield.
-- Excel and CSV valuation exports.
+-   Financial data storage using SQLite.
+-   ETL pipeline for loading, normalising and validating financial
+    records.
+-   Financial ratios, profitability, leverage and growth analytics.
+-   Six predefined financial screener strategies.
+-   Peer-group percentile rankings across ten metrics.
+-   KMeans clustering into five company archetypes.
+-   Cash-flow and capital-allocation intelligence.
+-   Valuation analysis and portfolio statistics.
+-   Streamlit dashboard with eight analyst screens.
+-   FastAPI REST API with 18 documented paths.
+-   Automated tests and PDF company tearsheets.
 
-## Dashboard pages
+## 2. Technology Stack
 
-1. Home — market overview, KPIs, sector distribution and quality ranking.
-2. Company Profile — company fundamentals and historical performance.
-3. Financial Screener — financial filters, presets and CSV export.
-4. Peer Comparison — peer-group comparisons and benchmarks.
-5. Trend Analysis — historical financial metrics.
-6. Sector Analysis — sector metrics and revenue-versus-ROE analysis.
-7. Capital Allocation — heuristic capital-allocation patterns.
-8. Annual Reports — report records and available links.
+  Component          Technology
+  ------------------ -----------------------------
+  Programming        Python 3.10
+  Data analysis      Pandas, NumPy
+  Database           SQLite
+  Dashboard          Streamlit
+  API                FastAPI
+  Visualisation      Plotly, Matplotlib, Seaborn
+  Machine learning   Scikit-learn
+  Testing            Pytest
+  Code quality       Black, Ruff
 
-The Financial Screener also includes a Valuation Intelligence section.
+## 3. Project Structure
 
-## Technology
-
-Python, Pandas, NumPy, SQLite, Streamlit, Plotly, OpenPyXL and Pytest.
-
-## Repository structure
-
-```text
+``` text
 nifty100/
-├── config/
 ├── data/
-├── db/
+│   └── nifty100.db
 ├── docs/
-├── notebooks/
+│   ├── analyst_guide.pdf
+│   └── openapi.json
 ├── output/
-├── pages/
 ├── reports/
+│   └── tearsheets/
 ├── scripts/
 ├── src/
 │   ├── analytics/
+│   ├── api/
 │   ├── dashboard/
-│   └── etl/
+│   ├── etl/
+│   ├── nlp/
+│   └── reports/
 ├── tests/
-├── .streamlit/
-├── requirements.txt
-└── README.md
+├── README.md
+└── requirements.txt
 ```
 
-## Setup
+## 4. Installation
 
-```powershell
-git clone https://github.com/Vaishnaviakashe/nifty100-financial-intelligence.git
-cd nifty100-financial-intelligence
+Open PowerShell in the project root.
+
+``` powershell
 python -m venv venv
 .\venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 ```
 
-If environment variables are required, copy `.env.template` to `.env` and populate the required values. Never commit `.env` or credentials.
+Ensure the database exists at `data/nifty100.db`.
 
-The dashboard expects the project SQLite database at `data/nifty100.db`. Use the project's ETL/database setup process if it is not present.
+## 5. ETL Pipeline
 
-## Run the dashboard
+The ETL modules are:
 
-```powershell
+-   `src/etl/loader.py` --- loads source financial workbooks.
+-   `src/etl/normaliser.py` --- normalises company identifiers and
+    financial periods.
+-   `src/etl/validator.py` --- validates financial records and data
+    quality.
+
+The pipeline loads source data, standardises fields, validates records
+and stores the resulting data in SQLite.
+
+ETL orchestration scripts are maintained under `scripts/`. Back up the
+database before running database-writing operations.
+
+## 6. Running the Dashboard
+
+``` powershell
 streamlit run src/dashboard/app.py
 ```
 
-Open the local URL printed by Streamlit (normally `http://localhost:8501`).
+Open `http://localhost:8501`.
 
-## Run valuation exports
+The dashboard contains:
 
-```powershell
-python scripts/run_valuation.py
+1.  Home
+2.  Company Profile
+3.  Screener
+4.  Peers
+5.  Trends
+6.  Sectors
+7.  Capital
+8.  Reports
+
+## 7. Running the REST API
+
+``` powershell
+uvicorn src.api.main:app --host 127.0.0.1 --port 8000 --reload
 ```
 
-The current runner is configured for FY 2024. It generates:
+API base URL: `http://127.0.0.1:8000`
 
-- `output/valuation_summary.xlsx`
-- `output/valuation_flags.csv`
+Interactive documentation: `http://127.0.0.1:8000/docs`
 
-### Valuation methodology
+## 8. API Endpoints
 
-- FCF yield = latest available free cash flow / latest available market capitalisation × 100.
-- Five-year median P/E = median of up to the latest five available annual P/E observations up to the selected year.
-- Sector median P/E = median of positive latest P/E values among companies in the same broad sector.
-- Discount = company P/E below 70% of sector median.
-- Fair = company P/E between 70% and 150% of sector median.
-- Caution = company P/E above 150% of sector median.
-- Missing/non-positive P/E or unavailable sector median is treated as insufficient data.
+  Endpoint                                     Purpose
+  -------------------------------------------- --------------------------------
+  `/api/v1/health`                             API and database health
+  `/api/v1/companies`                          Company listing
+  `/api/v1/companies/{ticker}`                 Company profile
+  `/api/v1/companies/{ticker}/pl`              Profit and loss history
+  `/api/v1/companies/{ticker}/bs`              Balance sheet history
+  `/api/v1/companies/{ticker}/cashflow`        Cash-flow history
+  `/api/v1/companies/{ticker}/ratios`          Financial ratios
+  `/api/v1/companies/{ticker}/tearsheet`       PDF tearsheet
+  `/api/v1/screener`                           Financial screening
+  `/api/v1/sectors`                            Sector summaries
+  `/api/v1/sectors/{sector}/companies`         Sector companies
+  `/api/v1/peers/{group_name}`                 Peer rankings
+  `/api/v1/companies/{ticker}/peers/compare`   Peer comparison
+  `/api/v1/market-cap/{ticker}`                Historical valuation multiples
+  `/api/v1/portfolio/stats`                    Portfolio statistics
+  `/api/v1/companies/{ticker}/documents`       Company documents
+  `/api/v1/valuation/summary`                  Valuation summary
 
-These are relative screening indicators, not investment recommendations. Outputs use stored project data and are not live market quotes.
+Consult `/docs` for the live API schema and supported parameters.
 
-## Run tests
+### Example requests
 
-```powershell
-pytest -q
+``` powershell
+curl.exe "http://127.0.0.1:8000/api/v1/health"
+curl.exe "http://127.0.0.1:8000/api/v1/companies"
+curl.exe "http://127.0.0.1:8000/api/v1/companies/TCS"
+curl.exe "http://127.0.0.1:8000/api/v1/companies/TCS/ratios"
+curl.exe "http://127.0.0.1:8000/api/v1/screener?preset=quality"
+curl.exe "http://127.0.0.1:8000/api/v1/portfolio/stats"
 ```
 
-At the recorded Sprint 4 validation checkpoint, the existing test suite reported **76 passed**. Re-run tests after changes and before publishing.
+## 9. Financial Analytics
 
-## Data interpretation notes
+### Screener Presets
 
-- Historical coverage varies by company and metric.
-- Missing values must not be interpreted as zero.
-- Capital-allocation labels are heuristic classifications based on available financial indicators, not audited disclosures of management's use of funds.
-- Annual-report links are sourced from the database. A syntactically valid URL does not prove the external document remains accessible.
-- Valuation flags are not standalone buy/sell advice.
+  -----------------------------------------------------------------------
+  Preset                              Conditions
+  ----------------------------------- -----------------------------------
+  Quality                             ROE \>= 15%, ROCE \>= 15%, net
+                                      margin \>= 10%
 
-## Recorded Sprint 4 validation
+  Low Debt                            Debt/equity \<= 0.5, interest
+                                      coverage \>= 3
 
-- Eight dashboard page scripts implemented.
-- Valuation engine executed for 92 companies.
-- Valuation summary contained 92 unique companies with no missing output values at the validation checkpoint.
-- Classification: 48 Fair, 30 Discount and 14 Caution.
-- `valuation_summary.xlsx` and `valuation_flags.csv` generated.
-- Existing automated test suite: 76 passed.
-- Data-layer smoke check loaded 92 companies and 11 peer groups; 1,457 annual-report records were retrieved.
+  Cash Generators                     Positive FCF, CFO quality \>= 1
 
-See `docs/` for architecture, sprint retrospectives and the demo guide. Before a public release, rerun tests, inspect Git status, confirm database distribution/licensing and verify that no secrets or local-only files are committed.
+  High Returns                        ROE \>= 20%, ROCE \>= 20%
+
+  Efficient                           Asset turnover \>= 0.75, OPM \>=
+                                      15%
+
+  Balanced                            Net margin \>= 10%, ROE \>= 12%,
+                                      debt/equity \<= 1, positive FCF
+  -----------------------------------------------------------------------
+
+### Peer Engine
+
+Calculates percentile rankings across ten financial metrics within
+eleven peer groups.
+
+### Clustering
+
+Uses KMeans to group companies into five archetypes using selected
+profitability, leverage and growth indicators.
+
+### Valuation
+
+Includes FCF yield, valuation flags and historical valuation multiples
+where data is available.
+
+## 10. Reports and Outputs
+
+Important project outputs include:
+
+-   `output/cluster_labels.csv`
+-   `output/outlier_report.csv`
+-   `output/portfolio_stats.csv`
+-   `reports/tearsheets/`
+-   `reports/correlation_heatmap.png`
+-   `reports/pytest_report.html`
+-   `docs/analyst_guide.pdf`
+-   `docs/openapi.json`
+
+The Analyst Guide provides detailed usage instructions, methodology, API
+examples and troubleshooting guidance.
+
+## 11. Testing and Code Quality
+
+Run the complete test suite:
+
+``` powershell
+pytest -v
+```
+
+Generate an HTML test report:
+
+``` powershell
+pytest -v --html=reports/pytest_report.html
+```
+
+Format code:
+
+``` powershell
+python -m black src tests scripts
+```
+
+Run lint checks:
+
+``` powershell
+python -m ruff check src tests scripts
+```
+
+### Recorded Day 44 Results
+
+-   Black formatting: Passed.
+-   Ruff lint: All checks passed.
+-   Pytest: 143 passed.
+-   Two dependency deprecation warnings.
+
+Re-run these checks after subsequent code changes.
+
+## 12. Data Quality and Limitations
+
+The reviewed database snapshot contained:
+
+-   92 companies.
+-   1,073 financial ratio records.
+-   11 peer groups.
+-   521 generated pros/cons signals: 432 pros and 89 cons.
+-   50 companies with at least one generated pro and one con.
+
+Known limitations:
+
+-   The financial ratio count is below the target of 1,100.
+-   Some companies have incomplete or missing financial history.
+-   ATGL had no cash-flow data in the reviewed snapshot.
+-   Some analysis records were unmatched or unavailable.
+-   Extreme ROE values require individual investigation.
+-   Cash-flow quality and capital-allocation labels are heuristic
+    indicators.
+
+Missing data must not be replaced with fabricated zero values. Analysts
+should verify source filings and apply sector-specific judgement.
+
+## 13. Disclaimer
+
+This platform is intended for financial research, analytics and
+educational purposes. It does not constitute investment advice or a
+recommendation to buy or sell securities. All financial outputs should
+be independently verified before use.
+
+------------------------------------------------------------------------
+
+**Project:** NIFTY 100 Financial Intelligence Platform\
+**Documentation:** `docs/analyst_guide.pdf`\
+**Last updated:** 07 November 2026

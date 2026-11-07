@@ -11,21 +11,17 @@ def main() -> None:
 
     connection = sqlite3.connect(DB_PATH)
 
-    tables = connection.execute(
-        """
+    tables = connection.execute("""
         SELECT name
         FROM sqlite_master
         WHERE type = 'table'
         ORDER BY name
-        """
-    ).fetchall()
+        """).fetchall()
 
     print(f"Tables: {len(tables)}")
 
     for (table_name,) in tables:
-        count = connection.execute(
-            f"SELECT COUNT(*) FROM {table_name}"
-        ).fetchone()[0]
+        count = connection.execute(f"SELECT COUNT(*) FROM {table_name}").fetchone()[0]
 
         print(f"{table_name:<20} {count:>6} rows")
 

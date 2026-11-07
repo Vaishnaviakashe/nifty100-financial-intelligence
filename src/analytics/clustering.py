@@ -1,11 +1,10 @@
-
 """KMeans financial clustering for the NIFTY 100 universe."""
 
 import sqlite3
-import warnings
 from pathlib import Path
 
 import matplotlib
+
 matplotlib.use("Agg")
 
 import matplotlib.pyplot as plt
@@ -54,21 +53,13 @@ def load_data():
             conn,
         )
 
-        ratios = pd.read_sql_query(
-            "SELECT * FROM financial_ratios", conn
-        )
+        ratios = pd.read_sql_query("SELECT * FROM financial_ratios", conn)
 
-        pnl = pd.read_sql_query(
-            "SELECT * FROM profitandloss", conn
-        )
+        pnl = pd.read_sql_query("SELECT * FROM profitandloss", conn)
 
-        cashflow = pd.read_sql_query(
-            "SELECT * FROM cashflow", conn
-        )
+        cashflow = pd.read_sql_query("SELECT * FROM cashflow", conn)
 
-        balance_sheet = pd.read_sql_query(
-            "SELECT * FROM balancesheet", conn
-        )
+        balance_sheet = pd.read_sql_query("SELECT * FROM balancesheet", conn)
 
     return companies, sectors, ratios, pnl, cashflow, balance_sheet
 
@@ -76,9 +67,7 @@ def load_data():
 def normalize_year_column(data):
     """Convert year strings into sortable datetime values."""
     data = data.copy()
-    data["year_date"] = pd.to_datetime(
-        data["year"], errors="coerce"
-    )
+    data["year_date"] = pd.to_datetime(data["year"], errors="coerce")
     return data
 
 
@@ -98,9 +87,7 @@ def calculate_historical_cagr(
 
     data = normalize_year_column(data)
 
-    data[value_column] = pd.to_numeric(
-        data[value_column], errors="coerce"
-    )
+    data[value_column] = pd.to_numeric(data[value_column], errors="coerce")
 
     for company_id, group in data.groupby("company_id"):
         group = (
@@ -117,10 +104,7 @@ def calculate_historical_cagr(
         latest_date = latest["year_date"]
 
         # Select observations approximately five years apart.
-        candidates = group[
-            group["year_date"]
-            <= latest_date - pd.DateOffset(years=4)
-        ]
+        candidates = group[group["year_date"] <= latest_date - pd.DateOffset(years=4)]
 
         if candidates.empty:
             results[company_id] = np.nan
@@ -129,17 +113,13 @@ def calculate_historical_cagr(
         target_date = latest_date - pd.DateOffset(years=5)
 
         earliest = candidates.iloc[
-            (candidates["year_date"] - target_date)
-            .abs()
-            .argmin()
+            (candidates["year_date"] - target_date).abs().argmin()
         ]
 
         start_value = earliest[value_column]
         end_value = latest[value_column]
 
-        years = (
-            latest_date - earliest["year_date"]
-        ).days / 365.25
+        years = (latest_date - earliest["year_date"]).days / 365.25
 
         if years < 4 or years > 6:
             results[company_id] = np.nan
@@ -196,7 +176,7 @@ def prepare_features():
         ratios,
         pnl,
         cashflow,
-        balance_sheet,
+        _,
     ) = load_data()
 
     # Latest financial ratios.
@@ -215,9 +195,7 @@ def prepare_features():
 
     # Latest P&L record for revenue CAGR calculation.
     pnl = normalize_year_column(pnl)
-    pnl["sales"] = pd.to_numeric(
-        pnl["sales"], errors="coerce"
-    )
+    pnl["sales"] = pd.to_numeric(pnl["sales"], errors="coerce")
 
     revenue_cagr = calculate_historical_cagr(
         pnl,
@@ -226,14 +204,9 @@ def prepare_features():
     )
 
     # FCF proxy = CFO + CFI.
-    cashflow["free_cash_flow"] = (
-        pd.to_numeric(
-            cashflow["operating_activity"], errors="coerce"
-        )
-        + pd.to_numeric(
-            cashflow["investing_activity"], errors="coerce"
-        )
-    )
+    cashflow["free_cash_flow"] = pd.to_numeric(
+        cashflow["operating_activity"], errors="coerce"
+    ) + pd.to_numeric(cashflow["investing_activity"], errors="coerce")
 
     fcf_cagr = calculate_historical_cagr(
         cashflow,
@@ -271,27 +244,18 @@ def prepare_features():
         how="left",
     )
 
-    features[FEATURES] = features[FEATURES].apply(
-        pd.to_numeric, errors="coerce"
-    )
+    features[FEATURES] = features[FEATURES].apply(pd.to_numeric, errors="coerce")
 
-        # Flag questionable extreme values for investigation.
-    features["roe_extreme_flag"] = (
-        features["return_on_equity_pct"].abs() > 200
-    )
+    # Flag questionable extreme values for investigation.
+    features["roe_extreme_flag"] = features["return_on_equity_pct"].abs() > 200
 
-    features["de_extreme_flag"] = (
-        features["debt_to_equity"].abs() > 10
-    )
+    features["de_extreme_flag"] = features["debt_to_equity"].abs() > 10
 
-    features["opm_extreme_flag"] = (
-        features["operating_profit_margin_pct"].abs() > 100
-    )
+    features["opm_extreme_flag"] = features["operating_profit_margin_pct"].abs() > 100
 
     # Compare latest ratio ROE against company master ROE.
     features["roe_master_difference"] = (
-        features["return_on_equity_pct"]
-        - features["roe_percentage"]
+        features["return_on_equity_pct"] - features["roe_percentage"]
     )
 
     # Preserve all original values and quality flags before imputation.
@@ -310,33 +274,27 @@ def impute_by_sector(features):
         missing_before = features[column].isna()
 
         for index in features.index[missing_before]:
-            missing_report.append({
-                "company_id": features.loc[index, "company_id"],
-                "broad_sector": features.loc[index, "broad_sector"],
-                "feature": column,
-                "imputation_method": "sector_median",
-            })
+            missing_report.append(
+                {
+                    "company_id": features.loc[index, "company_id"],
+                    "broad_sector": features.loc[index, "broad_sector"],
+                    "feature": column,
+                    "imputation_method": "sector_median",
+                }
+            )
 
-        sector_medians = features.groupby(
-            "broad_sector"
-        )[column].transform("median")
+        sector_medians = features.groupby("broad_sector")[column].transform("median")
 
-        features[column] = features[column].fillna(
-            sector_medians
-        )
+        features[column] = features[column].fillna(sector_medians)
 
         # Use global median only when a sector has no valid value.
         if features[column].isna().any():
             global_median = features[column].median()
 
             if pd.isna(global_median):
-                raise ValueError(
-                    f"Cannot impute feature: {column}"
-                )
+                raise ValueError(f"Cannot impute feature: {column}")
 
-            features[column] = features[column].fillna(
-                global_median
-            )
+            features[column] = features[column].fillna(global_median)
 
     missing_df = pd.DataFrame(missing_report)
 
@@ -417,8 +375,7 @@ def run_clustering():
 
     if len(features) != EXPECTED_COMPANIES:
         raise ValueError(
-            f"Expected {EXPECTED_COMPANIES} companies, "
-            f"found {len(features)}"
+            f"Expected {EXPECTED_COMPANIES} companies, " f"found {len(features)}"
         )
 
     if features["company_id"].nunique() != EXPECTED_COMPANIES:
@@ -466,15 +423,14 @@ def run_clustering():
         axis=1,
     )
 
-    results = pd.DataFrame({
-        "company_id": imputed["company_id"],
-        "cluster_id": cluster_ids,
-        "cluster_name": [
-            f"Cluster {cluster_id}"
-            for cluster_id in cluster_ids
-        ],
-        "distance_from_centroid": distances,
-    })
+    results = pd.DataFrame(
+        {
+            "company_id": imputed["company_id"],
+            "cluster_id": cluster_ids,
+            "cluster_name": [f"Cluster {cluster_id}" for cluster_id in cluster_ids],
+            "distance_from_centroid": distances,
+        }
+    )
 
     output_path = OUTPUT_DIR / "cluster_labels.csv"
 
@@ -488,9 +444,7 @@ def run_clustering():
     print(f"Unique clusters: {results['cluster_id'].nunique()}")
 
     print("\nCluster distribution:")
-    print(
-        results.groupby("cluster_id").size().to_string()
-    )
+    print(results.groupby("cluster_id").size().to_string())
 
     print("\nFeature missingness before imputation:")
     print(original[FEATURES].isna().sum().to_string())
@@ -503,7 +457,9 @@ def run_clustering():
                 "de_extreme_flag",
                 "opm_extreme_flag",
             ]
-        ].sum().to_string()
+        ]
+        .sum()
+        .to_string()
     )
 
     print("\nElbow inertia:")

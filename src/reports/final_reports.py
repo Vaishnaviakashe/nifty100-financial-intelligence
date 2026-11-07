@@ -11,28 +11,30 @@ Outputs:
     output/final_report_validation.txt
 """
 
-from pathlib import Path
-import sqlite3
 import re
-import math
+import sqlite3
 import warnings
+from pathlib import Path
 
-import pandas as pd
 import matplotlib
+import pandas as pd
+
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-
 from reportlab.lib import colors
-from reportlab.lib.enums import TA_CENTER, TA_LEFT
+from reportlab.lib.enums import TA_LEFT
 from reportlab.lib.pagesizes import A4
-from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import mm
 from reportlab.platypus import (
-    SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle,
-    Image, PageBreak, KeepTogether
+    Image,
+    PageBreak,
+    Paragraph,
+    SimpleDocTemplate,
+    Spacer,
+    Table,
+    TableStyle,
 )
-from reportlab.pdfbase.ttfonts import TTFont
-from reportlab.pdfbase import pdfmetrics
 
 warnings.filterwarnings("ignore", category=UserWarning)
 
@@ -72,7 +74,7 @@ def safe_num(value, digits=2):
 def load_table(conn, table):
     try:
         return pd.read_sql_query(f'SELECT * FROM "{table}"', conn)
-    except Exception:
+    except (sqlite3.Error, pd.errors.DatabaseError):
         return pd.DataFrame()
 
 
@@ -115,8 +117,9 @@ def build_data():
     for optional in ("sub_sector", "index_weight_pct", "market_cap_category"):
         if optional in sectors.columns:
             sector_cols.append(optional)
-    base = base.merge(sectors[sector_cols].drop_duplicates("company_id"),
-                      on="company_id", how="left")
+    base = base.merge(
+        sectors[sector_cols].drop_duplicates("company_id"), on="company_id", how="left"
+    )
 
     def attach_latest(source, prefix, keep):
         nonlocal base
@@ -128,21 +131,47 @@ def build_data():
         rename = {c: f"{prefix}{c}" for c in selected if c != "company_id"}
         base = base.merge(latest.rename(columns=rename), on="company_id", how="left")
 
-    attach_latest(ratios, "ratio_", [
-        "year", "net_profit_margin_pct", "operating_profit_margin_pct",
-        "return_on_equity_pct", "return_on_capital_employed_pct",
-        "debt_to_equity", "interest_coverage", "free_cash_flow_cr",
-        "cfo_quality_score", "fcf_conversion_pct"
-    ])
-    attach_latest(market, "market_", [
-        "year", "market_cap_crore", "enterprise_value_crore", "pe_ratio",
-        "pb_ratio", "ev_ebitda", "dividend_yield_pct"
-    ])
+    attach_latest(
+        ratios,
+        "ratio_",
+        [
+            "year",
+            "net_profit_margin_pct",
+            "operating_profit_margin_pct",
+            "return_on_equity_pct",
+            "return_on_capital_employed_pct",
+            "debt_to_equity",
+            "interest_coverage",
+            "free_cash_flow_cr",
+            "cfo_quality_score",
+            "fcf_conversion_pct",
+        ],
+    )
+    attach_latest(
+        market,
+        "market_",
+        [
+            "year",
+            "market_cap_crore",
+            "enterprise_value_crore",
+            "pe_ratio",
+            "pb_ratio",
+            "ev_ebitda",
+            "dividend_yield_pct",
+        ],
+    )
     attach_latest(pnl, "pnl_", ["year", "sales", "net_profit", "operating_profit"])
-    attach_latest(cash, "cash_", [
-        "year", "operating_activity", "investing_activity",
-        "financing_activity", "net_cash_flow"
-    ])
+    attach_latest(
+        cash,
+        "cash_",
+        [
+            "year",
+            "operating_activity",
+            "investing_activity",
+            "financing_activity",
+            "net_cash_flow",
+        ],
+    )
 
     base["broad_sector"] = base["broad_sector"].fillna("Unclassified")
     return base, ratios, pnl, cash
@@ -150,23 +179,48 @@ def build_data():
 
 def make_styles():
     styles = getSampleStyleSheet()
-    styles.add(ParagraphStyle(
-        name="ReportTitle", parent=styles["Title"], fontName="Helvetica-Bold",
-        fontSize=20, leading=24, textColor=NAVY, alignment=TA_LEFT,
-        spaceAfter=4
-    ))
-    styles.add(ParagraphStyle(
-        name="SubtitleCustom", parent=styles["Normal"], fontSize=8.5,
-        leading=12, textColor=GREY, spaceAfter=10
-    ))
-    styles.add(ParagraphStyle(
-        name="SectionCustom", parent=styles["Heading2"], fontSize=11,
-        leading=14, textColor=BLUE, spaceBefore=8, spaceAfter=5
-    ))
-    styles.add(ParagraphStyle(
-        name="SmallCustom", parent=styles["Normal"], fontSize=7.5,
-        leading=10, textColor=GREY
-    ))
+    styles.add(
+        ParagraphStyle(
+            name="ReportTitle",
+            parent=styles["Title"],
+            fontName="Helvetica-Bold",
+            fontSize=20,
+            leading=24,
+            textColor=NAVY,
+            alignment=TA_LEFT,
+            spaceAfter=4,
+        )
+    )
+    styles.add(
+        ParagraphStyle(
+            name="SubtitleCustom",
+            parent=styles["Normal"],
+            fontSize=8.5,
+            leading=12,
+            textColor=GREY,
+            spaceAfter=10,
+        )
+    )
+    styles.add(
+        ParagraphStyle(
+            name="SectionCustom",
+            parent=styles["Heading2"],
+            fontSize=11,
+            leading=14,
+            textColor=BLUE,
+            spaceBefore=8,
+            spaceAfter=5,
+        )
+    )
+    styles.add(
+        ParagraphStyle(
+            name="SmallCustom",
+            parent=styles["Normal"],
+            fontSize=7.5,
+            leading=10,
+            textColor=GREY,
+        )
+    )
     return styles
 
 
@@ -175,21 +229,25 @@ STYLES = make_styles()
 
 def make_table(data, widths=None, font_size=7.5):
     table = Table(data, colWidths=widths, repeatRows=1, hAlign="LEFT")
-    table.setStyle(TableStyle([
-        ("BACKGROUND", (0, 0), (-1, 0), NAVY),
-        ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
-        ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
-        ("FONTNAME", (0, 1), (-1, -1), "Helvetica"),
-        ("FONTSIZE", (0, 0), (-1, -1), font_size),
-        ("LEADING", (0, 0), (-1, -1), font_size + 2),
-        ("GRID", (0, 0), (-1, -1), 0.35, colors.HexColor("#D6DCE4")),
-        ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, LIGHT_GREY]),
-        ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
-        ("LEFTPADDING", (0, 0), (-1, -1), 5),
-        ("RIGHTPADDING", (0, 0), (-1, -1), 5),
-        ("TOPPADDING", (0, 0), (-1, -1), 5),
-        ("BOTTOMPADDING", (0, 0), (-1, -1), 5),
-    ]))
+    table.setStyle(
+        TableStyle(
+            [
+                ("BACKGROUND", (0, 0), (-1, 0), NAVY),
+                ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
+                ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
+                ("FONTNAME", (0, 1), (-1, -1), "Helvetica"),
+                ("FONTSIZE", (0, 0), (-1, -1), font_size),
+                ("LEADING", (0, 0), (-1, -1), font_size + 2),
+                ("GRID", (0, 0), (-1, -1), 0.35, colors.HexColor("#D6DCE4")),
+                ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, LIGHT_GREY]),
+                ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
+                ("LEFTPADDING", (0, 0), (-1, -1), 5),
+                ("RIGHTPADDING", (0, 0), (-1, -1), 5),
+                ("TOPPADDING", (0, 0), (-1, -1), 5),
+                ("BOTTOMPADDING", (0, 0), (-1, -1), 5),
+            ]
+        )
+    )
     return table
 
 
@@ -235,14 +293,18 @@ def save_sector_chart(sector, frame):
 def generate_sector_report(sector, frame):
     path = SECTOR_DIR / f"{clean_filename(sector)}_sector_report.pdf"
     doc = SimpleDocTemplate(
-        str(path), pagesize=A4, rightMargin=15*mm, leftMargin=15*mm,
-        topMargin=13*mm, bottomMargin=13*mm
+        str(path),
+        pagesize=A4,
+        rightMargin=15 * mm,
+        leftMargin=15 * mm,
+        topMargin=13 * mm,
+        bottomMargin=13 * mm,
     )
     story = [
         Paragraph(f"{sector} — Sector Intelligence Report", STYLES["ReportTitle"]),
         Paragraph(
             "NIFTY 100 Financial Intelligence Platform | Latest available company-level observations",
-            STYLES["SubtitleCustom"]
+            STYLES["SubtitleCustom"],
         ),
     ]
 
@@ -250,25 +312,39 @@ def generate_sector_report(sector, frame):
     story.append(Paragraph("Sector Snapshot", STYLES["SectionCustom"]))
     snapshot = [
         ["Metric", "Value", "Metric", "Value"],
-        ["Companies covered", str(count), "Avg. ROE (%)",
-         metric_summary(frame, "ratio_return_on_equity_pct")],
-        ["Avg. net margin (%)", metric_summary(frame, "ratio_net_profit_margin_pct"),
-         "Avg. operating margin (%)",
-         metric_summary(frame, "ratio_operating_profit_margin_pct")],
-        ["Avg. P/E", metric_summary(frame, "market_pe_ratio"),
-         "Avg. debt/equity", metric_summary(frame, "ratio_debt_to_equity")],
-        ["Avg. interest coverage", metric_summary(frame, "ratio_interest_coverage"),
-         "Avg. FCF conversion (%)",
-         metric_summary(frame, "ratio_fcf_conversion_pct")],
+        [
+            "Companies covered",
+            str(count),
+            "Avg. ROE (%)",
+            metric_summary(frame, "ratio_return_on_equity_pct"),
+        ],
+        [
+            "Avg. net margin (%)",
+            metric_summary(frame, "ratio_net_profit_margin_pct"),
+            "Avg. operating margin (%)",
+            metric_summary(frame, "ratio_operating_profit_margin_pct"),
+        ],
+        [
+            "Avg. P/E",
+            metric_summary(frame, "market_pe_ratio"),
+            "Avg. debt/equity",
+            metric_summary(frame, "ratio_debt_to_equity"),
+        ],
+        [
+            "Avg. interest coverage",
+            metric_summary(frame, "ratio_interest_coverage"),
+            "Avg. FCF conversion (%)",
+            metric_summary(frame, "ratio_fcf_conversion_pct"),
+        ],
     ]
-    story.append(make_table(snapshot, [42*mm, 30*mm, 42*mm, 30*mm]))
-    story.append(Spacer(1, 5*mm))
+    story.append(make_table(snapshot, [42 * mm, 30 * mm, 42 * mm, 30 * mm]))
+    story.append(Spacer(1, 5 * mm))
 
     chart = save_sector_chart(sector, frame)
     if chart:
         story.append(Paragraph("Latest Financial Scale", STYLES["SectionCustom"]))
-        story.append(Image(str(chart), width=170*mm, height=59*mm))
-        story.append(Spacer(1, 2*mm))
+        story.append(Image(str(chart), width=170 * mm, height=59 * mm))
+        story.append(Spacer(1, 2 * mm))
 
     story.append(Paragraph("Company Coverage", STYLES["SectionCustom"]))
     display_cols = [
@@ -285,22 +361,27 @@ def generate_sector_report(sector, frame):
         ordered["market_market_cap_crore"] = pd.to_numeric(
             ordered["market_market_cap_crore"], errors="coerce"
         )
-        ordered = ordered.sort_values("market_market_cap_crore", ascending=False,
-                                      na_position="last")
+        ordered = ordered.sort_values(
+            "market_market_cap_crore", ascending=False, na_position="last"
+        )
     for _, row in ordered.head(20).iterrows():
-        rows.append([
-            str(row[col])[:38] if col == "company_name" else safe_num(row[col])
-            for col, _ in available
-        ])
-    widths = [65*mm] + ([25*mm] * (len(available)-1))
+        rows.append(
+            [
+                str(row[col])[:38] if col == "company_name" else safe_num(row[col])
+                for col, _ in available
+            ]
+        )
+    widths = [65 * mm] + ([25 * mm] * (len(available) - 1))
     story.append(make_table(rows, widths, 7))
-    story.append(Spacer(1, 4*mm))
-    story.append(Paragraph(
-        "Methodology: latest available observation per company is used for cross-sectional "
-        "metrics. Averages exclude missing values. Figures are database-derived and are not "
-        "investment recommendations. Financial-sector ratios require sector-specific interpretation.",
-        STYLES["SmallCustom"]
-    ))
+    story.append(Spacer(1, 4 * mm))
+    story.append(
+        Paragraph(
+            "Methodology: latest available observation per company is used for cross-sectional "
+            "metrics. Averages exclude missing values. Figures are database-derived and are not "
+            "investment recommendations. Financial-sector ratios require sector-specific interpretation.",
+            STYLES["SmallCustom"],
+        )
+    )
     doc.build(story)
     return path
 
@@ -308,47 +389,75 @@ def generate_sector_report(sector, frame):
 def generate_portfolio_summary(base):
     path = PORTFOLIO_DIR / "portfolio_summary.pdf"
     doc = SimpleDocTemplate(
-        str(path), pagesize=A4, rightMargin=15*mm, leftMargin=15*mm,
-        topMargin=13*mm, bottomMargin=13*mm
+        str(path),
+        pagesize=A4,
+        rightMargin=15 * mm,
+        leftMargin=15 * mm,
+        topMargin=13 * mm,
+        bottomMargin=13 * mm,
     )
     story = [
         Paragraph("NIFTY 100 — Portfolio Intelligence Summary", STYLES["ReportTitle"]),
         Paragraph(
             "Sprint 5 consolidated report | Company, sector, valuation and cash-flow overview",
-            STYLES["SubtitleCustom"]
+            STYLES["SubtitleCustom"],
         ),
         Paragraph("Portfolio Coverage", STYLES["SectionCustom"]),
     ]
 
-    sectors = (base.groupby("broad_sector")["company_id"].nunique()
-               .sort_values(ascending=False))
+    sectors = (
+        base.groupby("broad_sector")["company_id"]
+        .nunique()
+        .sort_values(ascending=False)
+    )
     total_companies = base["company_id"].nunique()
-    total_sectors = base.loc[base["broad_sector"] != "Unclassified",
-                             "broad_sector"].nunique()
-    total_mcap = pd.to_numeric(base.get("market_market_cap_crore"),
-                               errors="coerce").sum()
+    total_sectors = base.loc[
+        base["broad_sector"] != "Unclassified", "broad_sector"
+    ].nunique()
+    total_mcap = pd.to_numeric(
+        base.get("market_market_cap_crore"), errors="coerce"
+    ).sum()
     overview = [
         ["Portfolio metric", "Value", "Portfolio metric", "Value"],
-        ["Companies in master", str(total_companies),
-         "Distinct sectors", str(total_sectors)],
-        ["Companies with market-cap data",
-         str(pd.to_numeric(base.get("market_market_cap_crore"), errors="coerce").notna().sum()),
-         "Aggregate latest market cap (₹ Cr)", safe_num(total_mcap, 0)],
-        ["Avg. ROE (%)", metric_summary(base, "ratio_return_on_equity_pct"),
-         "Avg. net margin (%)", metric_summary(base, "ratio_net_profit_margin_pct")],
-        ["Avg. P/E", metric_summary(base, "market_pe_ratio"),
-         "Avg. debt/equity", metric_summary(base, "ratio_debt_to_equity")],
+        [
+            "Companies in master",
+            str(total_companies),
+            "Distinct sectors",
+            str(total_sectors),
+        ],
+        [
+            "Companies with market-cap data",
+            str(
+                pd.to_numeric(base.get("market_market_cap_crore"), errors="coerce")
+                .notna()
+                .sum()
+            ),
+            "Aggregate latest market cap (₹ Cr)",
+            safe_num(total_mcap, 0),
+        ],
+        [
+            "Avg. ROE (%)",
+            metric_summary(base, "ratio_return_on_equity_pct"),
+            "Avg. net margin (%)",
+            metric_summary(base, "ratio_net_profit_margin_pct"),
+        ],
+        [
+            "Avg. P/E",
+            metric_summary(base, "market_pe_ratio"),
+            "Avg. debt/equity",
+            metric_summary(base, "ratio_debt_to_equity"),
+        ],
     ]
-    story.append(make_table(overview, [42*mm, 35*mm, 42*mm, 35*mm]))
-    story.append(Spacer(1, 5*mm))
+    story.append(make_table(overview, [42 * mm, 35 * mm, 42 * mm, 35 * mm]))
+    story.append(Spacer(1, 5 * mm))
 
     story.append(Paragraph("Sector Distribution", STYLES["SectionCustom"]))
     sector_rows = [["Sector", "Companies", "Share of covered universe"]]
     for sector, count in sectors.items():
-        sector_rows.append([
-            str(sector), str(int(count)), f"{count / total_companies * 100:.1f}%"
-        ])
-    story.append(make_table(sector_rows, [80*mm, 35*mm, 45*mm]))
+        sector_rows.append(
+            [str(sector), str(int(count)), f"{count / total_companies * 100:.1f}%"]
+        )
+    story.append(make_table(sector_rows, [80 * mm, 35 * mm, 45 * mm]))
 
     fig, ax = plt.subplots(figsize=(7.2, 3.0))
     sectors.sort_values().plot(kind="barh", ax=ax)
@@ -359,8 +468,8 @@ def generate_portfolio_summary(base):
     chart_path = CHART_DIR / "portfolio_sector_distribution.png"
     fig.savefig(chart_path, dpi=150, bbox_inches="tight")
     plt.close(fig)
-    story.append(Spacer(1, 4*mm))
-    story.append(Image(str(chart_path), width=165*mm, height=69*mm))
+    story.append(Spacer(1, 4 * mm))
+    story.append(Image(str(chart_path), width=165 * mm, height=69 * mm))
 
     story.append(PageBreak())
     story.append(Paragraph("Portfolio Quality Indicators", STYLES["SectionCustom"]))
@@ -373,37 +482,53 @@ def generate_portfolio_summary(base):
         ("Interest coverage", "ratio_interest_coverage"),
         ("FCF conversion (%)", "ratio_fcf_conversion_pct"),
     ]:
-        vals = pd.to_numeric(base[col], errors="coerce").dropna() if col in base else pd.Series(dtype=float)
-        quality_rows.append([label, str(len(vals)), safe_num(vals.mean()) if len(vals) else "N/A"])
-    story.append(make_table(quality_rows, [75*mm, 45*mm, 40*mm]))
+        vals = (
+            pd.to_numeric(base[col], errors="coerce").dropna()
+            if col in base
+            else pd.Series(dtype=float)
+        )
+        quality_rows.append(
+            [label, str(len(vals)), safe_num(vals.mean()) if len(vals) else "N/A"]
+        )
+    story.append(make_table(quality_rows, [75 * mm, 45 * mm, 40 * mm]))
 
-    story.append(Paragraph("Largest Companies by Latest Market Capitalisation",
-                           STYLES["SectionCustom"]))
+    story.append(
+        Paragraph(
+            "Largest Companies by Latest Market Capitalisation", STYLES["SectionCustom"]
+        )
+    )
     top = base.copy()
     if "market_market_cap_crore" in top.columns:
         top["market_market_cap_crore"] = pd.to_numeric(
             top["market_market_cap_crore"], errors="coerce"
         )
-        top = top.sort_values("market_market_cap_crore", ascending=False,
-                              na_position="last")
+        top = top.sort_values(
+            "market_market_cap_crore", ascending=False, na_position="last"
+        )
     top_rows = [["Company", "Sector", "Market cap (₹ Cr)", "P/E"]]
     for _, row in top.head(15).iterrows():
-        top_rows.append([
-            str(row["company_name"])[:35],
-            str(row["broad_sector"])[:25],
-            safe_num(row.get("market_market_cap_crore"), 0),
-            safe_num(row.get("market_pe_ratio")),
-        ])
-    story.append(make_table(top_rows, [55*mm, 55*mm, 30*mm, 20*mm], 7))
+        top_rows.append(
+            [
+                str(row["company_name"])[:35],
+                str(row["broad_sector"])[:25],
+                safe_num(row.get("market_market_cap_crore"), 0),
+                safe_num(row.get("market_pe_ratio")),
+            ]
+        )
+    story.append(make_table(top_rows, [55 * mm, 55 * mm, 30 * mm, 20 * mm], 7))
 
-    story.append(Paragraph("Interpretation & Data Limitations", STYLES["SectionCustom"]))
+    story.append(
+        Paragraph("Interpretation & Data Limitations", STYLES["SectionCustom"])
+    )
     notes = [
         "This report is a quantitative screening summary, not a buy/sell recommendation.",
         "Metrics use the latest available observation per company; reporting periods may differ.",
         "Missing observations are retained as missing and are not treated as zero.",
-        "Cash-flow patterns and leverage ratios should be interpreted differently for banks, "
-        "insurers and other financial institutions.",
-        "The sector universe reflects the distinct sector labels present in the project database."
+        (
+            "Cash-flow patterns and leverage ratios should be interpreted differently for banks, "
+            "insurers and other financial institutions."
+        ),
+        "The sector universe reflects the distinct sector labels present in the project database.",
     ]
     for note in notes:
         story.append(Paragraph(f"• {note}", STYLES["SmallCustom"]))
@@ -417,10 +542,9 @@ def main():
     print("SPRINT 5 - DAY 35: FINAL REPORT GENERATION")
     print("=" * 62)
 
-    base, ratios, pnl, cash = build_data()
+    base, *_ = build_data()
     sector_names = sorted(
-        s for s in base["broad_sector"].dropna().unique()
-        if s != "Unclassified"
+        s for s in base["broad_sector"].dropna().unique() if s != "Unclassified"
     )
     generated = []
     failed = []
@@ -431,16 +555,20 @@ def main():
             report_path = generate_sector_report(sector, frame)
             size_kb = report_path.stat().st_size / 1024
             generated.append(report_path)
-            print(f"[{index}/{len(sector_names)}] {sector}: {len(frame)} companies | {size_kb:.1f} KB")
-        except Exception as exc:
+            print(
+                f"[{index}/{len(sector_names)}] {sector}: {len(frame)} companies | {size_kb:.1f} KB"
+            )
+        except Exception as exc:  # noqa: BLE001
             failed.append((sector, str(exc)))
             print(f"[{index}/{len(sector_names)}] FAILED: {sector} -> {exc}")
 
     portfolio_path = None
     try:
         portfolio_path = generate_portfolio_summary(base)
-        print(f"Portfolio summary: {portfolio_path} ({portfolio_path.stat().st_size/1024:.1f} KB)")
-    except Exception as exc:
+        print(
+            f"Portfolio summary: {portfolio_path} ({portfolio_path.stat().st_size/1024:.1f} KB)"
+        )
+    except Exception as exc:  # noqa: BLE001
         failed.append(("PORTFOLIO_SUMMARY", str(exc)))
         print(f"Portfolio summary FAILED: {exc}")
 
@@ -452,12 +580,14 @@ def main():
         f"Sector PDF failures: {len(failed)}",
         f"Portfolio summary generated: {'YES' if portfolio_path else 'NO'}",
         "",
-        "SECTOR REPORTS:"
+        "SECTOR REPORTS:",
     ]
     for path in generated:
         validation_lines.append(f"{path.name} | {path.stat().st_size/1024:.1f} KB")
     if failed:
-        validation_lines += ["", "FAILURES:"] + [f"{name}: {error}" for name, error in failed]
+        validation_lines += ["", "FAILURES:"] + [
+            f"{name}: {error}" for name, error in failed
+        ]
 
     validation_path = OUTPUT_DIR / "final_report_validation.txt"
     validation_path.write_text("\n".join(validation_lines), encoding="utf-8")

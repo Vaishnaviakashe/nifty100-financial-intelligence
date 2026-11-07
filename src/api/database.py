@@ -1,4 +1,3 @@
-
 import sqlite3
 from pathlib import Path
 
@@ -9,9 +8,7 @@ DB_PATH = ROOT / "data" / "nifty100.db"
 def get_connection():
     """Create a SQLite database connection."""
     if not DB_PATH.exists():
-        raise FileNotFoundError(
-            f"Database not found: {DB_PATH}"
-        )
+        raise FileNotFoundError(f"Database not found: {DB_PATH}")
 
     connection = sqlite3.connect(
         str(DB_PATH),
@@ -28,15 +25,13 @@ def get_table_row_counts():
     counts = {}
 
     with get_connection() as connection:
-        tables = connection.execute(
-            """
+        tables = connection.execute("""
             SELECT name
             FROM sqlite_master
             WHERE type = 'table'
             AND name NOT LIKE 'sqlite_%'
             ORDER BY name
-            """
-        ).fetchall()
+            """).fetchall()
 
         for table in tables:
             table_name = table["name"]

@@ -6,8 +6,8 @@ import time
 import urllib.error
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from datetime import datetime, timezone
 from pathlib import Path
-from datetime import datetime
 
 BASE_URL = "http://127.0.0.1:8000"
 ROOT = Path(__file__).resolve().parents[1]
@@ -42,7 +42,7 @@ def make_request(endpoint):
     try:
         request = urllib.request.Request(
             BASE_URL + endpoint,
-            headers={"User-Agent": "NIFTY100-Performance-Benchmark/1.0"}
+            headers={"User-Agent": "NIFTY100-Performance-Benchmark/1.0"},
         )
 
         with urllib.request.urlopen(request, timeout=30) as response:
@@ -53,7 +53,7 @@ def make_request(endpoint):
         status = exc.code
         error = str(exc)
 
-    except Exception as exc:
+    except Exception as exc:  # noqa: BLE001
         error = str(exc)
 
     elapsed_ms = (time.perf_counter() - start) * 1000
@@ -89,20 +89,15 @@ def benchmark_sequential():
     results = []
 
     for name, endpoint in ENDPOINTS.items():
-        # Warm-up requests
         for _ in range(2):
             make_request(endpoint)
 
         endpoint_results = [
-            make_request(endpoint)
-            for _ in range(SEQUENTIAL_ITERATIONS)
+            make_request(endpoint) for _ in range(SEQUENTIAL_ITERATIONS)
         ]
 
         summary = summarize(endpoint_results)
-        summary.update({
-            "endpoint": name,
-            "test_type": "Sequential"
-        })
+        summary.update({"endpoint": name, "test_type": "Sequential"})
         results.append(summary)
 
         print(
@@ -131,10 +126,7 @@ def benchmark_concurrent():
                 endpoint_results.append(future.result())
 
         summary = summarize(endpoint_results)
-        summary.update({
-            "endpoint": name,
-            "test_type": "Concurrent"
-        })
+        summary.update({"endpoint": name, "test_type": "Concurrent"})
         results.append(summary)
 
         print(
@@ -150,26 +142,20 @@ def benchmark_database():
     print("\n[3/3] Running SQLite benchmarks...")
 
     queries = {
-        "Company Count": (
-            "SELECT COUNT(*) FROM companies", ()
-        ),
-        "Financial Ratios Count": (
-            "SELECT COUNT(*) FROM financial_ratios", ()
-        ),
+        "Company Count": ("SELECT COUNT(*) FROM companies", ()),
+        "Financial Ratios Count": ("SELECT COUNT(*) FROM financial_ratios", ()),
         "TCS Financial Ratios": (
             "SELECT * FROM financial_ratios WHERE company_id = ?",
-            ("TCS",)
+            ("TCS",),
         ),
-        "Sector Count": (
-            "SELECT COUNT(DISTINCT broad_sector) FROM sectors", ()
-        ),
+        "Sector Count": ("SELECT COUNT(DISTINCT broad_sector) FROM sectors", ()),
     }
 
     results = []
 
     connection = sqlite3.connect(
         f"file:{DB_PATH.as_posix()}?mode=ro",
-        uri=True
+        uri=True,
     )
 
     try:
@@ -179,9 +165,7 @@ def benchmark_database():
             for _ in range(100):
                 start = time.perf_counter()
                 connection.execute(query, params).fetchall()
-                timings.append(
-                    (time.perf_counter() - start) * 1000
-                )
+                timings.append((time.perf_counter() - start) * 1000)
 
             summary = {
                 "query": name,
@@ -190,11 +174,11 @@ def benchmark_database():
                 "median_ms": round(statistics.median(timings), 3),
                 "max_ms": round(max(timings), 3),
             }
+
             results.append(summary)
 
-            print(
-                f"{name:25} | Avg: {summary['avg_ms']:.3f} ms"
-            )
+            print(f"{name:25} | Avg: {summary['avg_ms']:.3f} ms")
+
     finally:
         connection.close()
 
@@ -207,13 +191,10 @@ def main():
     print("API AND DATABASE PERFORMANCE BENCHMARK")
     print("=" * 65)
 
-    # Confirm that the API is reachable before benchmarking.
     health = make_request("/api/v1/health")
 
     if not health["success"]:
-        raise SystemExit(
-            "API is unavailable. Start Uvicorn in the first terminal."
-        )
+        raise SystemExit("API is unavailable. Start Uvicorn in the first terminal.")
 
     sequential = benchmark_sequential()
     concurrent = benchmark_concurrent()
@@ -227,10 +208,17 @@ def main():
         writer = csv.DictWriter(
             file,
             fieldnames=[
-                "endpoint", "test_type", "requests",
-                "successful", "failed", "avg_ms",
-                "median_ms", "p95_ms", "max_ms", "min_ms"
-            ]
+                "endpoint",
+                "test_type",
+                "requests",
+                "successful",
+                "failed",
+                "avg_ms",
+                "median_ms",
+                "p95_ms",
+                "max_ms",
+                "min_ms",
+            ],
         )
         writer.writeheader()
         writer.writerows(all_results)
@@ -241,9 +229,12 @@ def main():
         writer = csv.DictWriter(
             file,
             fieldnames=[
-                "query", "iterations", "avg_ms",
-                "median_ms", "max_ms"
-            ]
+                "query",
+                "iterations",
+                "avg_ms",
+                "median_ms",
+                "max_ms",
+            ],
         )
         writer.writeheader()
         writer.writerows(database)
@@ -251,7 +242,7 @@ def main():
     report = {
         "project": "NIFTY 100 Financial Intelligence Platform",
         "day": "Sprint 6 - Day 43",
-        "generated_at": datetime.now().isoformat(timespec="seconds"),
+        "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "configuration": {
             "sequential_iterations_per_endpoint": SEQUENTIAL_ITERATIONS,
             "concurrent_workers": CONCURRENT_WORKERS,
@@ -263,6 +254,7 @@ def main():
     }
 
     json_path = OUTPUT_DIR / "day43_performance_summary.json"
+
     with open(json_path, "w", encoding="utf-8") as file:
         json.dump(report, file, indent=4)
 
@@ -314,18 +306,19 @@ def main():
         f"- Failed API requests: {total_failed}",
         f"- Successful API requests: {total_requests - total_failed}",
         "",
-        "Note: Results are from a local development server. "
-        "They are not production capacity or external-network benchmarks.",
+        (
+            "Note: Results are from a local development server. "
+            "They are not production capacity or external-network benchmarks."
+        ),
         "",
-        "Concurrent requests are measured individually; this is a "
-        "basic concurrency benchmark, not a full stress test.",
+        (
+            "Concurrent requests are measured individually; this is a "
+            "basic concurrency benchmark, not a full stress test."
+        ),
     ]
 
     report_path = REPORT_DIR / "day43_performance_report.md"
-    report_path.write_text(
-        "\n".join(report_lines),
-        encoding="utf-8"
-    )
+    report_path.write_text("\n".join(report_lines), encoding="utf-8")
 
     print("\n" + "=" * 65)
     print("DAY 43 BENCHMARK COMPLETED")

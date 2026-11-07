@@ -1,9 +1,9 @@
 from src.analytics.ratios import (
+    cross_check_opm,
     net_profit_margin,
     operating_profit_margin,
-    return_on_equity,
     return_on_capital_employed,
-    cross_check_opm,
+    return_on_equity,
 )
 
 
@@ -32,12 +32,15 @@ def test_return_on_equity_negative_equity():
 
 
 def test_return_on_capital_employed():
-    assert return_on_capital_employed(
-        200,
-        300,
-        200,
-        500,
-    ) == 20
+    assert (
+        return_on_capital_employed(
+            200,
+            300,
+            200,
+            500,
+        )
+        == 20
+    )
 
 
 def test_cross_check_opm():

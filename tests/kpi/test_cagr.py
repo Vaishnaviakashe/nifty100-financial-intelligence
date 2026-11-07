@@ -1,8 +1,8 @@
 from src.analytics.cagr import (
     calculate_cagr,
-    revenue_cagr,
-    pat_cagr,
     eps_cagr,
+    pat_cagr,
+    revenue_cagr,
     turnaround_flag,
 )
 

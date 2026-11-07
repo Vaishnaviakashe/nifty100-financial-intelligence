@@ -34,11 +34,7 @@ def return_on_capital_employed(
     borrowings,
 ):
     """Calculate Return on Capital Employed."""
-    capital_employed = (
-        equity_capital
-        + reserves
-        + borrowings
-    )
+    capital_employed = equity_capital + reserves + borrowings
 
     if capital_employed == 0:
         return None
@@ -52,8 +48,6 @@ def cross_check_opm(calculated_opm, source_opm, tolerance=0.1):
         return True
 
     return abs(calculated_opm - source_opm) <= tolerance
-
-
 
 
 def debt_to_equity(borrowings, equity_capital, reserves):
@@ -80,5 +74,3 @@ def asset_turnover(sales, total_assets):
         return None
 
     return sales / total_assets
-
-

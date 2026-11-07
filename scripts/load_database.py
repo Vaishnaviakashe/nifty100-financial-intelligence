@@ -1,7 +1,7 @@
 """Load all project datasets into the SQLite database."""
 
-from pathlib import Path
 import sqlite3
+from pathlib import Path
 
 import pandas as pd
 
@@ -26,7 +26,6 @@ DATASETS = {
     "market_cap": ("market_cap.xlsx", False),
     "financial_ratios": ("financial_ratios.xlsx", False),
     "peer_groups": ("peer_groups.xlsx", False),
-
 }
 
 
@@ -58,18 +57,14 @@ def prepare_dataframe(
 
         before = len(dataframe)
 
-        dataframe = dataframe[
-            dataframe["year"] != "PARSE_ERROR"
-        ].copy()
+        dataframe = dataframe[dataframe["year"] != "PARSE_ERROR"].copy()
 
         invalid_year_rows_removed = before - len(dataframe)
 
     if "company_id" in dataframe.columns:
         before = len(dataframe)
 
-        dataframe = dataframe[
-            dataframe["company_id"].isin(valid_company_ids)
-        ].copy()
+        dataframe = dataframe[dataframe["company_id"].isin(valid_company_ids)].copy()
 
         orphan_rows_removed = before - len(dataframe)
 
@@ -88,6 +83,7 @@ def prepare_dataframe(
     }
 
     return dataframe, audit
+
 
 def main() -> None:
     """Load all datasets into SQLite."""
@@ -111,10 +107,10 @@ def main() -> None:
         dataframe = load_excel(path, core=is_core)
 
         dataframe, audit = prepare_dataframe(
-                            dataframe,
-                            table_name,
-                            valid_company_ids,
-                        )
+            dataframe,
+            table_name,
+            valid_company_ids,
+        )
 
         dataframe.to_sql(
             table_name,
@@ -135,7 +131,7 @@ def main() -> None:
         AUDIT_PATH,
         index=False,
     )
-    
+
     connection.commit()
     connection.close()
 

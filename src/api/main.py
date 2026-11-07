@@ -1,25 +1,22 @@
-
 import logging
 import time
-from src.api.routers.companies import router as companies_router
-
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 
-from src.api.routers.screener import router as screener_router
-from src.api.routers.sectors import router as sectors_router
-from src.api.routers.peers import router as peers_router
-from src.api.routers.valuation import router as valuation_router
-from src.api.routers.portfolio import router as portfolio_router
-from src.api.routers.documents import router as documents_router
-
 from src.api.database import (
     get_connection,
     get_table_row_counts,
 )
-
+from src.api.routers.companies import router as companies_router
+from src.api.routers.documents import router as documents_router
+from src.api.routers.peers import router as peers_router
+from src.api.routers.portfolio import router as portfolio_router
+from src.api.routers.pros_cons import router as pros_cons_router
+from src.api.routers.screener import router as screener_router
+from src.api.routers.sectors import router as sectors_router
+from src.api.routers.valuation import router as valuation_router
 
 # ============================================================
 # CONFIGURATION
@@ -41,6 +38,7 @@ logger = logging.getLogger("nifty100_api")
 # ============================================================
 # APPLICATION LIFESPAN
 # ============================================================
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -82,6 +80,7 @@ app.include_router(sectors_router)
 app.include_router(peers_router)
 app.include_router(valuation_router)
 app.include_router(portfolio_router)
+app.include_router(pros_cons_router)
 app.include_router(documents_router)
 
 # ============================================================
@@ -100,6 +99,7 @@ app.add_middleware(
 # ============================================================
 # REQUEST LOGGING MIDDLEWARE
 # ============================================================
+
 
 @app.middleware("http")
 async def request_logging(request: Request, call_next):
@@ -125,6 +125,7 @@ async def request_logging(request: Request, call_next):
 # ROOT ENDPOINT
 # ============================================================
 
+
 @app.get("/", tags=["General"])
 def root():
 
@@ -139,6 +140,7 @@ def root():
 # ============================================================
 # HEALTH ENDPOINT
 # ============================================================
+
 
 @app.get("/api/v1/health", tags=["Health"])
 def health_check():
@@ -155,14 +157,10 @@ def health_check():
             "application": APP_NAME,
             "version": VERSION,
             "database": "connected",
-            "uptime_seconds": round(
-                time.time() - START_TIME, 2
-            ),
+            "uptime_seconds": round(time.time() - START_TIME, 2),
             "total_tables": len(row_counts),
             "table_row_counts": row_counts,
-            "timestamp": time.strftime(
-                "%Y-%m-%d %H:%M:%S"
-            ),
+            "timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
         }
 
     except Exception as error:

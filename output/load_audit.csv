@@ -1,0 +1,13 @@
+source_rows,rows_loaded,duplicate_rows_removed,invalid_year_rows_removed,orphan_rows_removed,table_name
+92,92,0,0,0,companies
+1276,1073,12,100,91,profitandloss
+1312,1140,87,0,85,balancesheet
+1187,1056,35,0,96,cashflow
+20,16,0,0,4,analysis
+1585,1457,0,0,128,documents
+16,14,0,0,2,prosandcons
+92,92,0,0,0,sectors
+5520,5520,0,0,0,stock_prices
+552,552,0,0,0,market_cap
+1184,1041,119,0,24,financial_ratios
+56,56,0,0,0,peer_groups

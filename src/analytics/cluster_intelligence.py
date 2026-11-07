@@ -1,11 +1,8 @@
-
-from pathlib import Path
 import sqlite3
+from pathlib import Path
 
-import numpy as np
-import pandas as pd
 import matplotlib.pyplot as plt
-
+import pandas as pd
 
 # ============================================================
 # CONFIGURATION
@@ -51,6 +48,7 @@ KPI_COLUMNS = [
 # DATA LOADING
 # ============================================================
 
+
 def load_data():
     """Load company, sector and financial ratio data."""
 
@@ -78,9 +76,7 @@ def load_data():
     missing = [col for col in required if col not in ratios.columns]
 
     if missing:
-        raise ValueError(
-            f"Missing required financial_ratios columns: {missing}"
-        )
+        raise ValueError(f"Missing required financial_ratios columns: {missing}")
 
     ratios["year_date"] = pd.to_datetime(
         ratios["year"].astype(str),
@@ -90,21 +86,12 @@ def load_data():
     ratios = ratios.dropna(subset=["year_date"])
 
     # Latest financial ratio record for each company
-    latest = (
-        ratios.sort_values("year_date")
-        .groupby("company_id")
-        .tail(1)
-        .copy()
-    )
+    latest = ratios.sort_values("year_date").groupby("company_id").tail(1).copy()
 
-    latest = latest[
-        ["company_id", "year"] + KPI_COLUMNS
-    ]
+    latest = latest[["company_id", "year"] + KPI_COLUMNS]
 
-    data = (
-        companies
-        .merge(sectors, on="company_id", how="left")
-        .merge(latest, on="company_id", how="left")
+    data = companies.merge(sectors, on="company_id", how="left").merge(
+        latest, on="company_id", how="left"
     )
 
     return data
@@ -114,29 +101,22 @@ def load_data():
 # DAY 37 - TASK 1: CLUSTER PROFILES
 # ============================================================
 
+
 def generate_cluster_profiles():
 
     labels = pd.read_csv(CLUSTER_FILE)
     features = pd.read_csv(FEATURE_FILE)
 
     required = ["company_id", "cluster_id"]
-    missing = [
-        col for col in required
-        if col not in labels.columns
-    ]
+    missing = [col for col in required if col not in labels.columns]
 
     if missing:
         raise ValueError(f"Missing cluster label columns: {missing}")
 
-    missing_features = [
-        col for col in CLUSTER_FEATURES
-        if col not in features.columns
-    ]
+    missing_features = [col for col in CLUSTER_FEATURES if col not in features.columns]
 
     if missing_features:
-        raise ValueError(
-            f"Missing clustering features: {missing_features}"
-        )
+        raise ValueError(f"Missing clustering features: {missing_features}")
 
     data = labels.merge(
         features[["company_id"] + CLUSTER_FEATURES],
@@ -147,14 +127,9 @@ def generate_cluster_profiles():
 
     grouped = data.groupby("cluster_id")
 
-    profiles = grouped[CLUSTER_FEATURES].agg(
-        ["mean", "median"]
-    )
+    profiles = grouped[CLUSTER_FEATURES].agg(["mean", "median"])
 
-    profiles.columns = [
-        f"{feature}_{stat}"
-        for feature, stat in profiles.columns
-    ]
+    profiles.columns = [f"{feature}_{stat}" for feature, stat in profiles.columns]
 
     profiles.insert(
         0,
@@ -178,6 +153,7 @@ def generate_cluster_profiles():
 # ============================================================
 # DAY 37 - TASK 2: KPI CORRELATION HEATMAP
 # ============================================================
+
 
 def generate_correlation_heatmap(data):
 
@@ -248,9 +224,7 @@ def generate_correlation_heatmap(data):
 
     print(f"\nCorrelation heatmap saved: {output_path}")
 
-    correlation.to_csv(
-        OUTPUT_DIR / "kpi_correlation_matrix.csv"
-    )
+    correlation.to_csv(OUTPUT_DIR / "kpi_correlation_matrix.csv")
 
     return correlation
 
@@ -259,6 +233,7 @@ def generate_correlation_heatmap(data):
 # DAY 37 - TASK 3: SECTOR-WISE OUTLIER DETECTION
 # ============================================================
 
+
 def generate_outlier_report(data):
 
     records = []
@@ -266,23 +241,15 @@ def generate_outlier_report(data):
     for kpi in KPI_COLUMNS:
 
         # Calculate Z-score separately within each sector
-        sector_groups = data.groupby(
-            "broad_sector"
-        )[kpi]
+        sector_groups = data.groupby("broad_sector")[kpi]
 
         sector_mean = sector_groups.transform("mean")
         sector_std = sector_groups.transform("std")
         sector_count = sector_groups.transform("count")
 
-        z_scores = (
-            (data[kpi] - sector_mean) / sector_std
-        )
+        z_scores = (data[kpi] - sector_mean) / sector_std
 
-        mask = (
-            z_scores.abs().gt(3)
-            & sector_count.ge(3)
-            & z_scores.notna()
-        )
+        mask = z_scores.abs().gt(3) & sector_count.ge(3) & z_scores.notna()
 
         outliers = data.loc[
             mask,
@@ -296,19 +263,17 @@ def generate_outlier_report(data):
 
         for index, row in outliers.iterrows():
 
-            records.append({
-                "company_id": row["company_id"],
-                "company_name": row["company_name"],
-                "broad_sector": row["broad_sector"],
-                "kpi": kpi,
-                "value": row[kpi],
-                "z_score": z_scores.loc[index],
-                "severity": (
-                    "High"
-                    if abs(z_scores.loc[index]) > 4
-                    else "Outlier"
-                ),
-            })
+            records.append(
+                {
+                    "company_id": row["company_id"],
+                    "company_name": row["company_name"],
+                    "broad_sector": row["broad_sector"],
+                    "kpi": kpi,
+                    "value": row[kpi],
+                    "z_score": z_scores.loc[index],
+                    "severity": ("High" if abs(z_scores.loc[index]) > 4 else "Outlier"),
+                }
+            )
 
     columns = [
         "company_id",
@@ -345,6 +310,7 @@ def generate_outlier_report(data):
 # DAY 37 - TASK 4: PORTFOLIO STATISTICS
 # ============================================================
 
+
 def generate_portfolio_stats(data):
 
     statistics = []
@@ -353,18 +319,20 @@ def generate_portfolio_stats(data):
 
         values = data[kpi].dropna()
 
-        statistics.append({
-            "metric": kpi,
-            "company_count": len(values),
-            "missing_count": data[kpi].isna().sum(),
-            "P10": values.quantile(0.10),
-            "P25": values.quantile(0.25),
-            "P50": values.quantile(0.50),
-            "P75": values.quantile(0.75),
-            "P90": values.quantile(0.90),
-            "mean": values.mean(),
-            "std": values.std(),
-        })
+        statistics.append(
+            {
+                "metric": kpi,
+                "company_count": len(values),
+                "missing_count": data[kpi].isna().sum(),
+                "P10": values.quantile(0.10),
+                "P25": values.quantile(0.25),
+                "P50": values.quantile(0.50),
+                "P75": values.quantile(0.75),
+                "P90": values.quantile(0.90),
+                "mean": values.mean(),
+                "std": values.std(),
+            }
+        )
 
     stats = pd.DataFrame(statistics)
 
@@ -382,6 +350,7 @@ def generate_portfolio_stats(data):
 # ============================================================
 # MAIN EXECUTION
 # ============================================================
+
 
 def main():
 
@@ -406,7 +375,7 @@ def main():
     correlation = generate_correlation_heatmap(data)
 
     print("\n3. Detecting sector-wise outliers...")
-    outliers = generate_outlier_report(data)
+    generate_outlier_report(data)
 
     print("\n4. Generating portfolio statistics...")
     stats = generate_portfolio_stats(data)

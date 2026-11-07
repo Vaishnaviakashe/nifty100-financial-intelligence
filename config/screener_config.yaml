@@ -1,0 +1,44 @@
+description: Sprint 3 financial screener preset configuration
+source: src/analytics/screener.py
+presets:
+  quality:
+    return_on_equity_pct: &id001
+    - '>='
+    - 15
+    return_on_capital_employed_pct: *id001
+    net_profit_margin_pct: &id003
+    - '>='
+    - 10
+  low_debt:
+    debt_to_equity:
+    - <=
+    - 0.5
+    interest_coverage:
+    - '>='
+    - 3
+  cash_generators:
+    free_cash_flow_cr: &id004
+    - '>'
+    - 0
+    cfo_quality_score:
+    - '>='
+    - 1
+  high_returns:
+    return_on_equity_pct: &id002
+    - '>='
+    - 20
+    return_on_capital_employed_pct: *id002
+  efficient:
+    asset_turnover:
+    - '>='
+    - 0.75
+    operating_profit_margin_pct: *id001
+  balanced:
+    net_profit_margin_pct: *id003
+    return_on_equity_pct:
+    - '>='
+    - 12
+    debt_to_equity:
+    - <=
+    - 1
+    free_cash_flow_cr: *id004

@@ -1,10 +1,7 @@
-
 import sqlite3
 from pathlib import Path
 
-import numpy as np
 import pandas as pd
-
 
 # ============================================================
 # CONFIGURATION
@@ -53,6 +50,7 @@ CON_TEXT = {
 # ============================================================
 # DATA LOADING
 # ============================================================
+
 
 def load_data():
     conn = sqlite3.connect(DB_PATH)
@@ -116,6 +114,7 @@ def load_data():
 # HELPER FUNCTIONS
 # ============================================================
 
+
 def valid_values(series):
     return pd.to_numeric(series, errors="coerce").dropna()
 
@@ -158,10 +157,7 @@ def get_cagr(df, column, years=5):
     if actual_years < years - 1:
         return None
 
-    return (
-        (latest[column] / start[column])
-        ** (1 / actual_years) - 1
-    ) * 100
+    return ((latest[column] / start[column]) ** (1 / actual_years) - 1) * 100
 
 
 def consecutive_values(df, column, count):
@@ -185,13 +181,15 @@ def add_signal(signals, company_id, signal_type, rule_id, text, confidence):
     confidence = round(float(confidence), 2)
 
     if confidence > MIN_CONFIDENCE:
-        signals.append({
-            "company_id": company_id,
-            "type": signal_type,
-            "rule_id": rule_id,
-            "text": text,
-            "confidence_pct": confidence,
-        })
+        signals.append(
+            {
+                "company_id": company_id,
+                "type": signal_type,
+                "rule_id": rule_id,
+                "text": text,
+                "confidence_pct": confidence,
+            }
+        )
 
 
 def confidence_from_strength(value, threshold, direction="above"):
@@ -212,8 +210,12 @@ def is_financial_sector(sector):
     text = str(sector).lower()
 
     keywords = [
-        "bank", "financial", "finance",
-        "insurance", "nbfc", "lending",
+        "bank",
+        "financial",
+        "finance",
+        "insurance",
+        "nbfc",
+        "lending",
     ]
 
     return any(word in text for word in keywords)
@@ -222,6 +224,7 @@ def is_financial_sector(sector):
 # ============================================================
 # GENERATE PROS AND CONS
 # ============================================================
+
 
 def evaluate_company(company, ratios, pnl, balance, cashflow, market):
 
@@ -277,7 +280,10 @@ def evaluate_company(company, ratios, pnl, balance, cashflow, market):
 
     if revenue_cagr is not None and revenue_cagr > 15:
         add_signal(
-            signals, company_id, "pro", 4,
+            signals,
+            company_id,
+            "pro",
+            4,
             PRO_TEXT[4],
             confidence_from_strength(revenue_cagr, 15),
         )
@@ -290,7 +296,10 @@ def evaluate_company(company, ratios, pnl, balance, cashflow, market):
 
     if opm is not None and opm > 25:
         add_signal(
-            signals, company_id, "pro", 5,
+            signals,
+            company_id,
+            "pro",
+            5,
             PRO_TEXT[5],
             confidence_from_strength(opm, 25),
         )
@@ -303,7 +312,10 @@ def evaluate_company(company, ratios, pnl, balance, cashflow, market):
 
     if pat_cagr is not None and pat_cagr > 20:
         add_signal(
-            signals, company_id, "pro", 6,
+            signals,
+            company_id,
+            "pro",
+            6,
             PRO_TEXT[6],
             confidence_from_strength(pat_cagr, 20),
         )
@@ -340,7 +352,10 @@ def evaluate_company(company, ratios, pnl, balance, cashflow, market):
 
     if eps_cagr is not None and eps_cagr > 15:
         add_signal(
-            signals, company_id, "pro", 9,
+            signals,
+            company_id,
+            "pro",
+            9,
             PRO_TEXT[9],
             confidence_from_strength(eps_cagr, 15),
         )
@@ -351,9 +366,7 @@ def evaluate_company(company, ratios, pnl, balance, cashflow, market):
 
     roe_trend = consecutive_values(r, "return_on_equity_pct", 3)
 
-    if len(roe_trend) == 3 and (
-        roe_trend[0] < roe_trend[1] < roe_trend[2]
-    ):
+    if len(roe_trend) == 3 and (roe_trend[0] < roe_trend[1] < roe_trend[2]):
         add_signal(signals, company_id, "pro", 10, PRO_TEXT[10], 85)
 
     # --------------------------------------------------------
@@ -361,11 +374,7 @@ def evaluate_company(company, ratios, pnl, balance, cashflow, market):
     # PAT CAGR > Revenue CAGR
     # --------------------------------------------------------
 
-    if (
-        revenue_cagr is not None
-        and pat_cagr is not None
-        and pat_cagr > revenue_cagr
-    ):
+    if revenue_cagr is not None and pat_cagr is not None and pat_cagr > revenue_cagr:
         add_signal(signals, company_id, "pro", 11, PRO_TEXT[11], 85)
 
     # --------------------------------------------------------
@@ -397,13 +406,15 @@ def evaluate_company(company, ratios, pnl, balance, cashflow, market):
 
     # CON 1: D/E > 2 for non-financial companies
 
-    if not is_financial_sector(sector):
-        if de is not None and de > 2:
-            add_signal(
-                signals, company_id, "con", 1,
-                CON_TEXT[1].format(value=de),
-                confidence_from_strength(de, 2),
-            )
+    if not is_financial_sector(sector) and de is not None and de > 2:
+        add_signal(
+            signals,
+            company_id,
+            "con",
+            1,
+            CON_TEXT[1].format(value=de),
+            confidence_from_strength(de, 2),
+        )
 
     # CON 2: FCF negative for 3 consecutive years
 
@@ -484,6 +495,7 @@ def evaluate_company(company, ratios, pnl, balance, cashflow, market):
 # MAIN EXECUTION
 # ============================================================
 
+
 def main():
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -522,13 +534,9 @@ def main():
     result = pd.DataFrame(all_signals, columns=columns)
 
     if not result.empty:
-        result = result.drop_duplicates(
-            subset=["company_id", "type", "rule_id"]
-        )
+        result = result.drop_duplicates(subset=["company_id", "type", "rule_id"])
 
-        result = result.sort_values(
-            ["company_id", "type", "rule_id"]
-        )
+        result = result.sort_values(["company_id", "type", "rule_id"])
 
     result.to_csv(OUTPUT_FILE, index=False)
 
@@ -540,28 +548,22 @@ def main():
 
     for company_id in companies["company_id"]:
 
-        company_result = result[
-            result["company_id"] == company_id
-        ]
+        company_result = result[result["company_id"] == company_id]
 
-        pro_count = int(
-            (company_result["type"] == "pro").sum()
+        pro_count = int((company_result["type"] == "pro").sum())
+
+        con_count = int((company_result["type"] == "con").sum())
+
+        coverage_rows.append(
+            {
+                "company_id": company_id,
+                "pro_count": pro_count,
+                "con_count": con_count,
+                "has_pro": pro_count >= 1,
+                "has_con": con_count >= 1,
+                "meets_both_requirements": (pro_count >= 1 and con_count >= 1),
+            }
         )
-
-        con_count = int(
-            (company_result["type"] == "con").sum()
-        )
-
-        coverage_rows.append({
-            "company_id": company_id,
-            "pro_count": pro_count,
-            "con_count": con_count,
-            "has_pro": pro_count >= 1,
-            "has_con": con_count >= 1,
-            "meets_both_requirements": (
-                pro_count >= 1 and con_count >= 1
-            ),
-        })
 
     coverage = pd.DataFrame(coverage_rows)
 
@@ -581,25 +583,16 @@ def main():
         print(f"Cons generated: {(result['type'] == 'con').sum()}")
 
         print("\nRULE DISTRIBUTION")
-        print(
-            result.groupby(["type", "rule_id"])
-            .size()
-            .to_string()
-        )
+        print(result.groupby(["type", "rule_id"]).size().to_string())
 
     print("\nCOMPANY COVERAGE")
     print(f"Companies with at least 1 pro: {coverage['has_pro'].sum()}")
     print(f"Companies with at least 1 con: {coverage['has_con'].sum()}")
-    print(
-        "Companies with both: "
-        f"{coverage['meets_both_requirements'].sum()}"
-    )
+    print("Companies with both: " f"{coverage['meets_both_requirements'].sum()}")
 
     print("\nCOMPANIES REQUIRING REVIEW")
 
-    incomplete = coverage[
-        ~coverage["meets_both_requirements"]
-    ]
+    incomplete = coverage[~coverage["meets_both_requirements"]]
 
     if incomplete.empty:
         print("All companies have at least one pro and one con.")

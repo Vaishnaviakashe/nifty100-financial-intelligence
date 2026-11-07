@@ -1,4 +1,3 @@
-
 """Sprint 5 - Two-page Company Financial Tearsheet Generator."""
 
 import sqlite3
@@ -6,26 +5,24 @@ import sys
 from pathlib import Path
 from xml.sax.saxutils import escape
 
+import matplotlib
 import pandas as pd
 
-import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-
-from reportlab.platypus import Image as PDFImage
-
 from reportlab.lib import colors
-from reportlab.lib.enums import TA_CENTER, TA_LEFT
+from reportlab.lib.enums import TA_LEFT
 from reportlab.lib.pagesizes import A4
-from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import mm
+from reportlab.platypus import Image as PDFImage
 from reportlab.platypus import (
-    SimpleDocTemplate,
+    PageBreak,
     Paragraph,
+    SimpleDocTemplate,
     Spacer,
     Table,
     TableStyle,
-    PageBreak,
 )
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -84,16 +81,16 @@ def make_table(data, widths, header=True, font_size=8):
     ]
 
     if header:
-        commands.extend([
-            ("BACKGROUND", (0, 0), (-1, 0), NAVY),
-            ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
-            ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
-        ])
+        commands.extend(
+            [
+                ("BACKGROUND", (0, 0), (-1, 0), NAVY),
+                ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
+                ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
+            ]
+        )
 
     if len(data) > 1:
-        commands.append(
-            ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, LIGHT])
-        )
+        commands.append(("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, LIGHT]))
 
     table.setStyle(TableStyle(commands))
     return table
@@ -117,7 +114,6 @@ def get_pros_cons(ticker):
     return df[df["company_id"].astype(str) == ticker].copy()
 
 
-
 def generate_financial_charts(ticker, pnl, cashflow):
     """Generate compact financial charts for the two-page tearsheet."""
 
@@ -133,10 +129,20 @@ def generate_financial_charts(ticker, pnl, cashflow):
 
         if not data.empty:
             fig, ax = plt.subplots(figsize=(7.2, 2.0))
-            ax.plot(data["year"].astype(str), data["sales"], marker="o",
-                    linewidth=1.8, label="Revenue")
-            ax.plot(data["year"].astype(str), data["net_profit"], marker="s",
-                    linewidth=1.8, label="Net Profit")
+            ax.plot(
+                data["year"].astype(str),
+                data["sales"],
+                marker="o",
+                linewidth=1.8,
+                label="Revenue",
+            )
+            ax.plot(
+                data["year"].astype(str),
+                data["net_profit"],
+                marker="s",
+                linewidth=1.8,
+                label="Net Profit",
+            )
             ax.set_title(f"{ticker} | Revenue and Net Profit", fontsize=10)
             ax.set_ylabel("₹ Crore", fontsize=8)
             ax.tick_params(axis="both", labelsize=7)
@@ -149,27 +155,42 @@ def generate_financial_charts(ticker, pnl, cashflow):
             plt.close(fig)
 
     required_cf = {
-        "year", "operating_activity", "investing_activity",
-        "financing_activity"
+        "year",
+        "operating_activity",
+        "investing_activity",
+        "financing_activity",
     }
     if not cashflow.empty and required_cf.issubset(cashflow.columns):
         data = cashflow.sort_values("year").tail(8).copy()
-        for col in ["operating_activity", "investing_activity",
-                    "financing_activity"]:
+        for col in ["operating_activity", "investing_activity", "financing_activity"]:
             data[col] = pd.to_numeric(data[col], errors="coerce")
         data = data.dropna(
-            subset=["operating_activity", "investing_activity",
-                    "financing_activity"]
+            subset=["operating_activity", "investing_activity", "financing_activity"]
         )
 
         if not data.empty:
             fig, ax = plt.subplots(figsize=(7.2, 2.0))
-            ax.plot(data["year"].astype(str), data["operating_activity"],
-                    marker="o", linewidth=1.6, label="Operating")
-            ax.plot(data["year"].astype(str), data["investing_activity"],
-                    marker="s", linewidth=1.6, label="Investing")
-            ax.plot(data["year"].astype(str), data["financing_activity"],
-                    marker="^", linewidth=1.6, label="Financing")
+            ax.plot(
+                data["year"].astype(str),
+                data["operating_activity"],
+                marker="o",
+                linewidth=1.6,
+                label="Operating",
+            )
+            ax.plot(
+                data["year"].astype(str),
+                data["investing_activity"],
+                marker="s",
+                linewidth=1.6,
+                label="Investing",
+            )
+            ax.plot(
+                data["year"].astype(str),
+                data["financing_activity"],
+                marker="^",
+                linewidth=1.6,
+                label="Financing",
+            )
             ax.axhline(0, linewidth=0.8, color="#555555")
             ax.set_title(f"{ticker} | Cash Flow Trends", fontsize=10)
             ax.set_ylabel("₹ Crore", fontsize=8)
@@ -218,12 +239,10 @@ def generate_tearsheet(ticker):
 
     company_name = company.get("company_name", ticker)
     sector = (
-        sector_df.iloc[0].get("broad_sector", "N/A")
-        if not sector_df.empty else "N/A"
+        sector_df.iloc[0].get("broad_sector", "N/A") if not sector_df.empty else "N/A"
     )
     sub_sector = (
-        sector_df.iloc[0].get("sub_sector", "N/A")
-        if not sector_df.empty else "N/A"
+        sector_df.iloc[0].get("sub_sector", "N/A") if not sector_df.empty else "N/A"
     )
 
     latest_ratio = ratios.iloc[-1] if not ratios.empty else {}
@@ -233,42 +252,50 @@ def generate_tearsheet(ticker):
 
     styles = getSampleStyleSheet()
 
-    styles.add(ParagraphStyle(
-        name="MainTitle",
-        parent=styles["Title"],
-        fontName="Helvetica-Bold",
-        fontSize=19,
-        leading=23,
-        textColor=NAVY,
-        alignment=TA_LEFT,
-        spaceAfter=5,
-    ))
+    styles.add(
+        ParagraphStyle(
+            name="MainTitle",
+            parent=styles["Title"],
+            fontName="Helvetica-Bold",
+            fontSize=19,
+            leading=23,
+            textColor=NAVY,
+            alignment=TA_LEFT,
+            spaceAfter=5,
+        )
+    )
 
-    styles.add(ParagraphStyle(
-        name="Section",
-        parent=styles["Heading2"],
-        fontName="Helvetica-Bold",
-        fontSize=10,
-        leading=12,
-        textColor=NAVY,
-        spaceBefore=5,
-        spaceAfter=3,
-    ))
+    styles.add(
+        ParagraphStyle(
+            name="Section",
+            parent=styles["Heading2"],
+            fontName="Helvetica-Bold",
+            fontSize=10,
+            leading=12,
+            textColor=NAVY,
+            spaceBefore=5,
+            spaceAfter=3,
+        )
+    )
 
-    styles.add(ParagraphStyle(
-        name="Small",
-        parent=styles["Normal"],
-        fontSize=7.5,
-        leading=9,
-        textColor=GREY,
-    ))
+    styles.add(
+        ParagraphStyle(
+            name="Small",
+            parent=styles["Normal"],
+            fontSize=7.5,
+            leading=9,
+            textColor=GREY,
+        )
+    )
 
-    styles.add(ParagraphStyle(
-        name="BodySmall",
-        parent=styles["Normal"],
-        fontSize=7.5,
-        leading=9,
-    ))
+    styles.add(
+        ParagraphStyle(
+            name="BodySmall",
+            parent=styles["Normal"],
+            fontSize=7.5,
+            leading=9,
+        )
+    )
 
     filename = OUTPUT_DIR / f"{ticker}_tearsheet.pdf"
 
@@ -294,11 +321,12 @@ def generate_tearsheet(ticker):
     story.append(Spacer(1, 3 * mm))
     story.append(Paragraph(str(company_name), styles["MainTitle"]))
 
-    story.append(Paragraph(
-        f"Ticker: {ticker} | Sector: {sector} | "
-        f"Sub-sector: {sub_sector}",
-        styles["BodySmall"],
-    ))
+    story.append(
+        Paragraph(
+            f"Ticker: {ticker} | Sector: {sector} | " f"Sub-sector: {sub_sector}",
+            styles["BodySmall"],
+        )
+    )
 
     story.append(Spacer(1, 3 * mm))
 
@@ -326,41 +354,51 @@ def generate_tearsheet(ticker):
         ],
     ]
 
-    story.append(make_table(
-        snapshot,
-        [39 * mm, 49 * mm, 35 * mm, 57 * mm],
-    ))
+    story.append(
+        make_table(
+            snapshot,
+            [39 * mm, 49 * mm, 35 * mm, 57 * mm],
+        )
+    )
 
     story.append(section("2. Financial Performance History", styles))
 
     if not pnl.empty:
         recent_pnl = pnl.tail(5).sort_values("year", ascending=False)
 
-        data = [["Year", "Sales (Cr)", "Operating Profit (Cr)", "Net Profit (Cr)", "EPS"]]
+        data = [
+            ["Year", "Sales (Cr)", "Operating Profit (Cr)", "Net Profit (Cr)", "EPS"]
+        ]
 
         for _, row in recent_pnl.iterrows():
-            data.append([
-                str(row.get("year", "N/A")),
-                safe_value(row.get("sales")),
-                safe_value(row.get("operating_profit")),
-                safe_value(row.get("net_profit")),
-                safe_value(row.get("eps")),
-            ])
+            data.append(
+                [
+                    str(row.get("year", "N/A")),
+                    safe_value(row.get("sales")),
+                    safe_value(row.get("operating_profit")),
+                    safe_value(row.get("net_profit")),
+                    safe_value(row.get("eps")),
+                ]
+            )
 
-        story.append(make_table(
-            data,
-            [25 * mm, 37 * mm, 48 * mm, 43 * mm, 27 * mm],
-        ))
+        story.append(
+            make_table(
+                data,
+                [25 * mm, 37 * mm, 48 * mm, 43 * mm, 27 * mm],
+            )
+        )
     else:
         story.append(Paragraph("Profit and loss history unavailable.", styles["Small"]))
 
     if "performance" in charts:
         story.append(Spacer(1, 2 * mm))
-        story.append(PDFImage(
-            str(charts["performance"]),
-            width=165 * mm,
-            height=43 * mm,
-        ))
+        story.append(
+            PDFImage(
+                str(charts["performance"]),
+                width=165 * mm,
+                height=43 * mm,
+            )
+        )
 
     story.append(section("3. Key Financial Ratios", styles))
 
@@ -379,33 +417,48 @@ def generate_tearsheet(ticker):
         left = ratio_metrics[i]
         right = ratio_metrics[i + 1]
 
-        ratio_data.append([
-            left[0],
-            safe_value(latest_ratio.get(left[1]), left[2]),
-            right[0],
-            safe_value(latest_ratio.get(right[1]), right[2]),
-        ])
+        ratio_data.append(
+            [
+                left[0],
+                safe_value(latest_ratio.get(left[1]), left[2]),
+                right[0],
+                safe_value(latest_ratio.get(right[1]), right[2]),
+            ]
+        )
 
-    story.append(make_table(
-        ratio_data,
-        [42 * mm, 48 * mm, 42 * mm, 48 * mm],
-    ))
+    story.append(
+        make_table(
+            ratio_data,
+            [42 * mm, 48 * mm, 42 * mm, 48 * mm],
+        )
+    )
 
     story.append(section("4. Cash Flow Quality", styles))
 
     cash_data = [
         ["Metric", "Latest Value"],
-        ["Cash from Operations", safe_value(latest_cash.get("operating_activity"), " Cr")],
-        ["Investing Cash Flow", safe_value(latest_cash.get("investing_activity"), " Cr")],
-        ["Financing Cash Flow", safe_value(latest_cash.get("financing_activity"), " Cr")],
+        [
+            "Cash from Operations",
+            safe_value(latest_cash.get("operating_activity"), " Cr"),
+        ],
+        [
+            "Investing Cash Flow",
+            safe_value(latest_cash.get("investing_activity"), " Cr"),
+        ],
+        [
+            "Financing Cash Flow",
+            safe_value(latest_cash.get("financing_activity"), " Cr"),
+        ],
         ["Free Cash Flow", safe_value(latest_ratio.get("free_cash_flow_cr"), " Cr")],
         ["CFO Quality Score", safe_value(latest_ratio.get("cfo_quality_score"))],
     ]
 
-    story.append(make_table(
-        cash_data,
-        [90 * mm, 90 * mm],
-    ))
+    story.append(
+        make_table(
+            cash_data,
+            [90 * mm, 90 * mm],
+        )
+    )
 
     # --------------------------------------------------
     # PAGE 2 - INVESTMENT INTELLIGENCE
@@ -427,10 +480,12 @@ def generate_tearsheet(ticker):
         ["Total Assets", safe_value(latest_balance.get("total_assets"), " Cr")],
     ]
 
-    story.append(make_table(
-        balance_data,
-        [90 * mm, 90 * mm],
-    ))
+    story.append(
+        make_table(
+            balance_data,
+            [90 * mm, 90 * mm],
+        )
+    )
 
     story.append(section("6. Capital Allocation Pattern", styles))
 
@@ -445,10 +500,12 @@ def generate_tearsheet(ticker):
         if not allocation.empty:
             latest_allocation = allocation.iloc[-1]
 
-            story.append(Paragraph(
-                f"<b>Latest Pattern:</b> {latest_allocation['pattern_label']}",
-                styles["BodySmall"],
-            ))
+            story.append(
+                Paragraph(
+                    f"<b>Latest Pattern:</b> {latest_allocation['pattern_label']}",
+                    styles["BodySmall"],
+                )
+            )
 
             pattern_counts = allocation["pattern_label"].value_counts()
 
@@ -457,23 +514,29 @@ def generate_tearsheet(ticker):
             for pattern, count in pattern_counts.items():
                 allocation_data.append([pattern, str(count)])
 
-            story.append(make_table(
-                allocation_data,
-                [90 * mm, 90 * mm],
-            ))
+            story.append(
+                make_table(
+                    allocation_data,
+                    [90 * mm, 90 * mm],
+                )
+            )
         else:
-            story.append(Paragraph(
-                "No historical capital allocation records available.",
-                styles["Small"],
-            ))
+            story.append(
+                Paragraph(
+                    "No historical capital allocation records available.",
+                    styles["Small"],
+                )
+            )
 
     if "cashflow" in charts:
         story.append(Spacer(1, 2 * mm))
-        story.append(PDFImage(
-            str(charts["cashflow"]),
-            width=165 * mm,
-            height=40 * mm,
-        ))
+        story.append(
+            PDFImage(
+                str(charts["cashflow"]),
+                width=165 * mm,
+                height=40 * mm,
+            )
+        )
 
     story.append(section("7. Generated Pros and Cons", styles))
 
@@ -483,31 +546,35 @@ def generate_tearsheet(ticker):
         # Actual generated CSV schema: company_id, type, rule_id, text, confidence_pct
         required_cols = {"type", "text", "confidence_pct"}
         if required_cols.issubset(pros_cons.columns):
-            ordered = pros_cons.sort_values(
-                "confidence_pct", ascending=False
-            ).head(8)
+            ordered = pros_cons.sort_values("confidence_pct", ascending=False).head(8)
 
             for _, row in ordered.iterrows():
                 signal_type = escape(str(row.get("type", "Signal")).title())
                 signal_text = escape(str(row.get("text", "")))
                 confidence = safe_value(row.get("confidence_pct"), "%")
 
-                story.append(Paragraph(
-                    f"<b>{signal_type}:</b> {signal_text} "
-                    f"<font color='#666666'>(Confidence: {confidence})</font>",
-                    styles["BodySmall"],
-                ))
+                story.append(
+                    Paragraph(
+                        f"<b>{signal_type}:</b> {signal_text} "
+                        f"<font color='#666666'>(Confidence: {confidence})</font>",
+                        styles["BodySmall"],
+                    )
+                )
                 story.append(Spacer(1, 2))
         else:
-            story.append(Paragraph(
-                "Pros/cons file columns do not match the expected schema.",
-                styles["Small"],
-            ))
+            story.append(
+                Paragraph(
+                    "Pros/cons file columns do not match the expected schema.",
+                    styles["Small"],
+                )
+            )
     else:
-        story.append(Paragraph(
-            "No generated pros and cons available for this company.",
-            styles["Small"],
-        ))
+        story.append(
+            Paragraph(
+                "No generated pros and cons available for this company.",
+                styles["Small"],
+            )
+        )
 
     story.append(section("8. Risk Indicators and Observations", styles))
 
@@ -518,22 +585,16 @@ def generate_tearsheet(ticker):
 
     if intelligence_path.exists():
         intelligence = pd.read_excel(intelligence_path)
-        company_data = intelligence[
-            intelligence["company_id"].astype(str) == ticker
-        ]
+        company_data = intelligence[intelligence["company_id"].astype(str) == ticker]
 
         if not company_data.empty:
             item = company_data.iloc[0]
 
             if pd.notna(item.get("distress_flag")):
-                distress_flag = (
-                    "Yes" if item["distress_flag"] else "No"
-                )
+                distress_flag = "Yes" if item["distress_flag"] else "No"
 
             if pd.notna(item.get("deleveraging_flag")):
-                deleveraging_flag = (
-                    "Yes" if item["deleveraging_flag"] else "No"
-                )
+                deleveraging_flag = "Yes" if item["deleveraging_flag"] else "No"
 
     risk_data = [
         ["Indicator", "Result"],
@@ -542,19 +603,23 @@ def generate_tearsheet(ticker):
         ["Data Coverage", f"{len(pnl)} P&L records; {len(cashflow)} cash-flow records"],
     ]
 
-    story.append(make_table(
-        risk_data,
-        [90 * mm, 90 * mm],
-    ))
+    story.append(
+        make_table(
+            risk_data,
+            [90 * mm, 90 * mm],
+        )
+    )
 
     story.append(Spacer(1, 5 * mm))
 
-    story.append(Paragraph(
-        "Disclaimer: This tearsheet is generated from historical financial "
-        "data and rule-based analytical signals. It is for research and "
-        "educational purposes only and is not investment advice.",
-        styles["Small"],
-    ))
+    story.append(
+        Paragraph(
+            "Disclaimer: This tearsheet is generated from historical financial "
+            "data and rule-based analytical signals. It is for research and "
+            "educational purposes only and is not investment advice.",
+            styles["Small"],
+        )
+    )
 
     def footer(canvas, document):
         canvas.saveState()
@@ -563,11 +628,13 @@ def generate_tearsheet(ticker):
         canvas.setFont("Helvetica", 7)
         canvas.setFillColor(GREY)
         canvas.drawString(
-            15 * mm, 6 * mm,
+            15 * mm,
+            6 * mm,
             "NIFTY 100 Financial Intelligence Platform",
         )
         canvas.drawRightString(
-            195 * mm, 6 * mm,
+            195 * mm,
+            6 * mm,
             f"Page {document.page}",
         )
         canvas.restoreState()

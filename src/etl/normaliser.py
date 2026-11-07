@@ -6,8 +6,8 @@ import re
 
 import pandas as pd
 
-
 PARSE_ERROR = "PARSE_ERROR"
+
 
 def normalize_year(value: object) -> str:
     """Normalize financial year labels to YYYY-MM format."""
@@ -36,7 +36,7 @@ def normalize_year(value: object) -> str:
             year += 2000
 
         return f"{year:04d}-03"
-    
+
     if re.fullmatch(r"\d{4}-\d{2}", text):
         return text
 
@@ -56,8 +56,8 @@ def normalize_year(value: object) -> str:
             return parsed.strftime("%Y-%m")
         except (ValueError, TypeError):
             return PARSE_ERROR
-    
-    
+
+
 def normalize_ticker(value: object) -> str:
     """Normalize an NSE ticker by stripping whitespace and uppercasing."""
 

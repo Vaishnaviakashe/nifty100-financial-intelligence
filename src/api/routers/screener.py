@@ -1,4 +1,3 @@
-
 from pathlib import Path
 
 import pandas as pd
@@ -36,19 +35,13 @@ def run_screener(
         )
 
         if sector:
-            df = df[
-                df["broad_sector"].str.lower() == sector.lower()
-            ]
+            df = df[df["broad_sector"].str.lower() == sector.lower()]
 
         total = len(df)
         df = df.head(limit)
 
         # Convert pandas NaN values to JSON-compatible nulls.
-        records = (
-            df.astype(object)
-            .where(pd.notna(df), None)
-            .to_dict(orient="records")
-        )
+        records = df.astype(object).where(pd.notna(df), None).to_dict(orient="records")
 
         return {
             "preset": preset,
@@ -58,8 +51,8 @@ def run_screener(
             "companies": records,
         }
 
-    except Exception as error:
+    except Exception as error:  # noqa: BLE001
         raise HTTPException(
             status_code=500,
-            detail=f"Screener execution failed: {str(error)}",
+            detail=f"Screener execution failed: {error!s}",
         )

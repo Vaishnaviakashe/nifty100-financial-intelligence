@@ -20,9 +20,7 @@ def main():
 
     conn = sqlite3.connect(DB_PATH)
 
-    companies = conn.execute(
-        "SELECT id FROM companies ORDER BY id"
-    ).fetchall()
+    companies = conn.execute("SELECT id FROM companies ORDER BY id").fetchall()
 
     conn.close()
 
@@ -46,18 +44,16 @@ def main():
             pages = len(reader.pages)
             size_kb = pdf_path.stat().st_size / 1024
 
-            successful.append({
-                "ticker": ticker,
-                "pages": pages,
-                "size_kb": round(size_kb, 2)
-            })
+            successful.append(
+                {"ticker": ticker, "pages": pages, "size_kb": round(size_kb, 2)}
+            )
 
             print(
                 f"[{index}/{len(companies)}] "
                 f"{ticker}: {pages} pages, {size_kb:.2f} KB"
             )
 
-        except Exception as error:
+        except Exception as error:  # noqa: BLE001
             failed.append((ticker, str(error)))
             print(f"[{index}/{len(companies)}] FAILED: {ticker} - {error}")
 

@@ -1,10 +1,8 @@
-
 import re
 import sqlite3
 from pathlib import Path
 
 import pandas as pd
-
 
 # --------------------------------------------------
 # PATHS AND CONFIGURATION
@@ -35,8 +33,7 @@ METRIC_COLUMNS = {
 # 1 Year: 16%
 # Last Year: 12%
 PATTERN = re.compile(
-    r"^\s*(?P<period>\d+)\s*Years?\s*:?\s*"
-    r"(?P<value>-?\d+(?:\.\d+)?)\s*%?\s*$",
+    r"^\s*(?P<period>\d+)\s*Years?\s*:?\s*" r"(?P<value>-?\d+(?:\.\d+)?)\s*%?\s*$",
     re.IGNORECASE,
 )
 
@@ -50,6 +47,7 @@ SPECIAL_PATTERN = re.compile(
 # --------------------------------------------------
 # PARSE PERIOD AND PERCENTAGE
 # --------------------------------------------------
+
 
 def parse_value(raw_value):
     if pd.isna(raw_value):
@@ -77,6 +75,7 @@ def parse_value(raw_value):
 # --------------------------------------------------
 # LOAD AND PARSE EXCEL
 # --------------------------------------------------
+
 
 def parse_analysis():
     if not EXCEL_PATH.exists():
@@ -110,20 +109,24 @@ def parse_analysis():
             period, value, error = parse_value(raw_value)
 
             if error:
-                failures.append({
-                    "company_id": company_id,
-                    "metric_type": metric_type,
-                    "raw_value": raw_value,
-                    "reason": error,
-                })
+                failures.append(
+                    {
+                        "company_id": company_id,
+                        "metric_type": metric_type,
+                        "raw_value": raw_value,
+                        "reason": error,
+                    }
+                )
                 continue
 
-            parsed_rows.append({
-                "company_id": company_id,
-                "metric_type": metric_type,
-                "period_years": period,
-                "value_pct": value,
-            })
+            parsed_rows.append(
+                {
+                    "company_id": company_id,
+                    "metric_type": metric_type,
+                    "period_years": period,
+                    "value_pct": value,
+                }
+            )
 
     parsed = pd.DataFrame(
         parsed_rows,
@@ -160,6 +163,7 @@ def parse_analysis():
 # --------------------------------------------------
 # CALCULATE HISTORICAL CAGR
 # --------------------------------------------------
+
 
 def calculate_cagr(start_value, end_value, years):
     if (
@@ -255,9 +259,7 @@ def get_stock_price_cagr(conn, company_id, period):
 
     start = candidates.iloc[-1]
 
-    actual_years = (
-        latest["date"] - start["date"]
-    ).days / 365.25
+    actual_years = (latest["date"] - start["date"]).days / 365.25
 
     if actual_years < period - 0.1:
         return None
@@ -272,6 +274,7 @@ def get_stock_price_cagr(conn, company_id, period):
 # --------------------------------------------------
 # CROSS-VALIDATE CAGR VALUES
 # --------------------------------------------------
+
 
 def cross_validate(parsed):
     conn = sqlite3.connect(DB_PATH)
@@ -316,16 +319,18 @@ def cross_validate(parsed):
             divergence = abs(parsed_value - computed_value)
 
             # Difference measured in percentage points.
-            review_rows.append({
-                "company_id": company_id,
-                "metric_type": metric,
-                "period_years": period,
-                "parsed_value_pct": parsed_value,
-                "computed_value_pct": round(computed_value, 2),
-                "divergence_pct_points": round(divergence, 2),
-                "source_table": source,
-                "manual_review": divergence > 5,
-            })
+            review_rows.append(
+                {
+                    "company_id": company_id,
+                    "metric_type": metric,
+                    "period_years": period,
+                    "parsed_value_pct": parsed_value,
+                    "computed_value_pct": round(computed_value, 2),
+                    "divergence_pct_points": round(divergence, 2),
+                    "source_table": source,
+                    "manual_review": divergence > 5,
+                }
+            )
 
     finally:
         conn.close()
@@ -334,11 +339,7 @@ def cross_validate(parsed):
 
     review_df.to_csv(DIVERGENCE_FILE, index=False)
 
-    flagged = (
-        int(review_df["manual_review"].sum())
-        if not review_df.empty
-        else 0
-    )
+    flagged = int(review_df["manual_review"].sum()) if not review_df.empty else 0
 
     print("\nCAGR CROSS-VALIDATION")
     print(f"Comparisons available: {len(review_df)}")
@@ -371,16 +372,16 @@ def generate_coverage_report(parsed):
     missing_ids = sorted(all_ids - parsed_ids)
     unmatched_source_ids = sorted(parsed_ids - all_ids)
 
-    coverage = pd.DataFrame({
-        "total_companies": [len(all_ids)],
-        "source_companies": [len(parsed_ids)],
-        "companies_with_analysis": [len(matched_ids)],
-        "companies_missing_analysis": [len(missing_ids)],
-        "source_tickers_not_in_master": [
-            ", ".join(unmatched_source_ids)
-        ],
-        "missing_company_ids": [", ".join(missing_ids)],
-    })
+    coverage = pd.DataFrame(
+        {
+            "total_companies": [len(all_ids)],
+            "source_companies": [len(parsed_ids)],
+            "companies_with_analysis": [len(matched_ids)],
+            "companies_missing_analysis": [len(missing_ids)],
+            "source_tickers_not_in_master": [", ".join(unmatched_source_ids)],
+            "missing_company_ids": [", ".join(missing_ids)],
+        }
+    )
 
     coverage.to_csv(COVERAGE_FILE, index=False)
 
@@ -389,10 +390,10 @@ def generate_coverage_report(parsed):
     print(f"Saved: {COVERAGE_FILE}")
 
 
-
 # --------------------------------------------------
 # MAIN
 # --------------------------------------------------
+
 
 def main():
     print("=" * 55)

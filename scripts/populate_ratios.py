@@ -1,34 +1,28 @@
 """Populate Sprint 2 financial ratios into SQLite."""
 
-
 import sys
 from pathlib import Path
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT_DIR))
 
-from pathlib import Path
 import sqlite3
-
-
-
-from src.analytics.ratios import (
-    net_profit_margin,
-    operating_profit_margin,
-    return_on_equity,
-    return_on_capital_employed,
-    debt_to_equity,
-    interest_coverage,
-    asset_turnover,
-)
+from pathlib import Path
 
 from src.analytics.cashflow_kpis import (
-    free_cash_flow,
-    capex_intensity,
-    fcf_conversion,
     cfo_quality_score,
+    fcf_conversion,
+    free_cash_flow,
 )
-
+from src.analytics.ratios import (
+    asset_turnover,
+    debt_to_equity,
+    interest_coverage,
+    net_profit_margin,
+    operating_profit_margin,
+    return_on_capital_employed,
+    return_on_equity,
+)
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 DB_PATH = BASE_DIR / "data" / "nifty100.db"
@@ -47,8 +41,7 @@ def main():
     # Clear existing Sprint 2 output.
     connection.execute("DELETE FROM financial_ratios")
 
-    rows = connection.execute(
-        """
+    rows = connection.execute("""
         SELECT
             p.company_id,
             p.year,
@@ -81,8 +74,7 @@ def main():
             AND p.year = c.year
 
         ORDER BY p.company_id, p.year
-        """
-    ).fetchall()
+        """).fetchall()
 
     print(f"Source company-year rows: {len(rows)}")
 
@@ -214,21 +206,17 @@ def main():
             (
                 row["company_id"],
                 row["year"],
-
                 npm,
                 opm,
                 roe,
                 roce,
-
                 de,
                 coverage,
                 turnover,
-
                 fcf,
                 capex,
                 cfo_quality,
                 fcf_conversion_value,
-
                 row["eps"],
                 None,
                 row["dividend_payout"],

@@ -1,12 +1,9 @@
-
 from pathlib import Path
-import sqlite3
 
 from fastapi import APIRouter, HTTPException, Query
 from fastapi.responses import FileResponse
 
 from src.api.database import get_connection
-
 
 router = APIRouter(
     prefix="/api/v1",
@@ -20,6 +17,7 @@ TEARSHEET_DIR = ROOT / "reports" / "tearsheets"
 # ============================================================
 # HELPER FUNCTIONS
 # ============================================================
+
 
 def fetch_all(query, params=()):
     """Execute a SELECT query and return rows as dictionaries."""
@@ -108,6 +106,7 @@ def get_financial_history(
 # 1. GET ALL COMPANIES
 # ============================================================
 
+
 @router.get("/companies")
 def get_companies(
     sector: str | None = None,
@@ -122,40 +121,34 @@ def get_companies(
     params = []
 
     if sector:
-        conditions.append(
-            """
+        conditions.append("""
             EXISTS (
                 SELECT 1
                 FROM sectors s
                 WHERE s.company_id = c.id
                 AND LOWER(s.broad_sector) = LOWER(?)
             )
-            """
-        )
+            """)
         params.append(sector)
 
     if market_cap_category:
-        conditions.append(
-            """
+        conditions.append("""
             EXISTS (
                 SELECT 1
                 FROM sectors s
                 WHERE s.company_id = c.id
                 AND LOWER(s.market_cap_category) = LOWER(?)
             )
-            """
-        )
+            """)
         params.append(market_cap_category)
 
     if search:
-        conditions.append(
-            """
+        conditions.append("""
             (
                 LOWER(c.id) LIKE LOWER(?)
                 OR LOWER(c.company_name) LIKE LOWER(?)
             )
-            """
-        )
+            """)
 
         search_value = f"%{search}%"
         params.extend([search_value, search_value])
@@ -211,6 +204,7 @@ def get_companies(
 # 2. GET COMPANY PROFILE
 # ============================================================
 
+
 @router.get("/companies/{ticker}")
 def get_company_profile(ticker: str):
     """Return company details and sector information."""
@@ -236,6 +230,7 @@ def get_company_profile(ticker: str):
 # 3. GET PROFIT AND LOSS HISTORY
 # ============================================================
 
+
 @router.get("/companies/{ticker}/pl")
 def get_company_profit_loss(
     ticker: str,
@@ -253,6 +248,7 @@ def get_company_profit_loss(
 # ============================================================
 # 4. GET BALANCE SHEET HISTORY
 # ============================================================
+
 
 @router.get("/companies/{ticker}/bs")
 def get_company_balance_sheet(
@@ -272,6 +268,7 @@ def get_company_balance_sheet(
 # 5. GET CASH FLOW HISTORY
 # ============================================================
 
+
 @router.get("/companies/{ticker}/cashflow")
 def get_company_cashflow(
     ticker: str,
@@ -289,6 +286,7 @@ def get_company_cashflow(
 # ============================================================
 # 6. GET FINANCIAL RATIOS
 # ============================================================
+
 
 @router.get("/companies/{ticker}/ratios")
 def get_company_ratios(

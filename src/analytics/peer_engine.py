@@ -1,9 +1,8 @@
-
 """Sprint 3: Peer comparison and percentile ranking engine."""
 
 import sqlite3
-import pandas as pd
 
+import pandas as pd
 
 METRICS = {
     "net_profit_margin_pct": True,
@@ -58,25 +57,18 @@ def get_peer_rankings(db_path):
 
     for metric, higher_is_better in METRICS.items():
         df[f"{metric}_percentile"] = (
-        df.groupby("peer_group_name")[metric]
-        .rank(
-            method="average",
-            ascending=higher_is_better,
-            pct=True
-        ) * 100
-    )
+            df.groupby("peer_group_name")[metric].rank(
+                method="average", ascending=higher_is_better, pct=True
+            )
+            * 100
+        )
 
-    percentile_columns = [
-        f"{metric}_percentile" for metric in METRICS
-    ]
+    percentile_columns = [f"{metric}_percentile" for metric in METRICS]
 
     df["overall_percentile"] = df[percentile_columns].mean(axis=1)
 
-    df["overall_rank"] = (
-        df.groupby("peer_group_name")["overall_percentile"]
-        .rank(method="min", ascending=False)
+    df["overall_rank"] = df.groupby("peer_group_name")["overall_percentile"].rank(
+        method="min", ascending=False
     )
 
-    return df.sort_values(
-        ["peer_group_name", "overall_rank"]
-    ).reset_index(drop=True)
+    return df.sort_values(["peer_group_name", "overall_rank"]).reset_index(drop=True)
