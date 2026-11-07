@@ -1,0 +1,14 @@
+company_id,company_name,broad_sector,kpi,value,z_score,severity
+BAJAJHLDNG,Bajaj Holdings & Investment Ltd,Financials,net_profit_margin_pct,432.7262044653349,4.497813911494211,High
+INDIGO,Interglobe Aviation Ltd,Consumer Discretionary,return_on_equity_pct,892.568306010929,3.471902785993034,Outlier
+PNB,Punjab National Bank,Financials,return_on_equity_pct,61.320565191187306,3.2495226363195013,Outlier
+ICICIPRULI,ICICI Prudential Life Insurance Company Ltd,Financials,return_on_capital_employed_pct,754.8873412535846,3.3075326761425083,Outlier
+INDIGO,Interglobe Aviation Ltd,Consumer Discretionary,return_on_capital_employed_pct,5643.454935622318,3.4731048622060348,Outlier
+ADANIGREEN,Adani Green Energy Ltd,Energy,debt_to_equity,6.595281675818589,3.1428777700392247,Outlier
+BAJAJHLDNG,Bajaj Holdings & Investment Ltd,Financials,interest_coverage,3764.5,3.6782692228945333,Outlier
+INDIGO,Interglobe Aviation Ltd,Consumer Discretionary,asset_turnover,56.38625204582652,3.4725940517670426,Outlier
+PNB,Punjab National Bank,Financials,asset_turnover,1.5070262950629396,4.233577435077389,High
+TATAMOTORS,Tata Motors Ltd,Consumer Discretionary,free_cash_flow_cr,45133.0,3.22891444411325,Outlier
+SBILIFE,SBI Life Insurance Company Ltd,Financials,cfo_quality_score,15.375923970432947,3.1239971004883373,Outlier
+ADANIGREEN,Adani Green Energy Ltd,Energy,fcf_conversion_pct,-1059.2857142857144,-3.402745946548149,Outlier
+CHOLAFIN,Cholamandalam Investment & Finance Company Ltd,Financials,fcf_conversion_pct,-1126.842105263158,-3.250198397404133,Outlier

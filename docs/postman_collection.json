@@ -1,0 +1,494 @@
+{
+  "info": {
+    "name": "NIFTY 100 Financial Intelligence API",
+    "description": "Complete API collection generated from FastAPI OpenAPI specification.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "GET /api/v1/companies",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/v1/companies",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "companies"
+          ],
+          "query": [
+            {
+              "key": "sector",
+              "value": "",
+              "description": "",
+              "disabled": false
+            },
+            {
+              "key": "market_cap_category",
+              "value": "",
+              "description": "",
+              "disabled": false
+            },
+            {
+              "key": "search",
+              "value": "",
+              "description": "",
+              "disabled": false
+            },
+            {
+              "key": "limit",
+              "value": "",
+              "description": "",
+              "disabled": false
+            },
+            {
+              "key": "offset",
+              "value": "",
+              "description": "",
+              "disabled": false
+            }
+          ]
+        },
+        "description": "Get Companies"
+      },
+      "response": []
+    },
+    {
+      "name": "GET /api/v1/companies/{ticker}",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/v1/companies/:ticker",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "companies",
+            ":ticker"
+          ]
+        },
+        "description": "Get Company Profile"
+      },
+      "response": []
+    },
+    {
+      "name": "GET /api/v1/companies/{ticker}/pl",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/v1/companies/:ticker/pl",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "companies",
+            ":ticker",
+            "pl"
+          ],
+          "query": [
+            {
+              "key": "year",
+              "value": "",
+              "description": "",
+              "disabled": false
+            }
+          ]
+        },
+        "description": "Get Company Profit Loss"
+      },
+      "response": []
+    },
+    {
+      "name": "GET /api/v1/companies/{ticker}/bs",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/v1/companies/:ticker/bs",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "companies",
+            ":ticker",
+            "bs"
+          ],
+          "query": [
+            {
+              "key": "year",
+              "value": "",
+              "description": "",
+              "disabled": false
+            }
+          ]
+        },
+        "description": "Get Company Balance Sheet"
+      },
+      "response": []
+    },
+    {
+      "name": "GET /api/v1/companies/{ticker}/cashflow",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/v1/companies/:ticker/cashflow",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "companies",
+            ":ticker",
+            "cashflow"
+          ],
+          "query": [
+            {
+              "key": "year",
+              "value": "",
+              "description": "",
+              "disabled": false
+            }
+          ]
+        },
+        "description": "Get Company Cashflow"
+      },
+      "response": []
+    },
+    {
+      "name": "GET /api/v1/companies/{ticker}/ratios",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/v1/companies/:ticker/ratios",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "companies",
+            ":ticker",
+            "ratios"
+          ],
+          "query": [
+            {
+              "key": "year",
+              "value": "",
+              "description": "",
+              "disabled": false
+            }
+          ]
+        },
+        "description": "Get Company Ratios"
+      },
+      "response": []
+    },
+    {
+      "name": "GET /api/v1/companies/{ticker}/tearsheet",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/v1/companies/:ticker/tearsheet",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "companies",
+            ":ticker",
+            "tearsheet"
+          ]
+        },
+        "description": "Download Company Tearsheet"
+      },
+      "response": []
+    },
+    {
+      "name": "GET /api/v1/screener",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/v1/screener",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "screener"
+          ],
+          "query": [
+            {
+              "key": "preset",
+              "value": "",
+              "description": "",
+              "disabled": false
+            },
+            {
+              "key": "sector",
+              "value": "",
+              "description": "",
+              "disabled": false
+            },
+            {
+              "key": "limit",
+              "value": "",
+              "description": "",
+              "disabled": false
+            }
+          ]
+        },
+        "description": "Run Screener"
+      },
+      "response": []
+    },
+    {
+      "name": "GET /api/v1/sectors",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/v1/sectors",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "sectors"
+          ]
+        },
+        "description": "Get Sectors"
+      },
+      "response": []
+    },
+    {
+      "name": "GET /api/v1/sectors/{sector}/companies",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/v1/sectors/:sector/companies",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "sectors",
+            ":sector",
+            "companies"
+          ]
+        },
+        "description": "Get Sector Companies"
+      },
+      "response": []
+    },
+    {
+      "name": "GET /api/v1/peers/{group_name}",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/v1/peers/:group_name",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "peers",
+            ":group_name"
+          ]
+        },
+        "description": "Get Peer Group"
+      },
+      "response": []
+    },
+    {
+      "name": "GET /api/v1/companies/{ticker}/peers/compare",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/v1/companies/:ticker/peers/compare",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "companies",
+            ":ticker",
+            "peers",
+            "compare"
+          ]
+        },
+        "description": "Compare Company Peers"
+      },
+      "response": []
+    },
+    {
+      "name": "GET /api/v1/market-cap/{ticker}",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/v1/market-cap/:ticker",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "market-cap",
+            ":ticker"
+          ]
+        },
+        "description": "Get Market Cap History"
+      },
+      "response": []
+    },
+    {
+      "name": "GET /api/v1/valuation/summary",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/v1/valuation/summary",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "valuation",
+            "summary"
+          ],
+          "query": [
+            {
+              "key": "year",
+              "value": "",
+              "description": "",
+              "disabled": false
+            }
+          ]
+        },
+        "description": "Get Valuation Summary"
+      },
+      "response": []
+    },
+    {
+      "name": "GET /api/v1/portfolio/stats",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/v1/portfolio/stats",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "portfolio",
+            "stats"
+          ]
+        },
+        "description": "Get Portfolio Statistics"
+      },
+      "response": []
+    },
+    {
+      "name": "GET /api/v1/companies/{ticker}/documents",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/v1/companies/:ticker/documents",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "companies",
+            ":ticker",
+            "documents"
+          ],
+          "query": [
+            {
+              "key": "year",
+              "value": "",
+              "description": "",
+              "disabled": false
+            }
+          ]
+        },
+        "description": "Get Company Documents"
+      },
+      "response": []
+    },
+    {
+      "name": "GET /",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": []
+        },
+        "description": "Root"
+      },
+      "response": []
+    },
+    {
+      "name": "GET /api/v1/health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/v1/health",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "health"
+          ]
+        },
+        "description": "Health Check"
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://127.0.0.1:8000",
+      "type": "string"
+    }
+  ]
+}

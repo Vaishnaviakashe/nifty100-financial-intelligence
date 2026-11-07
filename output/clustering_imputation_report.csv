@@ -1,0 +1,66 @@
+company_id,broad_sector,feature,imputation_method
+SBIN,Financials,return_on_equity_pct,sector_median
+SBIN,Financials,debt_to_equity,sector_median
+JIOFIN,Financials,revenue_cagr_5yr,sector_median
+ABB,Industrials,fcf_cagr_5yr,sector_median
+ADANIENSOL,Energy,fcf_cagr_5yr,sector_median
+ADANIENT,Industrials,fcf_cagr_5yr,sector_median
+ADANIGREEN,Energy,fcf_cagr_5yr,sector_median
+ADANIPORTS,Industrials,fcf_cagr_5yr,sector_median
+AMBUJACEM,Materials,fcf_cagr_5yr,sector_median
+ATGL,Energy,fcf_cagr_5yr,sector_median
+AXISBANK,Financials,fcf_cagr_5yr,sector_median
+BAJAJFINSV,Financials,fcf_cagr_5yr,sector_median
+BAJAJHLDNG,Financials,fcf_cagr_5yr,sector_median
+BAJFINANCE,Financials,fcf_cagr_5yr,sector_median
+BANKBARODA,Financials,fcf_cagr_5yr,sector_median
+BEL,Industrials,fcf_cagr_5yr,sector_median
+BHARTIARTL,Communication Services,fcf_cagr_5yr,sector_median
+BHEL,Industrials,fcf_cagr_5yr,sector_median
+BPCL,Energy,fcf_cagr_5yr,sector_median
+BRITANNIA,Consumer Staples,fcf_cagr_5yr,sector_median
+CANBK,Financials,fcf_cagr_5yr,sector_median
+CHOLAFIN,Financials,fcf_cagr_5yr,sector_median
+DIVISLAB,Healthcare,fcf_cagr_5yr,sector_median
+DMART,Consumer Discretionary,fcf_cagr_5yr,sector_median
+GAIL,Energy,fcf_cagr_5yr,sector_median
+GODREJCP,Consumer Staples,fcf_cagr_5yr,sector_median
+GRASIM,Industrials,fcf_cagr_5yr,sector_median
+HAL,Industrials,fcf_cagr_5yr,sector_median
+HAVELLS,Industrials,fcf_cagr_5yr,sector_median
+HDFCBANK,Financials,fcf_cagr_5yr,sector_median
+HDFCLIFE,Financials,fcf_cagr_5yr,sector_median
+HINDALCO,Materials,fcf_cagr_5yr,sector_median
+ICICIBANK,Financials,fcf_cagr_5yr,sector_median
+ICICIPRULI,Financials,fcf_cagr_5yr,sector_median
+INDUSINDBK,Financials,fcf_cagr_5yr,sector_median
+IOC,Energy,fcf_cagr_5yr,sector_median
+IRCTC,Consumer Discretionary,fcf_cagr_5yr,sector_median
+IRFC,Financials,fcf_cagr_5yr,sector_median
+JINDALSTEL,Materials,fcf_cagr_5yr,sector_median
+JIOFIN,Financials,fcf_cagr_5yr,sector_median
+JSWENERGY,Energy,fcf_cagr_5yr,sector_median
+JSWSTEEL,Materials,fcf_cagr_5yr,sector_median
+KOTAKBANK,Financials,fcf_cagr_5yr,sector_median
+LODHA,Real Estate,fcf_cagr_5yr,sector_median
+LT,Industrials,fcf_cagr_5yr,sector_median
+M&M,Consumer Discretionary,fcf_cagr_5yr,sector_median
+NAUKRI,Communication Services,fcf_cagr_5yr,sector_median
+NTPC,Energy,fcf_cagr_5yr,sector_median
+PFC,Financials,fcf_cagr_5yr,sector_median
+PIDILITIND,Materials,fcf_cagr_5yr,sector_median
+PNB,Financials,fcf_cagr_5yr,sector_median
+RECLTD,Financials,fcf_cagr_5yr,sector_median
+RELIANCE,Energy,fcf_cagr_5yr,sector_median
+SBILIFE,Financials,fcf_cagr_5yr,sector_median
+SBIN,Financials,fcf_cagr_5yr,sector_median
+SHREECEM,Materials,fcf_cagr_5yr,sector_median
+SHRIRAMFIN,Financials,fcf_cagr_5yr,sector_median
+SIEMENS,Industrials,fcf_cagr_5yr,sector_median
+SUNPHARMA,Healthcare,fcf_cagr_5yr,sector_median
+TATAMOTORS,Consumer Discretionary,fcf_cagr_5yr,sector_median
+TATAPOWER,Energy,fcf_cagr_5yr,sector_median
+TATASTEEL,Materials,fcf_cagr_5yr,sector_median
+TITAN,Consumer Discretionary,fcf_cagr_5yr,sector_median
+TRENT,Consumer Discretionary,fcf_cagr_5yr,sector_median
+TVSMOTOR,Consumer Discretionary,fcf_cagr_5yr,sector_median
