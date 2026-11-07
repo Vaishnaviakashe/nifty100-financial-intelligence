@@ -1,0 +1,5 @@
+query,iterations,avg_ms,median_ms,max_ms
+Company Count,100,0.026,0.016,0.693
+Financial Ratios Count,100,0.026,0.022,0.2
+TCS Financial Ratios,100,0.066,0.053,0.744
+Sector Count,100,0.057,0.026,0.886

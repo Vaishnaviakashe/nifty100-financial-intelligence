@@ -1,0 +1,235 @@
+{
+    "project": "NIFTY 100 Financial Intelligence Platform",
+    "day": "Sprint 6 - Day 43",
+    "generated_at": "2026-11-07T08:05:34",
+    "configuration": {
+        "sequential_iterations_per_endpoint": 20,
+        "concurrent_workers": 5,
+        "concurrent_iterations_per_endpoint": 10,
+        "database_iterations_per_query": 100
+    },
+    "api_results": [
+        {
+            "requests": 20,
+            "successful": 20,
+            "failed": 0,
+            "avg_ms": 12.415,
+            "median_ms": 7.562,
+            "p95_ms": 36.144,
+            "max_ms": 36.144,
+            "min_ms": 4.906,
+            "endpoint": "Health",
+            "test_type": "Sequential"
+        },
+        {
+            "requests": 20,
+            "successful": 20,
+            "failed": 0,
+            "avg_ms": 16.364,
+            "median_ms": 13.664,
+            "p95_ms": 33.66,
+            "max_ms": 33.66,
+            "min_ms": 8.265,
+            "endpoint": "Company List",
+            "test_type": "Sequential"
+        },
+        {
+            "requests": 20,
+            "successful": 20,
+            "failed": 0,
+            "avg_ms": 10.685,
+            "median_ms": 8.081,
+            "p95_ms": 37.948,
+            "max_ms": 37.948,
+            "min_ms": 4.421,
+            "endpoint": "TCS Profile",
+            "test_type": "Sequential"
+        },
+        {
+            "requests": 20,
+            "successful": 20,
+            "failed": 0,
+            "avg_ms": 11.134,
+            "median_ms": 9.941,
+            "p95_ms": 23.743,
+            "max_ms": 23.743,
+            "min_ms": 6.719,
+            "endpoint": "TCS Ratios",
+            "test_type": "Sequential"
+        },
+        {
+            "requests": 20,
+            "successful": 20,
+            "failed": 0,
+            "avg_ms": 107.089,
+            "median_ms": 57.365,
+            "p95_ms": 409.596,
+            "max_ms": 409.596,
+            "min_ms": 22.639,
+            "endpoint": "Screener",
+            "test_type": "Sequential"
+        },
+        {
+            "requests": 20,
+            "successful": 20,
+            "failed": 0,
+            "avg_ms": 11.401,
+            "median_ms": 8.02,
+            "p95_ms": 29.62,
+            "max_ms": 29.62,
+            "min_ms": 5.179,
+            "endpoint": "Sectors",
+            "test_type": "Sequential"
+        },
+        {
+            "requests": 20,
+            "successful": 20,
+            "failed": 0,
+            "avg_ms": 11.886,
+            "median_ms": 9.252,
+            "p95_ms": 34.316,
+            "max_ms": 34.316,
+            "min_ms": 7.718,
+            "endpoint": "Valuation",
+            "test_type": "Sequential"
+        },
+        {
+            "requests": 20,
+            "successful": 20,
+            "failed": 0,
+            "avg_ms": 16.761,
+            "median_ms": 14.365,
+            "p95_ms": 37.497,
+            "max_ms": 37.497,
+            "min_ms": 9.24,
+            "endpoint": "Portfolio Stats",
+            "test_type": "Sequential"
+        },
+        {
+            "requests": 10,
+            "successful": 10,
+            "failed": 0,
+            "avg_ms": 43.59,
+            "median_ms": 48.352,
+            "p95_ms": 88.035,
+            "max_ms": 88.035,
+            "min_ms": 12.658,
+            "endpoint": "Health",
+            "test_type": "Concurrent"
+        },
+        {
+            "requests": 10,
+            "successful": 10,
+            "failed": 0,
+            "avg_ms": 78.566,
+            "median_ms": 68.803,
+            "p95_ms": 134.228,
+            "max_ms": 134.228,
+            "min_ms": 28.602,
+            "endpoint": "Company List",
+            "test_type": "Concurrent"
+        },
+        {
+            "requests": 10,
+            "successful": 10,
+            "failed": 0,
+            "avg_ms": 27.234,
+            "median_ms": 25.386,
+            "p95_ms": 43.594,
+            "max_ms": 43.594,
+            "min_ms": 14.112,
+            "endpoint": "TCS Profile",
+            "test_type": "Concurrent"
+        },
+        {
+            "requests": 10,
+            "successful": 10,
+            "failed": 0,
+            "avg_ms": 31.604,
+            "median_ms": 29.106,
+            "p95_ms": 47.642,
+            "max_ms": 47.642,
+            "min_ms": 16.26,
+            "endpoint": "TCS Ratios",
+            "test_type": "Concurrent"
+        },
+        {
+            "requests": 10,
+            "successful": 10,
+            "failed": 0,
+            "avg_ms": 49.239,
+            "median_ms": 47.707,
+            "p95_ms": 64.506,
+            "max_ms": 64.506,
+            "min_ms": 31.664,
+            "endpoint": "Screener",
+            "test_type": "Concurrent"
+        },
+        {
+            "requests": 10,
+            "successful": 10,
+            "failed": 0,
+            "avg_ms": 15.521,
+            "median_ms": 13.396,
+            "p95_ms": 29.341,
+            "max_ms": 29.341,
+            "min_ms": 9.56,
+            "endpoint": "Sectors",
+            "test_type": "Concurrent"
+        },
+        {
+            "requests": 10,
+            "successful": 10,
+            "failed": 0,
+            "avg_ms": 112.889,
+            "median_ms": 114.402,
+            "p95_ms": 160.464,
+            "max_ms": 160.464,
+            "min_ms": 63.602,
+            "endpoint": "Valuation",
+            "test_type": "Concurrent"
+        },
+        {
+            "requests": 10,
+            "successful": 10,
+            "failed": 0,
+            "avg_ms": 87.391,
+            "median_ms": 90.013,
+            "p95_ms": 159.412,
+            "max_ms": 159.412,
+            "min_ms": 23.745,
+            "endpoint": "Portfolio Stats",
+            "test_type": "Concurrent"
+        }
+    ],
+    "database_results": [
+        {
+            "query": "Company Count",
+            "iterations": 100,
+            "avg_ms": 0.026,
+            "median_ms": 0.016,
+            "max_ms": 0.693
+        },
+        {
+            "query": "Financial Ratios Count",
+            "iterations": 100,
+            "avg_ms": 0.026,
+            "median_ms": 0.022,
+            "max_ms": 0.2
+        },
+        {
+            "query": "TCS Financial Ratios",
+            "iterations": 100,
+            "avg_ms": 0.066,
+            "median_ms": 0.053,
+            "max_ms": 0.744
+        },
+        {
+            "query": "Sector Count",
+            "iterations": 100,
+            "avg_ms": 0.057,
+            "median_ms": 0.026,
+            "max_ms": 0.886
+        }
+    ]
+}

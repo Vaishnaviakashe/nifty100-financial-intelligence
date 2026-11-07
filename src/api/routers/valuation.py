@@ -1,11 +1,10 @@
-
+﻿from functools import lru_cache
 from pathlib import Path
 
 import pandas as pd
 from fastapi import APIRouter, HTTPException, Query
 
 from src.analytics.valuation import build_valuation_summary
-from src.api.database import get_connection
 
 router = APIRouter(prefix="/api/v1", tags=["Valuation"])
 
@@ -13,9 +12,24 @@ ROOT = Path(__file__).resolve().parents[3]
 DB_PATH = ROOT / "data" / "nifty100.db"
 
 
+@lru_cache(maxsize=6)
+def get_cached_valuation_summary(year: int):
+    df = build_valuation_summary(year=year, db_path=DB_PATH)
+
+    records = (
+        df.astype(object)
+        .where(pd.notna(df), None)
+        .to_dict(orient="records")
+    )
+
+    return tuple(records)
+
+
 @router.get("/market-cap/{ticker}")
 def get_market_cap_history(ticker: str):
     """Return historical market capitalization and valuation multiples."""
+
+    from src.api.database import get_connection
 
     with get_connection() as conn:
         company = conn.execute(
@@ -62,19 +76,13 @@ def get_market_cap_history(ticker: str):
 def get_valuation_summary(
     year: int = Query(default=2024, ge=2019, le=2024),
 ):
-    """Return the existing valuation summary for a selected year."""
+    """Return cached valuation summary for a selected year."""
 
     try:
-        df = build_valuation_summary(
-            year=year,
-            db_path=DB_PATH,
-        )
-
-        records = (
-            df.astype(object)
-            .where(pd.notna(df), None)
-            .to_dict(orient="records")
-        )
+        records = [
+            dict(record)
+            for record in get_cached_valuation_summary(year)
+        ]
 
         return {
             "year": year,

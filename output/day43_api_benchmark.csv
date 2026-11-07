@@ -1,0 +1,17 @@
+endpoint,test_type,requests,successful,failed,avg_ms,median_ms,p95_ms,max_ms,min_ms
+Health,Sequential,20,20,0,12.415,7.562,36.144,36.144,4.906
+Company List,Sequential,20,20,0,16.364,13.664,33.66,33.66,8.265
+TCS Profile,Sequential,20,20,0,10.685,8.081,37.948,37.948,4.421
+TCS Ratios,Sequential,20,20,0,11.134,9.941,23.743,23.743,6.719
+Screener,Sequential,20,20,0,107.089,57.365,409.596,409.596,22.639
+Sectors,Sequential,20,20,0,11.401,8.02,29.62,29.62,5.179
+Valuation,Sequential,20,20,0,11.886,9.252,34.316,34.316,7.718
+Portfolio Stats,Sequential,20,20,0,16.761,14.365,37.497,37.497,9.24
+Health,Concurrent,10,10,0,43.59,48.352,88.035,88.035,12.658
+Company List,Concurrent,10,10,0,78.566,68.803,134.228,134.228,28.602
+TCS Profile,Concurrent,10,10,0,27.234,25.386,43.594,43.594,14.112
+TCS Ratios,Concurrent,10,10,0,31.604,29.106,47.642,47.642,16.26
+Screener,Concurrent,10,10,0,49.239,47.707,64.506,64.506,31.664
+Sectors,Concurrent,10,10,0,15.521,13.396,29.341,29.341,9.56
+Valuation,Concurrent,10,10,0,112.889,114.402,160.464,160.464,63.602
+Portfolio Stats,Concurrent,10,10,0,87.391,90.013,159.412,159.412,23.745
